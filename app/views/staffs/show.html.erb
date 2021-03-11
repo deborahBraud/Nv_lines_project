@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Staff name:</strong>
+  <%= @staff.staff_name %>
+</p>
+
+<p>
+  <strong>Staff header:</strong>
+  <%= @staff.staff_header %>
+</p>
+
+<p>
+  <strong>Staff adress:</strong>
+  <%= @staff.staff_adress %>
+</p>
+
+<p>
+  <strong>Institut name:</strong>
+  <%= @staff.institut_name %>
+</p>
+
+<%= link_to 'Edit', edit_staff_path(@staff), class:'btn btn-info' %> 
+<%= link_to 'Back', staffs_path, class:'btn btn-secondary' %>
