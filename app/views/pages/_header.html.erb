@@ -1,19 +1,22 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-info">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#e3f2fd;">
  
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">NvLines</a>
+    <div class="navbar-nav ">
+      <%= link_to "NvLines", root_path, class:"nav-link"%> 
+     </div>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <%= image_tag("logo_nv.png", :size => '50x50', :alt => "logo_nv", :class => "d-inline-block align-top" )%>
+    <%= image_tag("logo_nv.png", :size => '60x60', :alt => "logo_nv", :class => "d-inline-block align-top" )%>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <%= link_to "Home", root_path, class:"nav-link"%>
+          <%= link_to "Home", root_path, class:"nav-link"%> 
         </li>
         
         <li class="nav-item dropdown">
@@ -21,12 +24,12 @@
             Lines
           </a>
 
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Wild-type lines</a></li>
-            <li><a class="dropdown-item" href="#">Transgenic & Mutant lines</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">All lines</a></li>
-          </ul>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Wild-type lines</a></li>
+              <li><a class="dropdown-item" href="#">Transgenic & Mutant lines</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">All lines</a></li>
+            </ul>
 
         </li>
 
@@ -41,6 +44,28 @@
         <li class="nav-item">
           <%= link_to "About", pages_about_nematostella_path, class:"nav-link"%>
         </li>
+
+        <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:"nav-link"%>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link"%>
+        </li>
+
+        <% else %>
+
+        <li class="nav-item">
+          <%= link_to "Sign Up", new_user_registration_path, class:"nav-link"%>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Sign In", new_user_session_path, class:"nav-link"%>
+        </li>
+
+        <% end %>
+
 
       </ul>
 
