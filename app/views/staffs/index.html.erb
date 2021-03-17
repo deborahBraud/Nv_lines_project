@@ -1,11 +1,9 @@
-<h1>Teams and Facilities</h1>
-</br>
-
 <table class ="table table-striped table-bordered">
   <thead class="thead-light">
     <tr>
       <th>Staff name</th>
       <th>Staff header</th>
+      <th>Staff co header</th>
       <th>Staff adress</th>
       <th>Institut name</th>
       <th colspan="3"></th>
@@ -13,18 +11,12 @@
   </thead>
 
   <tbody>
-    <% @staffs.each do |staff| %>
-      <tr>
-        <td><%= staff.staff_name %></td>
-        <td><%= staff.staff_header %></td>
-        <td><%= staff.staff_adress %></td>
-        <td><%= staff.institut_name %></td>
-        <td><%= link_to 'Show', staff %></td>
-        <td><%= link_to 'Edit', edit_staff_path(staff) %></td>
-        <td><%= link_to 'Destroy', staff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+
+<h1>Teams and Facilities</h1>
+<%= render partial: "staff", collection: @staffs %>
+</br>
+ 
+ </tbody>
 </table>
 
 <br>

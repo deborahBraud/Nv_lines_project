@@ -1,5 +1,47 @@
-<h1>Welcome</h1>
-
 <p>
-  Nematostella vectensis lines database is the first database referencing wild-type, transgenic and mutants lines of Nematostella organism. You can search specific lines and find molecular information on it.
+  Nematostella vectensis lines database is the first database referencing wild-type, transgenic and mutants lines of Nematostella organism. You can search for specific lines and find all molecular information you need.
 </p>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+  <div class="col">
+    <div class="card h-100">
+    <%= link_to image_tag("anemone.jpg", :alt => "Image", :class => "img-fluid tm-header-img" ), image_path("/") %>
+    	<div class="card-body">
+	        <h5 class="card-title">Images</h5>
+	        <p class="card-text">Description</p>
+	    </div>
+	    	</br>
+	    <div class="card-footer">
+          <small class="text-muted">image by ©name</small>
+      	</div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card h-100">
+	<%= link_to image_tag("anemone.jpg",:alt => "Image", :class => "img-fluid tm-header-img" ), image_path("/") %>
+      <div class="card-body">
+        <h5 class="card-title">Phenotypes</h5>
+        <p class="card-text">Description</p>
+      </div>
+  		</br>
+      <div class="card-footer">
+        <small class="text-muted">image by ©name</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card h-100">
+      <%= link_to image_tag("anemone.jpg", :alt => "Image", :class => "img-fluid tm-header-img" ), image_path("/") %>
+      <div class="card-body">
+        <h5 class="card-title">Latest entry</h5>
+        <p class="card-text">Description</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">image by ©name</small>
+      </div>
+    </div>
+  </div>
+</div>
