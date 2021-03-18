@@ -1,0 +1,39 @@
+<h1> Latest News </h1>
+
+<p>SECTION A REFLECHIR...</p>
+
+
+
+<h3>Publications</h3>
+
+<table class ="table table-striped table-bordered">
+  <thead class="thead-light">
+    <tr>
+      <th>Publication name</th>
+      <th>Publication date</th>
+      <th>Authors</th>
+      <th>Pubmed link</th>
+      <th>Doi link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @publications.each do |publication| %>
+      <tr>
+        <td><%= publication.publication_name %></td>
+        <td><%= publication.publication_date %></td>
+        <td><%= publication.authors %></td>
+        <<td> <p> <a href= <%= publication.pubmed_link %> > <%= publication.pubmed_link %> </a> </p> </td>
+
+        <td> <p> <a href= <%= publication.doi_link %> > <%= publication.doi_link %> </a> </p> </td>
+        <td><%= link_to 'Edit', edit_publication_path(publication) %></td>
+        <td><%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Publication', new_publication_path, class: "btn btn-info" %>

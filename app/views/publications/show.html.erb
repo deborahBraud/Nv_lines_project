@@ -1,0 +1,27 @@
+<p>
+  <strong>Publication name:</strong>
+  <%= @publication.publication_name %>
+</p>
+
+<p>
+  <strong>Publication date:</strong>
+  <%= @publication.publication_date %>
+</p>
+
+<p>
+  <strong>Authors:</strong>
+  <%= @publication.authors %>
+</p>
+
+<p>
+  <strong>Pubmed link:</strong>
+  <%= @publication.pubmed_link %>
+</p>
+
+<p>
+  <strong>Doi link:</strong>
+  <%= @publication.doi_link %>
+</p>
+
+<%= link_to 'Edit', edit_publication_path(@publication) %> |
+<%= link_to 'Back', publications_path %>

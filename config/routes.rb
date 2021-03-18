@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
+
   devise_for :users
 
+  #resources 
   resources :staffs
-  #resources :lines
+  resources :publications
 
   #pages routes
-  get 'pages/publications_index'
   get 'pages/about_nematostella'
   get 'pages/contact'
   get 'lines/index'

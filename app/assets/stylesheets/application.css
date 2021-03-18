@@ -11,7 +11,9 @@ h1{
 	color: #39464A; /* couleur du titre de la page*/}
 
 h3{
-	font-size: 1.1em;
+	background-color: #F8F9FA;
+	text-align: center;
+	font-size: 1.2em;
 	color: #39464A; /* couleur du titre de la page*/}
 
 /* NAVBAR */
