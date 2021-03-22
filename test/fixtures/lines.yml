@@ -2,8 +2,16 @@
 
 one:
   line_name: MyString
+  synonym_line_name: MyString
   line_type: MyString
+  person_in_charge: MyString
+  breeding_type: MyString
+  generation: 1
 
 two:
   line_name: MyString
+  synonym_line_name: MyString
   line_type: MyString
+  person_in_charge: MyString
+  breeding_type: MyString
+  generation: 1

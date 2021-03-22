@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_19_142431) do
+ActiveRecord::Schema.define(version: 2021_03_22_105133) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -40,11 +40,14 @@ ActiveRecord::Schema.define(version: 2021_03_19_142431) do
 
   create_table "lines", force: :cascade do |t|
     t.string "line_name"
+    t.string "synonym_line_name"
     t.string "line_type"
+    t.string "person_in_charge"
+    t.string "breeding_type"
+    t.integer "generation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
-    t.index ["user_id"], name: "index_lines_on_user_id"
+    t.integer "zygosity"
   end
 
   create_table "publications", force: :cascade do |t|
@@ -64,6 +67,7 @@ ActiveRecord::Schema.define(version: 2021_03_19_142431) do
     t.string "institut_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "fieldname"
     t.string "country"
     t.string "city"
     t.string "postalcode"

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Line name:</strong>
+  <%= @line.line_name %>
+</p>
+
+<p>
+  <strong>Synonym line name:</strong>
+  <%= @line.synonym_line_name %>
+</p>
+
+<p>
+  <strong>Line type:</strong>
+  <%= @line.line_type %>
+</p>
+
+<p>
+  <strong>Person in charge:</strong>
+  <%= @line.person_in_charge %>
+</p>
+
+<p>
+  <strong>Breeding type:</strong>
+  <%= @line.breeding_type %>
+</p>
+
+<p>
+  <strong>Generation:</strong>
+  <%= @line.generation %>
+</p>
+
+<p>
+  <strong>Zygosity:</strong>
+  <%= @line.zygosity %>
+</p>
+
+<%= link_to 'Edit', edit_line_path(@line) %> |
+<%= link_to 'Back', lines_path %>

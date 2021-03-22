@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+  resources :lines
   devise_for :users
 
   #resources 

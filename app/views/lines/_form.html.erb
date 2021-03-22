@@ -1,0 +1,62 @@
+<%= form_with(model: line) do |form| %>
+  <% if line.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(line.errors.count, "error") %> prohibited this line from being saved:</h2>
+
+      <ul>
+        <% line.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">  
+    <%= form.label :line_name %> <i>(Mandatory)</i>
+    <%= form.text_field :line_name, class:'form-control' %> 
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :synonym_line_name %>
+    <%= form.text_field :synonym_line_name, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :line_type %>
+    <%= form.text_field :line_type, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :person_in_charge %>
+    <%= form.text_field :person_in_charge, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :breeding_type %>
+    <%= form.text_field :breeding_type, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :generation %></br>
+    <%= form.radio_button :generation, 'F0' %> F0<br />
+    <%= form.radio_button :generation, 'F1' %> F1<br />
+    <%= form.radio_button :generation, 'F2' %> F2<br />
+  </div>
+  
+  </br>
+  <div class="field form-group">
+    <%= form.label :zygosity %></br>
+    <%= form.radio_button :zygosity, 'Homozygous' %> Homozygous<br />
+    <%= form.radio_button :zygosity, 'Heterozygous' %> Heterogozygous<br />
+  </div>
+
+  </br>
+  <div class="actions">
+    <%= form.submit class: 'btn btn-info' %>
+  </div>
+<% end %>
