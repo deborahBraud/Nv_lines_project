@@ -13,26 +13,52 @@
 
   <div class="field form-group">
     <%= form.label :staff_name %>
-    <%= form.text_field :staff_name, class:'form-control' %>
+    <%= form.text_field :staff_name, class:'form-control', placeholder: 'Name' %>
   </div>
+
+</br>
+<div class="field form-group">
+    <%= form.label :staff_type %></br>
+    <%= form.radio_button :staff_type, 'Team' %> Team<br />
+    <%= form.radio_button :staff_type, 'Facility' %> Facility<br />
+</div>
 
 </br>
   <div class="field form-group">
     <%= form.label :staff_header %>
-    <%= form.text_field :staff_header, class:'form-control' %>
+    <%= form.text_field :staff_header, class:'form-control', placeholder: "Header's name" %>
   </div>
-
 
 </br>
   <div class="field form-group">
     <%= form.label :staff_adress %>
-    <%= form.text_field :staff_adress, class:'form-control' %>
+    <%= form.text_field :staff_adress, class:'form-control', placeholder: 'Adress' %>
   </div>
 
 </br>
   <div class="field form-group">
+    <%= form.label :postalcode %>
+    <%= form.text_field :postalcode, class:'form-control', placeholder: 'Postal Code' %>
+  </div> 
+
+
+</br>
+  <div class="field form-group">
+    <%= form.label :city %>
+    <%= form.text_field :city, class:'form-control', placeholder: 'City' %>
+  </div>
+
+</br>
+  <div class="field form-group">
+    <%= form.label :country %>
+    <%= form.text_field :country, class:'form-control', placeholder: 'Country' %>
+  </div>
+
+
+</br>
+  <div class="field form-group">
     <%= form.label :institut_name %>
-    <%= form.text_field :institut_name, class:'form-control' %>
+    <%= form.text_field :institut_name, class:'form-control', placeholder: 'Institut name' %>
   </div>
 
 </br>

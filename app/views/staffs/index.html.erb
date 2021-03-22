@@ -2,6 +2,7 @@
   <thead class="thead-light">
     <tr>
       <th>Staff name</th>
+      <th>Staff type</th>
       <th>Staff header</th>
       <th>Staff adress</th>
       <th>Institut name</th>
@@ -20,4 +21,9 @@
 
 <br>
 
-<%= link_to 'New Staff', new_staff_path, class:'btn btn-info' %>
+
+<% if user_signed_in?%>
+  <%= link_to 'New Staff', new_staff_path, class:'btn btn-info' %>
+ <% else %>
+  <p> To add a new staff, please <%= link_to "login",new_user_session_path, class:"link" %> </p>
+ <% end %>  
