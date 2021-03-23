@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_22_105133) do
+ActiveRecord::Schema.define(version: 2021_03_23_123403) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -48,6 +48,22 @@ ActiveRecord::Schema.define(version: 2021_03_22_105133) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "zygosity"
+  end
+
+  create_table "phenotypes", force: :cascade do |t|
+    t.float "embryo_letality"
+    t.boolean "larva_swimming_perturbation"
+    t.float "larva_letality"
+    t.boolean "metamorphosis_perturbation"
+    t.string "post_metamorphosis_growth"
+    t.string "regeneration"
+    t.float "adult_letality"
+    t.float "adult_fecondity"
+    t.string "other_phenotype_description"
+    t.string "tissu_localization"
+    t.string "cell_localization"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "publications", force: :cascade do |t|

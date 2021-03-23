@@ -1,0 +1,84 @@
+<%= form_with(model: phenotype) do |form| %>
+  <% if phenotype.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(phenotype.errors.count, "error") %> prohibited this phenotype from being saved:</h2>
+
+      <ul>
+        <% phenotype.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :embryo_letality %> 
+    <%= form.text_field :embryo_letality, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.check_box :larva_swimming_perturbation %>
+    <%= form.label :larva_swimming_perturbation %> <i>(To indicate a larval swimming perturbation, check the button)</i>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :larva_letality %>
+    <%= form.text_field :larva_letality, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.check_box :metamorphosis_perturbation %>
+    <%= form.label :metamorphosis_perturbation %> <i>(To indicate a metamorphosis perturbation, check the button)</i>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :post_metamorphosis_growth %>
+    <%= form.text_field :post_metamorphosis_growth, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :regeneration %>
+    <%= form.text_field :regeneration, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :adult_letality %>
+    <%= form.text_field :adult_letality, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :adult_fecondity %>
+    <%= form.text_field :adult_fecondity, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :other_phenotype_description %>
+    <%= form.text_field :other_phenotype_description, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :tissu_localization %>
+    <%= form.text_field :tissu_localization, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :cell_localization %>
+    <%= form.text_field :cell_localization, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="actions">
+    <%= form.submit class:"btn btn-info" %>
+  </div>
+<% end %>

@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :lines
   devise_for :users
 
   #resources 
   resources :staffs
   resources :publications
+  resources :lines
+  resources :phenotypes
 
   #pages routes
   get 'pages/about_nematostella'

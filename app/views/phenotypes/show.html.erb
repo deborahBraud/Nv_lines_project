@@ -1,0 +1,61 @@
+<p>
+  <strong>Embryo letality rate :</strong>
+  <%= @phenotype.embryo_letality %>
+</p>
+
+<p>
+  <strong>Larva swimming perturbation:</strong>
+  <%= @phenotype.larva_swimming_perturbation %>
+</p>
+
+<p>
+  <strong>Larva lethality:</strong>
+  <%= @phenotype.larva_letality %>
+</p>
+
+<p>
+  <strong>Metamorphosis perturbation:</strong>
+  <%= @phenotype.metamorphosis_perturbation %>
+</p>
+
+<p>
+  <strong>Post metamorphosis growth:</strong>
+  <%= @phenotype.post_metamorphosis_growth %>
+</p>
+
+<p>
+  <strong>Regeneration:</strong>
+  <%= @phenotype.regeneration %>
+</p>
+
+<p>
+  <strong>Adult lethality:</strong>
+  <%= @phenotype.adult_letality %>
+</p>
+
+<p>
+  <strong>Adult fecondity:</strong>
+  <%= @phenotype.adult_fecondity %>
+</p>
+
+<p>
+  <strong>Other phenotype description:</strong>
+  <%= @phenotype.other_phenotype_description %>
+</p>
+
+<p>
+  <strong>Tissu localization:</strong>
+  <%= @phenotype.tissu_localization %>
+</p>
+
+<p>
+  <strong>Cell localization:</strong>
+  <%= @phenotype.cell_localization %>
+</p>
+
+<p> <%= link_to 'Associated images', phenotypes_path, class:"btn btn-warning"  %></p>
+
+<%= link_to 'Edit', edit_phenotype_path(@phenotype) %> |
+<%= link_to 'Back', phenotypes_path %>
+
+

@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  embryo_letality: 1.5
+  larva_swimming_perturbation: false
+  larva_letality: 1.5
+  metamorphosis_perturbation: false
+  post_metamorphosis_growth: MyString
+  regeneration: MyString
+  adult_letality: 1.5
+  adult_fecondity: 1.5
+  other_phenotype_description: MyString
+  tissu_localization: MyString
+  cell_localization: MyString
+
+two:
+  embryo_letality: 1.5
+  larva_swimming_perturbation: false
+  larva_letality: 1.5
+  metamorphosis_perturbation: false
+  post_metamorphosis_growth: MyString
+  regeneration: MyString
+  adult_letality: 1.5
+  adult_fecondity: 1.5
+  other_phenotype_description: MyString
+  tissu_localization: MyString
+  cell_localization: MyString

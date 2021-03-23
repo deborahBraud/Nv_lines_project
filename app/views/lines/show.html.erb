@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Line name:</strong>
   <%= @line.line_name %>
@@ -35,5 +33,11 @@
   <%= @line.zygosity %>
 </p>
 
-<%= link_to 'Edit', edit_line_path(@line) %> |
+<p> <%= link_to 'Phenotypes', phenotypes_path %> </p>
+<p> <%= link_to 'Images', phenotypes_path %> </p>
+<p> <%= link_to 'Wild-type background', phenotypes_path %> </p>
+<p> <%= link_to 'Materials & Methods', phenotypes_path %> </p>
+<p> <%= link_to 'Publication', publications_path %> </p>
+
+<%= link_to 'Edit', edit_line_path(@line) %> 
 <%= link_to 'Back', lines_path %>
