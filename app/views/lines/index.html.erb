@@ -4,7 +4,7 @@
   <thead class="thead-light">
     <tr>
       <th>Line name</th>
-      <th>Description</th>
+      <th>Short Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,8 +16,6 @@
         <%= line.synonym_line_name %></td>
         <td><%= line.line_type %>
         <%= line.person_in_charge %>
-        <%= line.breeding_type %>
-        <%= line.generation %>
         <%= line.zygosity %></td>
         <td><%= link_to 'Show', line %></td>
 
@@ -35,7 +33,7 @@
 <br>
 
 <% if user_signed_in?%>
-  <%= link_to 'New Line', new_line_path, class:'btn btn-info' %>
+  <%= link_to 'Add Line', new_line_path, class:'btn btn-info' %>
  <% else %>
   <p> To add a new line, please <%= link_to "login",new_user_session_path, class:"link" %> </p>
  <% end %>  

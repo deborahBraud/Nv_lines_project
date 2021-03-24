@@ -1,0 +1,35 @@
+<h1>Genetic Modification Methods</h1>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th>Line </th>
+      <th>Transgenic construction type</th>
+      <th>Mutagenic construction type</th>
+      <th>Molecular tools</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @genetic_modification_methods.each do |genetic_modification_method| %>
+      <tr>
+        <td><%= genetic_modification_method.line_id %></td>
+        <td><%= genetic_modification_method.transgenic_construction_type %></td>
+        <td><%= genetic_modification_method.mutagenic_construction_type %></td>
+        <td><%= genetic_modification_method.molecular_tools %></td>
+        <td><%= link_to 'Show more', genetic_modification_method %></td>
+
+        <% if user_signed_in?%> 
+          <td><%= link_to 'Edit', edit_genetic_modification_method_path(genetic_modification_method) %></td>
+          <td><%= link_to 'Destroy', genetic_modification_method, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%else%>
+        <%end%>  
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add Methods Background', new_genetic_modification_method_path %>

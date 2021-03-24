@@ -19,10 +19,12 @@ h3{
 	font-size: 1.1em;
 	color: #39464A; /* couleur du titre de la page*/}
 
-th{
+th, td {
 	text-align: center;
 	vertical-align: middle;
 	font-size: 0.9em; }
+
+
 
 
 /* NAVBAR */

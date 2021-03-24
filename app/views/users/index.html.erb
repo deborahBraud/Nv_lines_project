@@ -1,0 +1,26 @@
+<h1>Member index</h1>
+</br>
+
+<table class="table table-bordered">
+  <thead class="thead-light">
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</br>
+
+

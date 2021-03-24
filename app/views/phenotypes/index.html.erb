@@ -1,5 +1,6 @@
 <h1>Phenotypes</h1>
 
+
 <div class="table-responsive"> </br>
 <table class="table table-bordered">
   <thead>
@@ -61,7 +62,7 @@
 
 </br>
 <% if user_signed_in?%>
-  <%= link_to 'New Phenotype', new_phenotype_path, class:'btn btn-info' %>
+  <%= link_to 'Add Phenotype', new_phenotype_path, class:'btn btn-info' %>
  <% else %>
   <p> To add a new phenotype, please <%= link_to "login",new_user_session_path, class:"link" %> </p>
  <% end %>  

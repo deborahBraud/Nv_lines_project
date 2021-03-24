@@ -1,0 +1,75 @@
+<%= form_with(model: genetic_modification_method) do |form| %>
+  <% if genetic_modification_method.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(genetic_modification_method.errors.count, "error") %> prohibited this genetic_modification_method from being saved:</h2>
+
+      <ul>
+        <% genetic_modification_method.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :line_id %>
+    <%= form.number_field :line_id, class:"form-control" %>
+  </div>
+
+
+   </br>
+  <div class="field form-group">
+    <%= form.label :mutagenic_construction_type %></br> <i> (Mandatory) </i>
+    <%= form.radio_button :mutagenic_construction_type, 'Gain_of_function_KnockIn' %> Knock In (KI) -> Gain of function <br />
+    <%= form.radio_button :mutagenic_construction_type, 'Loss_of_function_KnockIn' %> Knock In (KI) -> Loss of function  <br />
+    <%= form.radio_button :mutagenic_construction_type, 'Loss_of_function_KnockOut' %> Knock Out (KO) -> Loss of function<br />
+    <%= form.radio_button :mutagenic_construction_type, 'Other_mutagenic' %> Other<br />
+        <%= form.radio_button :mutagenic_construction_type, 'None_mutagenic' %> None<br />
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :transgenic_construction_type %></br> <i> (Mandatory) </i>
+    <%= form.radio_button :transgenic_construction_type, 'Overexpression' %> Over-expression<br />
+    <%= form.radio_button :transgenic_construction_type, 'Inducible' %> Inducible<br />
+    <%= form.radio_button :transgenic_construction_type, 'Knockdown' %> Knockdown<br />
+    <%= form.radio_button :transgenic_construction_type, 'Reporter' %> Reporter<br />
+    <%= form.radio_button :transgenic_construction_type, 'Other_transgenic' %> Other<br />
+    <%= form.radio_button :transgenic_construction_type, 'None_transgenic' %> None <br />
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :molecular_tools %> <i> (ex : CRISPR/Cas9, Meganusclease, TALEN, ...) </i>
+    <%= form.text_field :molecular_tools, class:"form-control" %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :mutation_type %> 
+    <%= form.text_field :mutation_type, class:"form-control" %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :vector_name %>
+    <%= form.text_field :vector_name, class:"form-control" %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :vector_description %>
+    <%= form.text_field :vector_description, class:"form-control" %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :reagent_and_protocol %>
+    <%= form.text_field :reagent_and_protocol, class:"form-control" %>
+  </div>
+
+  </br>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

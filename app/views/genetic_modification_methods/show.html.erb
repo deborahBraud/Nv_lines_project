@@ -1,0 +1,47 @@
+<p>
+  <strong>Line:</strong>
+  <%= @genetic_modification_method.line_id %>
+</p>
+
+<p>
+  <strong>Transgenic construction type:</strong>
+  <%= @genetic_modification_method.transgenic_construction_type %>
+</p>
+
+<p>
+  <strong>Mutagenic construction type:</strong>
+  <%= @genetic_modification_method.mutagenic_construction_type %>
+</p>
+
+<p>
+  <strong>Construction type description:</strong>
+  <%= @genetic_modification_method.construction_type_description %>
+</p>
+
+<p>
+  <strong>Molecular tools:</strong>
+  <%= @genetic_modification_method.molecular_tools %>
+</p>
+
+<p>
+  <strong>Mutation type:</strong>
+  <%= @genetic_modification_method.mutation_type %>
+</p>
+
+<p>
+  <strong>Vector name:</strong>
+  <%= @genetic_modification_method.vector_name %>
+</p>
+
+<p>
+  <strong>Vector description:</strong>
+  <%= @genetic_modification_method.vector_description %>
+</p>
+
+<p>
+  <strong>Reagent and protocol:</strong>
+  <%= @genetic_modification_method.reagent_and_protocol %>
+</p>
+
+<%= link_to 'Edit', edit_genetic_modification_method_path(@genetic_modification_method) %> |
+<%= link_to 'Back', genetic_modification_methods_path %>

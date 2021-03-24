@@ -1,0 +1,2 @@
+class GeneticModificationMethod < ApplicationRecord
+end

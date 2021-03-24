@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  line_id: 1
+  transgenic_construction_type: 1
+  mutagenic_construction_type: 1
+  construction_type_description: MyString
+  molecular_tools: MyString
+  mutation_type: MyString
+  vector_name: MyString
+  vector_description: MyString
+  reagent_and_protocol: MyString
+
+two:
+  line_id: 1
+  transgenic_construction_type: 1
+  mutagenic_construction_type: 1
+  construction_type_description: MyString
+  molecular_tools: MyString
+  mutation_type: MyString
+  vector_name: MyString
+  vector_description: MyString
+  reagent_and_protocol: MyString

@@ -1,0 +1,1 @@
+json.partial! "genetic_modification_methods/genetic_modification_method", genetic_modification_method: @genetic_modification_method

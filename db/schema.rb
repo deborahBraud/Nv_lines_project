@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_23_123403) do
+ActiveRecord::Schema.define(version: 2021_03_24_125251) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -38,6 +38,20 @@ ActiveRecord::Schema.define(version: 2021_03_23_123403) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "genetic_modification_methods", force: :cascade do |t|
+    t.integer "line_id"
+    t.integer "transgenic_construction_type"
+    t.integer "mutagenic_construction_type"
+    t.string "construction_type_description"
+    t.string "molecular_tools"
+    t.string "mutation_type"
+    t.string "vector_name"
+    t.string "vector_description"
+    t.string "reagent_and_protocol"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "lines", force: :cascade do |t|
     t.string "line_name"
     t.string "synonym_line_name"
@@ -48,6 +62,7 @@ ActiveRecord::Schema.define(version: 2021_03_23_123403) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "zygosity"
+    t.integer "phenotype_id"
   end
 
   create_table "phenotypes", force: :cascade do |t|
