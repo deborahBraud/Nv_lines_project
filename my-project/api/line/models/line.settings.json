@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lines",
+  "info": {
+    "name": "Line"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "line_name": {
+      "type": "string"
+    },
+    "synonym_line": {
+      "type": "string"
+    },
+    "line_type": {
+      "type": "string"
+    },
+    "person_in_charge": {
+      "type": "string"
+    },
+    "breeding_type": {
+      "type": "string"
+    },
+    "line_clonage": {
+      "type": "string"
+    },
+    "generation": {
+      "type": "enumeration",
+      "enum": [
+        "F0",
+        "F1",
+        "F2"
+      ]
+    },
+    "zygosity": {
+      "type": "enumeration",
+      "enum": [
+        "Homozygous",
+        "Heterozygous"
+      ]
+    },
+    "publications_id": {
+      "via": "lines_id",
+      "collection": "publication"
+    }
+  }
+}

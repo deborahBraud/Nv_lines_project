@@ -53,7 +53,12 @@
   <%= @phenotype.cell_localization %>
 </p>
 
-<p> <%= link_to 'Associated images', phenotypes_path, class:"btn btn-warning"  %></p>
+<p>
+  <strong>Phenotype id:</strong>
+  <%= @phenotype.id %>
+</p>
+
+<p> <%= link_to 'Associated images', images_path , class:"btn btn-warning"  %></p>
 
 <%= link_to 'Edit', edit_phenotype_path(@phenotype) %> |
 <%= link_to 'Back', phenotypes_path %>

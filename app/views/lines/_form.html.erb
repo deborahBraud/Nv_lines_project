@@ -52,12 +52,12 @@
   <div class="field form-group">
     <%= form.label :zygosity %></br>
     <%= form.radio_button :zygosity, 'Homozygous' %> Homozygous<br />
-    <%= form.radio_button :zygosity, 'Heterozygous' %> Heterogozygous<br />
+    <%= form.radio_button :zygosity, 'Heterozygous' %> Heterozygous<br />
   </div>
 
   </br>
   <div class="field form-group">
-    <%= form.collection_select :phenotype_id, Phenotype.all, :id, :id, {prompt: "Localization of the phenotype expression?"} %>
+    <%= form.collection_select :phenotype_id, Phenotype.all, :id, :id, {prompt: "Phenotype_id value"} %>
   </div> 
 
   </br>

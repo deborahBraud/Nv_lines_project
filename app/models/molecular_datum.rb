@@ -1,0 +1,2 @@
+class MolecularDatum < ApplicationRecord
+end

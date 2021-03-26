@@ -1,0 +1,98 @@
+<%= form_with(model: image) do |form| %>
+  <% if image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(image.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+      <ul>
+        <% image.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :image %>
+    <%= form.text_field :image, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :image_name %>
+    <%= form.text_field :image_name, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :image_legend %>
+    <%= form.text_field :image_legend, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :image_date %>
+    <%= form.date_select :image_date, :start_year => 1970, :end_year => 2120, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :microscopy_technique %>
+    <%= form.text_field :microscopy_technique, class:'form-control' %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :lifecycle_stage %>
+    <%= form.text_field :lifecycle_stage, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :tissu_localization %>
+    <%= form.text_field :tissu_localization, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :cellular_localization %>
+    <%= form.text_field :cellular_localization, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :person_who_takes_image %>
+    <%= form.text_field :person_who_takes_image, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :objective_used %>
+    <%= form.text_field :objective_used, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :line_id %>
+    <%= form.number_field :line_id, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :phenotype_id %>
+    <%= form.number_field :phenotype_id, class:'form-control' %>
+  </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.collection_select :line_id, Line.all, :id, :id, {prompt: "Line_id value"} %>
+  </div> 
+
+  </br>
+  <div class="field form-group">
+    <%= form.collection_select :phenotype_id, Phenotype.all, :id, :id, {prompt: "Phenotype_id value"} %>
+  </div> 
+
+  </br>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

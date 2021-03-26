@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: MyString
+  image_name: MyString
+  image_legend: MyString
+  image_date: 2021-03-24
+  microscopy_technique: MyString
+  lifecycle_stage: MyString
+  tissu_localization: MyString
+  cellular_localization: MyString
+  person_who_takes_image: MyString
+  objective_used: MyString
+  line_id: 1
+  pehnotype_id: 1
+
+two:
+  image: MyString
+  image_name: MyString
+  image_legend: MyString
+  image_date: 2021-03-24
+  microscopy_technique: MyString
+  lifecycle_stage: MyString
+  tissu_localization: MyString
+  cellular_localization: MyString
+  person_who_takes_image: MyString
+  objective_used: MyString
+  line_id: 1
+  pehnotype_id: 1

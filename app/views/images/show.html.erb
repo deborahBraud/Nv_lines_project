@@ -1,0 +1,64 @@
+<div class="row row-cols-1 row-cols-md-2 g-2">
+  <div class="col">
+    <div class="card h-100">
+       <%= image_tag(@image.image, :alt => "image") %>
+      <div class="card-body">
+        <h5 class="card-title"><%= @image.image_name %></h5>
+        <p class="card-text"><%= @image.image_date %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <p>
+      <strong>Legend :</strong>
+      <%= @image.image_legend %>
+    </p>  
+
+    <p>
+      <strong>Microscopy technique:</strong>
+      <%= @image.microscopy_technique %> 
+    </p>
+
+    <p>
+      <strong>Life cycle stage:</strong>
+      <%= @image.lifecycle_stage %> 
+    </p>
+
+    <p>
+      <strong>Tissu localization:</strong>
+      <%= @image.tissu_localization %> 
+    </p>
+
+    <p>
+      <strong>Cellular localization:</strong>
+      <%= @image.cellular_localization %> 
+    </p>
+
+    <p>
+      <strong>Image taken by:</strong>
+      <%= @image.person_who_takes_image %> 
+    </p>
+
+    <p>
+      <strong>Objective used:</strong>
+      <%= @image.objective_used %> 
+    </p>
+
+    <p>
+      <strong>Line:</strong>
+      <%= @image.line_id %> 
+    </p>
+
+    <p>
+      <strong>Phenotype:</strong>
+      <%= @image.phenotype_id %> 
+    </p> 
+
+  </div>   
+</div>
+
+</br>
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>
+

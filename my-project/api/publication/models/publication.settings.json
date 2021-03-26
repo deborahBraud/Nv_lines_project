@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "publications",
+  "info": {
+    "name": "Publication",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "publication_name": {
+      "type": "string"
+    },
+    "publication_date": {
+      "type": "date"
+    },
+    "authors": {
+      "type": "text"
+    },
+    "pubmed_link": {
+      "type": "string"
+    },
+    "doi_link": {
+      "type": "string"
+    },
+    "lines_id": {
+      "collection": "line",
+      "via": "publications_id",
+      "dominant": true
+    }
+  }
+}

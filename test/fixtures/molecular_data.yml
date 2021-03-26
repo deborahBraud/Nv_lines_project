@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gene_name: MyString
+  genbank_gene_accession_number: MyString
+  ensembl_gene_accession_number: MyString
+  genome_version_accession_number: MyString
+  gene_sequence: MyString
+  chromosome_number: MyString
+  gene_promoter: MyString
+  NvERTx_id: MyString
+  locus_insertion: MyString
+  mutated_region: MyString
+  genetic_modification_method_id: 1
+
+two:
+  gene_name: MyString
+  genbank_gene_accession_number: MyString
+  ensembl_gene_accession_number: MyString
+  genome_version_accession_number: MyString
+  gene_sequence: MyString
+  chromosome_number: MyString
+  gene_promoter: MyString
+  NvERTx_id: MyString
+  locus_insertion: MyString
+  mutated_region: MyString
+  genetic_modification_method_id: 1

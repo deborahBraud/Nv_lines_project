@@ -1,0 +1,2 @@
+class WildTypeBackground < ApplicationRecord
+end

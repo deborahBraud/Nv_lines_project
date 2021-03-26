@@ -1,0 +1,32 @@
+<%= form_with(model: wild_type_background) do |form| %>
+  <% if wild_type_background.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(wild_type_background.errors.count, "error") %> prohibited this wild_type_background from being saved:</h2>
+
+      <ul>
+        <% wild_type_background.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :sampling_conditions %>
+    <%= form.text_area :sampling_conditions %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sampling_geographical_zone %>
+    <%= form.text_field :sampling_geographical_zone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :supplementary_information %>
+    <%= form.text_area :supplementary_information %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

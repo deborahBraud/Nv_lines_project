@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_24_125251) do
+ActiveRecord::Schema.define(version: 2021_03_25_155826) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -52,6 +52,23 @@ ActiveRecord::Schema.define(version: 2021_03_24_125251) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "images", force: :cascade do |t|
+    t.string "image"
+    t.string "image_name"
+    t.string "image_legend"
+    t.date "image_date"
+    t.string "microscopy_technique"
+    t.string "lifecycle_stage"
+    t.string "tissu_localization"
+    t.string "cellular_localization"
+    t.string "person_who_takes_image"
+    t.string "objective_used"
+    t.integer "line_id"
+    t.integer "phenotype_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "lines", force: :cascade do |t|
     t.string "line_name"
     t.string "synonym_line_name"
@@ -63,6 +80,22 @@ ActiveRecord::Schema.define(version: 2021_03_24_125251) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "zygosity"
     t.integer "phenotype_id"
+  end
+
+  create_table "molecular_data", force: :cascade do |t|
+    t.string "gene_name"
+    t.string "genbank_gene_accession_number"
+    t.string "ensembl_gene_accession_number"
+    t.string "genome_version_accession_number"
+    t.string "gene_sequence"
+    t.string "chromosome_number"
+    t.string "gene_promoter"
+    t.string "NvERTx_id"
+    t.string "locus_insertion"
+    t.string "mutated_region"
+    t.integer "genetic_modification_method_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "phenotypes", force: :cascade do |t|
@@ -122,6 +155,14 @@ ActiveRecord::Schema.define(version: 2021_03_24_125251) do
     t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "wild_type_backgrounds", force: :cascade do |t|
+    t.text "sampling_conditions"
+    t.string "sampling_geographical_zone"
+    t.text "supplementary_information"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

@@ -1,42 +1,64 @@
 <p>
-  <strong>Line name:</strong>
-  <%= @line.line_name %>
+  <% unless @line.line_name.blank? %>
+    <strong>Line name:</strong>
+    <%= @line.line_name %>
+  <% end %>
 </p>
 
 <p>
-  <strong>Synonym line name:</strong>
-  <%= @line.synonym_line_name %>
+  <% unless @line.synonym_line_name.blank? %>
+    <strong>Synonym line name:</strong>
+    <%= @line.synonym_line_name %>
+  <% end %>
 </p>
 
 <p>
-  <strong>Line type:</strong>
-  <%= @line.line_type %>
+  <% unless @line.line_type.blank? %>
+    <strong>Line type:</strong>
+    <%= @line.line_type %>
+  <% end %> 
+
 </p>
 
 <p>
-  <strong>Person in charge:</strong>
-  <%= @line.person_in_charge %>
+  <% unless @line.person_in_charge.blank? %>
+    <strong>Person in charge:</strong>
+    <%= @line.person_in_charge %>
+  <% end %> 
 </p>
 
 <p>
-  <strong>Breeding type:</strong>
-  <%= @line.breeding_type %>
+  <% unless @line.breeding_type.blank? %>
+    <strong>Breeding type:</strong>
+    <%= @line.breeding_type %>
+  <% end %> 
 </p>
 
 <p>
-  <strong>Generation:</strong>
-  <%= @line.generation %>
+  <% unless @line.generation.blank? %>
+    <strong>Generation:</strong>
+    <%= @line.generation %>
+  <% end %>  
 </p>
 
 <p>
-  <strong>Zygosity:</strong>
-  <%= @line.zygosity %>
+  <% unless @line.zygosity.blank? %>
+    <strong>Zygosity:</strong>
+    <%= @line.zygosity %>
+  <% end %>  
 </p>
 
-<p> <%= link_to 'Associated phenotype', phenotype_path %> </p>
-<p> <%= link_to 'Images', phenotypes_path %> </p>
+<p>
+<% unless @line.phenotype_id.blank? %>
+  <strong>Phenotype_id:</strong>
+  <%= @line.phenotype_id %>
+<% end %>  
+</p>
+
+<p> <%= link_to 'Associated phenotype', phenotype_path(@line.phenotype_id) %> </p>
+<p> <%= link_to 'Images', images_path %> </p>
 <p> <%= link_to 'Wild-type background', phenotypes_path %> </p>
-<p> <%= link_to 'Materials & Methods', phenotypes_path %> </p>
+<p> <%= link_to 'Materials & Methods', genetic_modification_methods_path%> </p> 
 <p> <%= link_to 'Publication', publications_path %> </p>
 
 <%= link_to 'Edit', edit_line_path(@line) %> 

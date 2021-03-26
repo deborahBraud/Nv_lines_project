@@ -1,3 +1,3 @@
 class Line < ApplicationRecord
-	has_many :phenotypes
+	belongs_to :phenotype
 end

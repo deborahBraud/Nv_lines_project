@@ -52,3 +52,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'irb', '~> 1.3', '>= 1.3.4'
+#gem 'refinerycms', '>= 4.0.3'

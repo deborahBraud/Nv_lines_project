@@ -12,18 +12,21 @@
   <tbody>
     <% @lines.each do |line| %>
       <tr>
-        <td><%= line.line_name %>
-        <%= line.synonym_line_name %></td>
-        <td><%= line.line_type %>
-        <%= line.person_in_charge %>
-        <%= line.zygosity %></td>
-        <td><%= link_to 'Show', line %></td>
+        <% unless @lines.each.blank? %>
+          <td><%= line.line_name %>
+          <%= line.synonym_line_name %></td>
+          <td><%= line.line_type %>
+          <%= line.person_in_charge %>
+          <%= line.generation %>
+          <%= line.zygosity %></td>
+          <td><%= link_to 'Show', line %></td>
 
-        <% if user_signed_in?%> 
-          <td><%= link_to 'Edit', edit_line_path(line) %></td>
-          <td><%= link_to 'Destroy', line, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% else %>
-        <% end %>
+          <% if user_signed_in?%> 
+            <td><%= link_to 'Edit', edit_line_path(line) %></td>
+            <td><%= link_to 'Destroy', line, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% else %>
+          <% end %>
+         <% end %> 
 
       </tr>
     <% end %>

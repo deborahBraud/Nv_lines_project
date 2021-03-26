@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :genetic_modification_methods
+  resources :wild_type_backgrounds
+  resources :molecular_data
   devise_for :users
 
   #resources 
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
   resources :lines
   resources :phenotypes
   resources :users
+  resources :images
+  resources :genetic_modification_methods
 
   #pages routes
   get 'pages/about_nematostella'

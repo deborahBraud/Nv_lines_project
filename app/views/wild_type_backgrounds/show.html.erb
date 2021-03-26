@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sampling conditions:</strong>
+  <%= @wild_type_background.sampling_conditions %>
+</p>
+
+<p>
+  <strong>Sampling geographical zone:</strong>
+  <%= @wild_type_background.sampling_geographical_zone %>
+</p>
+
+<p>
+  <strong>Supplementary information:</strong>
+  <%= @wild_type_background.supplementary_information %>
+</p>
+
+<%= link_to 'Edit', edit_wild_type_background_path(@wild_type_background) %> |
+<%= link_to 'Back', wild_type_backgrounds_path %>

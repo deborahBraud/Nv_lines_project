@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Wild Type Backgrounds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sampling conditions</th>
+      <th>Sampling geographical zone</th>
+      <th>Supplementary information</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wild_type_backgrounds.each do |wild_type_background| %>
+      <tr>
+        <td><%= wild_type_background.sampling_conditions %></td>
+        <td><%= wild_type_background.sampling_geographical_zone %></td>
+        <td><%= wild_type_background.supplementary_information %></td>
+        <td><%= link_to 'Show', wild_type_background %></td>
+        <td><%= link_to 'Edit', edit_wild_type_background_path(wild_type_background) %></td>
+        <td><%= link_to 'Destroy', wild_type_background, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wild Type Background', new_wild_type_background_path %>

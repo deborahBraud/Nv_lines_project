@@ -11,7 +11,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <%= image_tag("logo_scheme.png", :size => '70x70', :alt => "Nvlines", :class => "d-inline-block align-top" )%>
+    <%= image_tag("logo_scheme.png", :size => '70x70', :alt => "Nvlines", :class => "d-inline-block align-top" )%> NvLines
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
@@ -22,9 +22,7 @@
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Lines
-          </a>
+          <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Lines </a>
 
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="#">Transgenic & Mutant lines</a></li>
@@ -35,16 +33,16 @@
 
         </li>
 
-
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> About </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li class="dropdown-item"> <%= link_to "Nematostella vectensis", pages_about_nematostella_path, class:"nav-link active" %> </li>
+              <li class="dropdown-item"> <%= link_to "Teams & Facilities", staffs_path, class:"nav-link active" %> </li>
+            </ul>
 
         <li class="nav-item">
-          <%= link_to "Teams and Facilities", staffs_path, class:"nav-link active"%>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "About", pages_about_nematostella_path, class:"nav-link active"%>
-        </li>
-
+          <%= link_to "Phenotypes", phenotypes_path, class:"nav-link active"%>
+        </li>    
         
         <li class= "nav-item">
           <%= link_to "Submit data", '#', class:"nav-link active" %> 

@@ -2,61 +2,63 @@
 
 
 <div class="table-responsive"> </br>
-<table class="table table-bordered">
-  <thead>
-    <tr class="header" bgcolor="F8F9FA">
-      <th> Embryo stage</th>
-      <th colspan ="2"> Larval stage </th>
-      <th colspan ="2"> Metamorphosis </th>
-      <th colspan ="2"> Adult stage </th>
-      <th colspan="4"> Other Caracterization </th>
-      
-    </tr>
-
-    <tr>
-      <th>Lethality rate</th>
-      <th>Swimming perturbation </th>
-      <th>Lethality rate</th>
-      <th>Perturbation</th>
-      <th>Post-metamorphosis growth</th>
-      <th>Lethality rate </td></th>
-      <th>Fecondity rate </td></th>
-      <th>Regeneration</th>
-      <th>Tissu localization</th>
-      <th>Cellular localization</th>
-      <th>Supplementary description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @phenotypes.each do |phenotype| %>
-      <tr>
-        <td><%= phenotype.embryo_letality %></td>
-        <td><%= phenotype.larva_swimming_perturbation %></td>
-        <td><%= phenotype.larva_letality %></td>
-        <td><%= phenotype.metamorphosis_perturbation %></td>
-        <td><%= phenotype.post_metamorphosis_growth %></td>
-        <td><%= phenotype.regeneration %></td>
-        <td><%= phenotype.adult_letality %></td>
-        <td><%= phenotype.adult_fecondity %></td>
-        <td><%= phenotype.other_phenotype_description %></td>
-        <td><%= phenotype.tissu_localization %></td>
-        <td><%= phenotype.cell_localization %></td>
-
-        <td><%= link_to 'Show', phenotype %></td>
-
-        <% if user_signed_in? %> 
-          <td><%= link_to 'Edit', edit_phenotype_path(phenotype) %></td>
-          <td><%= link_to 'Destroy', phenotype, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% else %>
-        <% end %> 
-
-        </td>
+  <table class="table table-bordered table-responsive">
+    <thead>
+      <tr class="header" bgcolor="F8F9FA">
+        <th> Embryo stage</th>
+        <th colspan ="2"> Larval stage </th>
+        <th colspan ="2"> Metamorphosis </th>
+        <th colspan ="2"> Adult stage </th>
+        <th colspan="3"> Other Caracterization </th>
+        <th> Association </th>
+        
       </tr>
-    <% end %>
-  </tbody>
-</table>
+
+      <tr>
+        <th>Lethality </th>
+        <th>Swimming perturbation </th>
+        <th>Lethality </th>
+        <th>Perturbation</th>
+        <th>Post-metamorphosis growth</th>
+        <th>Lethality </td></th>
+        <th>Fecondity </td></th>
+        <th>Regeneration</th>
+        <th>Tissu localization</th>
+        <th>Supplementary description</th>
+        <th>Line </th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @phenotypes.each do |phenotype| %>
+        <tr>
+          <td><%= phenotype.embryo_letality %></td>
+          <td><%= phenotype.larva_swimming_perturbation %></td>
+          <td><%= phenotype.larva_letality %></td>
+          <td><%= phenotype.metamorphosis_perturbation %></td>
+          <td><%= phenotype.post_metamorphosis_growth %></td>
+          <td><%= phenotype.adult_letality %></td>
+          <td><%= phenotype.adult_fecondity %></td>
+          <td><%= phenotype.regeneration %></td>
+          <td><%= phenotype.tissu_localization %> <%= phenotype.cell_localization %></td>
+          <td><%= phenotype.other_phenotype_description %></td>
+          <td><%= link_to 'Line', lines_path%> </td>
+
+
+          <td><%= link_to 'Show', phenotype %></td>
+
+          <% if user_signed_in? %> 
+            <td><%= link_to 'Edit', edit_phenotype_path(phenotype) %></td>
+            <td><%= link_to 'Destroy', phenotype, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% else %>
+          <% end %> 
+
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 </div>
 

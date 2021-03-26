@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gene name:</strong>
+  <%= @molecular_datum.gene_name %>
+</p>
+
+<p>
+  <strong>Genbank gene accession number:</strong>
+  <%= @molecular_datum.genbank_gene_accession_number %>
+</p>
+
+<p>
+  <strong>Ensembl gene accession number:</strong>
+  <%= @molecular_datum.ensembl_gene_accession_number %>
+</p>
+
+<p>
+  <strong>Genome version accession number:</strong>
+  <%= @molecular_datum.genome_version_accession_number %>
+</p>
+
+<p>
+  <strong>Gene sequence:</strong>
+  <%= @molecular_datum.gene_sequence %>
+</p>
+
+<p>
+  <strong>Chromosome number:</strong>
+  <%= @molecular_datum.chromosome_number %>
+</p>
+
+<p>
+  <strong>Gene promoter:</strong>
+  <%= @molecular_datum.gene_promoter %>
+</p>
+
+<p>
+  <strong>Nvertx:</strong>
+  <%= @molecular_datum.NvERTx_id %>
+</p>
+
+<p>
+  <strong>Locus insertion:</strong>
+  <%= @molecular_datum.locus_insertion %>
+</p>
+
+<p>
+  <strong>Mutated region:</strong>
+  <%= @molecular_datum.mutated_region %>
+</p>
+
+<p>
+  <strong>Genetic modification method:</strong>
+  <%= @molecular_datum.genetic_modification_method_id %>
+</p>
+
+<%= link_to 'Edit', edit_molecular_datum_path(@molecular_datum) %> |
+<%= link_to 'Back', molecular_data_path %>

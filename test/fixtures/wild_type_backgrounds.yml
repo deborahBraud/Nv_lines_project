@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sampling_conditions: MyText
+  sampling_geographical_zone: MyString
+  supplementary_information: MyText
+
+two:
+  sampling_conditions: MyText
+  sampling_geographical_zone: MyString
+  supplementary_information: MyText

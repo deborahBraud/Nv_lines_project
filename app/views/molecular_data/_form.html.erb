@@ -1,0 +1,72 @@
+<%= form_with(model: molecular_datum) do |form| %>
+  <% if molecular_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(molecular_datum.errors.count, "error") %> prohibited this molecular_datum from being saved:</h2>
+
+      <ul>
+        <% molecular_datum.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :gene_name %>
+    <%= form.text_field :gene_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genbank_gene_accession_number %>
+    <%= form.text_field :genbank_gene_accession_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ensembl_gene_accession_number %>
+    <%= form.text_field :ensembl_gene_accession_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genome_version_accession_number %>
+    <%= form.text_field :genome_version_accession_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gene_sequence %>
+    <%= form.text_field :gene_sequence %>
+  </div>
+
+  <div class="field">
+    <%= form.label :chromosome_number %>
+    <%= form.text_field :chromosome_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gene_promoter %>
+    <%= form.text_field :gene_promoter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :NvERTx_id %>
+    <%= form.text_field :NvERTx_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :locus_insertion %>
+    <%= form.text_field :locus_insertion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mutated_region %>
+    <%= form.text_field :mutated_region %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genetic_modification_method_id %>
+    <%= form.number_field :genetic_modification_method_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
