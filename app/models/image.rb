@@ -1,3 +1,4 @@
 class Image < ApplicationRecord
-	has_one :phenotype
+	belongs_to :phenotype
+	belongs_to :line
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_25_155826) do
+ActiveRecord::Schema.define(version: 2021_03_29_082332) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -52,6 +52,18 @@ ActiveRecord::Schema.define(version: 2021_03_25_155826) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "groups", force: :cascade do |t|
+    t.text "group_description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "group_name"
+  end
+
+  create_table "groups_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "group_id", null: false
+  end
+
   create_table "images", force: :cascade do |t|
     t.string "image"
     t.string "image_name"
@@ -80,6 +92,16 @@ ActiveRecord::Schema.define(version: 2021_03_25_155826) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "zygosity"
     t.integer "phenotype_id"
+    t.integer "wild_type_background_id"
+    t.integer "genetic_modification_method_id"
+    t.integer "line_id"
+    t.integer "user_id"
+    t.integer "group_id"
+  end
+
+  create_table "lines_publications", id: false, force: :cascade do |t|
+    t.integer "line_id", null: false
+    t.integer "publication_id", null: false
   end
 
   create_table "molecular_data", force: :cascade do |t|

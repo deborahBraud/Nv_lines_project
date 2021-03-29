@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :groups
   resources :wild_type_backgrounds
   resources :molecular_data
   devise_for :users

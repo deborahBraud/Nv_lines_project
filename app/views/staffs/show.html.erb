@@ -1,43 +1,65 @@
+
+<h1>  <%= @staff.staff_name %> </h1> </br>
+
 <p>
-  <strong>Name:</strong>
-  <%= @staff.staff_name %>
+  <% unless @staff.staff_name.blank? %>
+    <strong>Name:</strong>
+    <%= @staff.staff_name %>
+  <% end %>
 </p>
 
 <p>
-  <strong>Header:</strong>
-  <%= @staff.staff_header %>
+  <% unless @staff.staff_header.blank? %>
+    <strong>Header's team or facility:</strong>
+    <%= @staff.staff_header %>
+  <% end %>  
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @staff.staff_type %>
+  <% unless @staff.staff_type.blank? %>
+    <strong>Type of staff:</strong>
+    <%= @staff.staff_type %>
+  <% end %>  
 </p>
 
 <p>
-  <strong>Adress:</strong>
-  <%= @staff.staff_adress %>
+  <% unless @staff.staff_adress.blank? %>
+    <strong>Adress:</strong>
+    <%= @staff.staff_adress %>
+  <% end %>  
 </p>
 
 <p>
-  <strong>Postal code:</strong>
-  <%= @staff.postalcode %>
+  <% unless @staff.postalcode.blank? %>
+    <strong>Postal code:</strong>
+    <%= @staff.postalcode %>
+  <% end %>   
 </p>
 
 <p>
-  <strong>City:</strong>
-  <%= @staff.city %>
+  <% unless @staff.city.blank? %>
+    <strong>City:</strong>
+    <%= @staff.city %>
+  <% end %>    
 </p>
 
 <p>
-  <strong>Country:</strong>
-  <%= @staff.country %>
+  <% unless @staff.country.blank? %>
+    <strong>Country:</strong>
+    <%= @staff.country %>
+  <% end %>    
 </p>
 
 
 <p>
-  <strong>Institut name:</strong>
-  <%= @staff.institut_name %>
+  <% unless @staff.institut_name.blank? %>
+    <strong>Institut name:</strong>
+    <%= @staff.institut_name %>
+  <% end %>     
 </p>
 
-<%= link_to 'Edit', edit_staff_path(@staff), class:'btn btn-info' %> 
-<%= link_to 'Back', staffs_path, class:'btn btn-secondary' %>
+</br>
+<p>
+<%= link_to 'Edit information', edit_staff_path(@staff), class:'btn btn-light' %> 
+<%= link_to 'Back to the index page', staffs_path, class:'btn btn-secondary' %>
+</p>

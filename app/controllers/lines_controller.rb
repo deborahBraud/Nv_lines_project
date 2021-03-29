@@ -64,6 +64,6 @@ class LinesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def line_params
-      params.require(:line).permit(:line_name, :synonym_line_name, :line_type, :person_in_charge, :breeding_type, :generation, :zygosity, :phenotype_id)
+      params.require(:line).permit(:line_name, :synonym_line_name, :line_type, :person_in_charge, :breeding_type, :generation, :zygosity, :phenotype_id, :line_id, :genetic_modification_method_id, :user_id, :group_id, :wild_type_background)
     end
 end

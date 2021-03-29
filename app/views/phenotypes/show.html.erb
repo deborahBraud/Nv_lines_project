@@ -1,61 +1,85 @@
 <p>
+  <% unless @phenotype.embryo_letality.blank? %>
   <strong>Embryo letality rate :</strong>
   <%= @phenotype.embryo_letality %>
+  <% end %>
 </p>
 
 <p>
+  <% unless @phenotype.larva_swimming_perturbation.blank? %>
   <strong>Larva swimming perturbation:</strong>
   <%= @phenotype.larva_swimming_perturbation %>
+  <% end %>
 </p>
 
 <p>
+  <% unless @phenotype.larva_letality.blank? %>
   <strong>Larva lethality:</strong>
   <%= @phenotype.larva_letality %>
+  <% end %>
 </p>
 
 <p>
+  <% unless @phenotype.metamorphosis_perturbation.blank? %>
   <strong>Metamorphosis perturbation:</strong>
   <%= @phenotype.metamorphosis_perturbation %>
+  <% end %>
 </p>
 
 <p>
+  <% unless @phenotype.post_metamorphosis_growth.blank? %>
   <strong>Post metamorphosis growth:</strong>
   <%= @phenotype.post_metamorphosis_growth %>
+  <% end %>
 </p>
 
 <p>
+  <% unless @phenotype.regeneration.blank? %>
   <strong>Regeneration:</strong>
   <%= @phenotype.regeneration %>
+  <% end %>
 </p>
 
 <p>
+  <% unless @phenotype.adult_letality.blank? %>
   <strong>Adult lethality:</strong>
   <%= @phenotype.adult_letality %>
+  <% end %>  
 </p>
 
 <p>
+  <% unless @phenotype.adult_fecondity.blank? %>
   <strong>Adult fecondity:</strong>
   <%= @phenotype.adult_fecondity %>
+  <% end %>  
 </p>
 
 <p>
+  <% unless @phenotype.other_phenotype_description.blank? %>
   <strong>Other phenotype description:</strong>
   <%= @phenotype.other_phenotype_description %>
+  <% end %>
 </p>
 
 <p>
+  <% unless @phenotype.tissu_localization.blank? %>
   <strong>Tissu localization:</strong>
   <%= @phenotype.tissu_localization %>
+  <% end %>  
 </p>
 
 <p>
+  <% unless @phenotype.cell_localization.blank? %>
   <strong>Cell localization:</strong>
   <%= @phenotype.cell_localization %>
+  <% end %>
 </p>
 
 <p>
+  <% unless @phenotype.id.blank? %>
   <strong>Phenotype id:</strong>
   <%= @phenotype.id %>
+  <% end %>
 </p>
 
 <p> <%= link_to 'Associated images', images_path , class:"btn btn-warning"  %></p>

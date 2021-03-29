@@ -1,8 +1,9 @@
+<h1>Teams and Facilities</h1> </br>
+
 <table class="table table-bordered">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Type</th>
       <th>Header</th>
       <th>Adress</th>
       <th>Institut name</th>
@@ -10,20 +11,33 @@
     </tr>
   </thead>
   <tbody>
-    
 
-<h1>Teams and Facilities</h1>
-<%= render partial: "staff", collection: @staffs %>
-</br>
- 
- </tbody>
+    <% @staffs.each do |staff| %>
+      <tr>
+       <td><%= staff.staff_name %></td>
+        <td><%= staff.staff_header %></td>
+        <td><%= staff.staff_adress %>
+            <%= staff.postalcode %>
+            <%= staff.city %>
+            <%= staff.country %></td>
+        <td><%= staff.institut_name %></td>
+        <td><%= link_to 'Show', staff, class: 'btn btn-outline-secondary btn-sm'  %></td>
+
+        <% if user_signed_in?%>
+            <td><%= link_to 'Edit', edit_staff_path(staff), class: 'btn btn-outline-secondary btn-sm' %></td>
+            <td><%= link_to 'Destroy', staff, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' %></td>
+        <%else%>
+        <%end%>
+
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br>
-
+</br>
 
 <% if user_signed_in?%>
-  <%= link_to 'New Staff', new_staff_path, class:'btn btn-info' %>
- <% else %>
+  <%= link_to 'Add a new team or facility', new_staff_path, class:'btn btn-light' %>
+<% else %>
   <p> To add a new staff, please <%= link_to "login",new_user_session_path, class:"link" %> </p>
- <% end %>  
+<% end %>  
