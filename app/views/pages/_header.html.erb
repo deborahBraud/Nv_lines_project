@@ -13,7 +13,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-      <%= image_tag("logo_scheme.png", :size => '70x70', :alt => "Nvlines", :class => "d-inline-block align-top" )%> NvLines
+      <%= image_tag("logo_scheme.png", :size => '70x70', :alt => "Nvlines", :class => "d-inline-block align-top" )%> 
 
       <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0">
 
@@ -44,31 +44,15 @@
           <%= link_to "Phenotypes", phenotypes_path, class:"nav-link active"%>
         </li>    
         
-        <li class= "nav-item">
-          <%= link_to "Submit data", '#', class:"nav-link active" %> 
-        </li>
-
-        <form class="form-inline" action="/Search/" method="get">
-            <fieldset>    
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <select id="oCategorie" name="oCategorie" class="form-control">
-                    <option selected="selected" value="0">Select a category</option>
-                    <option value="1">Line name</option>
-                    <option value="2">Gene name</option>
-                    <option value="3">Phenotype</option>
-                    <option value="4">Image</option>
-                    <option value="5">Publication</option>
-                    <option value="6">Others</option>
-                  </select>
-                </div>
-                <input id="oSaisie" name="oSaisie" type="text" class="form-control" aria-label="key words" required="required">
-                <div class="input-group-append">
-                  <button class="btn btn-secondary" type="submit">Search</button>
-                </div>
-              </div>
-            </fieldset> 
-        </form>
+        <%= form_tag(search_page_path, :method => "get",   
+            class: 'navbar-form navbar-left') do %>  
+          <div class="input-group">  
+            <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+            <div class="input-group-btn">  
+              <%= button_tag "search", :class => 'btn btn-outline-secondary',:name => nil%>  
+            </div>  
+          </div>  
+        <% end %>
 
 <!-- IF LOGIN -->
 

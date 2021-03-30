@@ -1,90 +1,64 @@
-<p>
-  <% unless @phenotype.embryo_letality.blank? %>
-  <strong>Embryo letality rate :</strong>
-  <%= @phenotype.embryo_letality %>
-  <% end %>
-</p>
-
-<p>
-  <% unless @phenotype.larva_swimming_perturbation.blank? %>
-  <strong>Larva swimming perturbation:</strong>
-  <%= @phenotype.larva_swimming_perturbation %>
-  <% end %>
-</p>
-
-<p>
-  <% unless @phenotype.larva_letality.blank? %>
-  <strong>Larva lethality:</strong>
-  <%= @phenotype.larva_letality %>
-  <% end %>
-</p>
-
-<p>
-  <% unless @phenotype.metamorphosis_perturbation.blank? %>
-  <strong>Metamorphosis perturbation:</strong>
-  <%= @phenotype.metamorphosis_perturbation %>
-  <% end %>
-</p>
-
-<p>
-  <% unless @phenotype.post_metamorphosis_growth.blank? %>
-  <strong>Post metamorphosis growth:</strong>
-  <%= @phenotype.post_metamorphosis_growth %>
-  <% end %>
-</p>
-
-<p>
-  <% unless @phenotype.regeneration.blank? %>
-  <strong>Regeneration:</strong>
-  <%= @phenotype.regeneration %>
-  <% end %>
-</p>
-
-<p>
-  <% unless @phenotype.adult_letality.blank? %>
-  <strong>Adult lethality:</strong>
-  <%= @phenotype.adult_letality %>
-  <% end %>  
-</p>
-
-<p>
-  <% unless @phenotype.adult_fecondity.blank? %>
-  <strong>Adult fecondity:</strong>
-  <%= @phenotype.adult_fecondity %>
-  <% end %>  
-</p>
-
-<p>
-  <% unless @phenotype.other_phenotype_description.blank? %>
-  <strong>Other phenotype description:</strong>
-  <%= @phenotype.other_phenotype_description %>
-  <% end %>
-</p>
-
-<p>
-  <% unless @phenotype.tissu_localization.blank? %>
-  <strong>Tissu localization:</strong>
-  <%= @phenotype.tissu_localization %>
-  <% end %>  
-</p>
-
-<p>
-  <% unless @phenotype.cell_localization.blank? %>
-  <strong>Cell localization:</strong>
-  <%= @phenotype.cell_localization %>
-  <% end %>
-</p>
-
-<p>
-  <% unless @phenotype.id.blank? %>
-  <strong>Phenotype id:</strong>
-  <%= @phenotype.id %>
-  <% end %>
-</p>
-
-<p> <%= link_to 'Associated images', images_path , class:"btn btn-warning"  %></p>
-
-<%= link_to 'Edit', edit_phenotype_path(@phenotype) %> |
-<%= link_to 'Back', phenotypes_path %>
+<h1>Phenotypes</h1>
 
 
+<div class="table-responsive"> </br>
+  <table class="table table-bordered table-responsive">
+    <thead>
+      <tr class="header" bgcolor="F8F9FA">
+        <th> Embryo stage</th>
+        <th colspan ="2"> Larval stage </th>
+        <th colspan ="2"> Metamorphosis </th>
+        <th colspan ="2"> Adult stage </th>
+        <th colspan="3"> Other Caracterization </th>
+        <th> Association </th>
+        
+      </tr>
+
+      <tr>
+        <th>Lethality </th>
+        <th>Swimming perturbation </th>
+        <th>Lethality </th>
+        <th>Perturbation</th>
+        <th>Post-metamorphosis growth</th>
+        <th>Lethality </td></th>
+        <th>Fecondity </td></th>
+        <th>Regeneration</th>
+        <th>Tissu / Cellular localization</th>
+        <th>Supplementary description</th>
+        <th>Line </th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+          <td><%= @phenotype.embryo_letality %></td>
+          <td><% if  @phenotype.larva_swimming_perturbation == true %> Yes
+              <% else %> No
+              <% end %>
+          </td>
+          <td><%=  @phenotype.larva_letality %></td>
+          <td><% if  @phenotype.metamorphosis_perturbation == true %> Yes
+              <% else %> No
+              <% end %>
+          </td>
+          <td><%=  @phenotype.post_metamorphosis_growth %></td>
+          <td><%=  @phenotype.adult_letality %></td>
+          <td><%=  @phenotype.adult_fecondity %></td>
+          <td><%=  @phenotype.regeneration %></td>
+          <td><%=  @phenotype.tissu_localization %> <%= @phenotype.cell_localization %></td>
+          <td><%=  @phenotype.other_phenotype_description %></td>
+          <td><%= link_to 'Line', lines_path%> </td>
+        </tr>
+
+    </tbody>
+  </table>
+
+<% if user_signed_in? %> 
+    <td><%= link_to 'Edit', edit_phenotype_path(@phenotype), class: 'btn btn-outline-secondary ' %></td>
+    <td><%= link_to 'Destroy', @phenotype, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger ' %>
+<% else %>
+<% end %> 
+</div>
+
+</br>
+<%= link_to 'Back', phenotypes_path, class: 'btn btn-secondary ' %>

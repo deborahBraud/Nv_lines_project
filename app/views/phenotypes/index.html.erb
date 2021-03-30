@@ -3,27 +3,11 @@
 
 <div class="table-responsive"> </br>
   <table class="table table-bordered table-responsive">
-    <thead>
-      <tr class="header" bgcolor="F8F9FA">
-        <th> Embryo stage</th>
-        <th colspan ="2"> Larval stage </th>
-        <th colspan ="2"> Metamorphosis </th>
-        <th colspan ="2"> Adult stage </th>
-        <th colspan="3"> Other Caracterization </th>
-        <th> Association </th>
-        
-      </tr>
+    <thead class="header" bgcolor="F8F9FA">
 
       <tr>
-        <th>Lethality </th>
-        <th>Swimming perturbation </th>
-        <th>Lethality </th>
-        <th>Perturbation</th>
-        <th>Post-metamorphosis growth</th>
-        <th>Lethality </td></th>
-        <th>Fecondity </td></th>
-        <th>Regeneration</th>
-        <th>Tissu localization</th>
+        <th> Phenotype ID </th>
+        <th>Tissu / Cellular localization</th>
         <th>Supplementary description</th>
         <th>Line </th>
         <th colspan="3"></th>
@@ -32,25 +16,17 @@
 
     <tbody>
       <% @phenotypes.each do |phenotype| %>
-        <tr>
-          <td><%= phenotype.embryo_letality %></td>
-          <td><%= phenotype.larva_swimming_perturbation %></td>
-          <td><%= phenotype.larva_letality %></td>
-          <td><%= phenotype.metamorphosis_perturbation %></td>
-          <td><%= phenotype.post_metamorphosis_growth %></td>
-          <td><%= phenotype.adult_letality %></td>
-          <td><%= phenotype.adult_fecondity %></td>
-          <td><%= phenotype.regeneration %></td>
+          <td><%= phenotype.id %></td>
           <td><%= phenotype.tissu_localization %> <%= phenotype.cell_localization %></td>
           <td><%= phenotype.other_phenotype_description %></td>
           <td><%= link_to 'Line', lines_path%> </td>
 
 
-          <td><%= link_to 'Show', phenotype %></td>
+          <td><%= link_to 'Show more', phenotype, class: 'btn btn-outline-secondary btn-sm' %></td>
 
           <% if user_signed_in? %> 
-            <td><%= link_to 'Edit', edit_phenotype_path(phenotype) %></td>
-            <td><%= link_to 'Destroy', phenotype, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <td><%= link_to 'Edit', edit_phenotype_path(phenotype), class: 'btn btn-outline-secondary btn-sm' %></td>
+            <td><%= link_to 'Destroy', phenotype, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' %>
           <% else %>
           <% end %> 
 
@@ -64,7 +40,7 @@
 
 </br>
 <% if user_signed_in?%>
-  <%= link_to 'Add Phenotype', new_phenotype_path, class:'btn btn-info' %>
+  <%= link_to 'Add a new phenotype', new_phenotype_path, class: 'btn btn-light ' %>
  <% else %>
   <p> To add a new phenotype, please <%= link_to "login",new_user_session_path, class:"link" %> </p>
  <% end %>  
