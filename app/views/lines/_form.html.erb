@@ -57,8 +57,19 @@
 
   </br>
   <div class="field form-group">
-    <%= form.collection_select :phenotype_id, Phenotype.all, :id, :id, {prompt: "Phenotype_id value"} %>
+    <%= form.collection_select :phenotype_id, Phenotype.all, :id, :id, {prompt: "Phenotype ID"} %>
   </div> 
+
+  </br>
+  <div class="field form-group">
+    <%= form.collection_select :user_id, User.all, :id, :id, {prompt: "User ID"} %>
+  </div> 
+
+  </br>
+  <div class="field form-group">
+    <%= form.collection_select :group_id, Group.all, :id, :id, {prompt: "Group ID"} %>
+  </div> 
+
 
   </br>
   <div class="actions">

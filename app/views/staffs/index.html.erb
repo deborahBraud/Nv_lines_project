@@ -6,6 +6,7 @@
       <th>Name</th>
       <th>Header</th>
       <th>Adress</th>
+      <th>Team / Facility </th>
       <th>Institut name</th>
       <th colspan="3"></th>
     </tr>
@@ -20,6 +21,7 @@
             <%= staff.postalcode %>
             <%= staff.city %>
             <%= staff.country %></td>
+        <td><%= staff.staff_type %></td>
         <td><%= staff.institut_name %></td>
         <td><%= link_to 'Show', staff, class: 'btn btn-outline-secondary btn-sm'  %></td>
 

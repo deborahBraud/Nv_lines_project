@@ -1,66 +1,129 @@
-<p>
-  <% unless @line.line_name.blank? %>
-    <strong>Line name:</strong>
-    <%= @line.line_name %>
-  <% end %>
-</p>
+<h1> <%= @line.line_name %> </h1>
+</br>
 
-<p>
-  <% unless @line.synonym_line_name.blank? %>
-    <strong>Synonym line name:</strong>
-    <%= @line.synonym_line_name %>
-  <% end %>
-</p>
-
-<p>
-  <% unless @line.line_type.blank? %>
-    <strong>Line type:</strong>
-    <%= @line.line_type %>
-  <% end %> 
-
-</p>
-
-<p>
-  <% unless @line.person_in_charge.blank? %>
-    <strong>Person in charge:</strong>
-    <%= @line.person_in_charge %>
-  <% end %> 
-</p>
-
-<p>
-  <% unless @line.breeding_type.blank? %>
-    <strong>Breeding type:</strong>
-    <%= @line.breeding_type %>
-  <% end %> 
-</p>
-
-<p>
-  <% unless @line.generation.blank? %>
-    <strong>Generation:</strong>
-    <%= @line.generation %>
-  <% end %>  
-</p>
-
-<p>
-  <% unless @line.zygosity.blank? %>
-    <strong>Zygosity:</strong>
-    <%= @line.zygosity %>
-  <% end %>  
-</p>
-
-<p>
-<% unless @line.phenotype_id.blank? %>
-  <strong>Phenotype_id:</strong>
-  <%= @line.phenotype_id %>
-<% end %>  
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+        <%= image_tag("anemona.jpg", :size => "300x300") %>
+    </div> 
 
 
-<p> <%= link_to 'Associated phenotype', phenotype_path(@line.phenotype_id) %> </p>
-<p> <%= link_to 'Images', images_path %> </p>
-<p> <%= link_to 'Wild-type background', phenotypes_path %> </p>
-<p> <%= link_to 'Materials & Methods', genetic_modification_methods_path%> </p> 
-<p> <%= link_to 'Publication', publications_path %> </p>
+    <div class="col-sm">
+      <p>
+        <% unless @line.line_name.blank? %>
+          <strong>Line name:</strong>
+          <%= @line.line_name %>
+        <% end %>
+      </p>
 
-<%= link_to 'Edit', edit_line_path(@line) %> 
-<%= link_to 'Back', lines_path %>
+      <p>
+        <% unless @line.synonym_line_name.blank? %>
+          <strong>Synonym line name:</strong>
+          <%= @line.synonym_line_name %>
+        <% end %>
+      </p>
+
+      <p>
+        <% unless @line.line_type.blank? %>
+          <strong>Line type:</strong>
+          <%= @line.line_type %>
+        <% end %> 
+
+      </p>
+
+      <p>
+        <% unless @line.person_in_charge.blank? %>
+          <strong>Person in charge:</strong>
+          <%= @line.person_in_charge %>
+        <% end %> 
+      </p>
+
+      <p>
+        <% unless @line.breeding_type.blank? %>
+          <strong>Breeding type:</strong>
+          <%= @line.breeding_type %>
+        <% end %> 
+      </p>
+
+      <p>
+        <% unless @line.generation.blank? %>
+          <strong>Generation:</strong>
+          <%= @line.generation %>
+        <% end %>  
+      </p>
+
+      <p>
+        <% unless @line.zygosity.blank? %>
+          <strong>Zygosity:</strong>
+          <%= @line.zygosity %>
+        <% end %>  
+      </p>
+
+      <p>
+      <% unless @line.user_id.blank? %>
+        <strong>User ID:</strong>
+        <%= @line.user_id %>
+      <% end %>  
+      </p>
+
+
+      <p>
+      <% unless @line.group_id.blank? %>
+        <strong>Group ID:</strong>
+        <%= @line.group_id %>
+      <% end %>  
+      </p>
+
+      <p>
+        <%= link_to 'Edit line information', edit_line_path(@line), class: 'btn btn-light' %> 
+      </p>  
+    </div>       
+
+    <div class="col-sm">
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th>Phenotype ID</th>
+            <th>Tissu / Cellular localization </th>
+            <th colspan="1"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td><%= @line.phenotype.id %></td>
+              <td><%= @line.phenotype.tissu_localization %></td>
+              <td><%= link_to 'Show more', phenotype_path(@line.phenotype_id), class: 'btn btn-outline-secondary' %> </td>
+            </tr>  
+        </tbody>
+      </table>
+    
+      <p><%= link_to 'Wild-type background', wild_type_backgrounds_path, class: 'btn btn-outline-secondary' %> </p>
+      <p><%= link_to 'Materials & Methods', genetic_modification_methods_path, class: 'btn btn-outline-secondary' %> </p>
+      <p><%= link_to 'Publication', publications_path, class: 'btn btn-outline-secondary' %> </p>
+
+    </div>  
+  </div>
+
+</br>
+<hr>
+
+  <div class="row"> 
+    <div class="col-sm">
+      <h4>Associated Images : </h4>
+        <% @line.images.each do |image| %>
+          <%= image.id %> 
+          <%= image.image %>
+          <%= link_to image_path(@line.images.ids) do %> 
+            <%= image_tag image.image, :size => '355x355',:alt => "Image", :class => "img-fluid tm-header-img"%>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+
+</br>
+  <div class="row">   
+    <div class="col-sm">   
+      <%= link_to 'Back', lines_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>            

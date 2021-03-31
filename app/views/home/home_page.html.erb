@@ -22,7 +22,7 @@
 
   <div class="col">
     <div class="card h-100">
-	<%= link_to image_tag("nv_tg.png",:size => '355x355',:alt => "Image", :class => "img-fluid tm-header-img"), image_path("/") %>
+	<%= link_to image_tag("nv_tg.png",:size => '355x355',:alt => "Image", :class => "img-fluid tm-header-img"), "/" %>
       <div class="card-body">
         <h5 class="card-title">Wild-type Lines</h5>
         <p class="card-text"> Description.</p>
@@ -36,7 +36,9 @@
 
   <div class="col">
     <div class="card h-100">
-      <%= link_to image_tag("nv_tg.png", :alt => "Image", :class => "img-fluid tm-header-img" ), image_path("/publications") %>
+      <%= link_to images_path do %>
+        <%= image_tag "nv_tg.png", :size => '355x355',:alt => "Image", :class => "img-fluid tm-header-img"%>
+      <% end %>
       <div class="card-body">
         <h5 class="card-title">Latest entry</h5>
         <p class="card-text">Latest entry </p>

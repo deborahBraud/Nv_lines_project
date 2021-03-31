@@ -20,7 +20,10 @@ Rails.application.routes.draw do
   get 'lines/index'
 
   #search bar route
-  get '/search' => 'pages#search', :as => 'search_page'
+  get '/search' => 'pages#search', :as => 'search_page', :to => "lines#index"
+
+  # Display Images
+  get 'show/lines/images/:id', to: "images#line_images"
 
 
   #home page

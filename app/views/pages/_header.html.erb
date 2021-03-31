@@ -47,7 +47,18 @@
         <%= form_tag(search_page_path, :method => "get",   
             class: 'navbar-form navbar-left') do %>  
           <div class="input-group">  
+            <div class="input-group-prepend ">
+                  <select id="oCategorie" name="oCategorie" class="form-control" >
+                    <option selected="selected" value="0" >Search by : </option>
+                    <option value="line_name">Line name</option>
+                    <option value="gene_name">Gene name</option>
+                    <option value="phenotype">Phenotype</option>
+                    <option value="image_name">Image</option>
+                    <option value="all">Others</option>
+                  </select>
+            </div>
             <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+            
             <div class="input-group-btn">  
               <%= button_tag "search", :class => 'btn btn-outline-secondary',:name => nil%>  
             </div>  

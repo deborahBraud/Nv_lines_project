@@ -10,6 +10,12 @@ class ImagesController < ApplicationController
   def show
   end
 
+  def line_images
+    @line = Line.find(params[:id])
+  end
+
+
+
   # GET /images/new
   def new
     @image = Image.new

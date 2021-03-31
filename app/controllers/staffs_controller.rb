@@ -69,6 +69,3 @@ class StaffsController < ApplicationController
 end
 
 
-def self.search(search)  
-   where("lower(staffs.name) LIKE :search OR lower(users.email) LIKE :search", search: "%#{search.downcase}%").uniq   
-end
