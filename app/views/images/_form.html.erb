@@ -77,24 +77,12 @@
 
   </br>
   <div class="field form-group">
-    <%= form.label :line_id %>
-    <%= form.number_field :line_id, class:'form-control' %>
-  </div>
-
-  </br>
-  <div class="field form-group">
-    <%= form.label :phenotype_id %>
-    <%= form.number_field :phenotype_id, class:'form-control' %>
-  </div>
-
-  </br>
-  <div class="field form-group">
-    <%= form.collection_select :line_id, Line.all, :id, :id, {prompt: "Line_id value"} %>
+    <%= form.collection_select :line_id, Line.all, :id, :id, {:include_blank => 'Line ID'} %>
   </div> 
 
   </br>
   <div class="field form-group">
-    <%= form.collection_select :phenotype_id, Phenotype.all, :id, :id, {prompt: "Phenotype_id value"} %>
+    <%= form.collection_select :phenotype_id, Phenotype.all, :id, :id, {:include_blank => 'Phenotype ID'} %>
   </div> 
 
   </br>

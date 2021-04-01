@@ -11,54 +11,71 @@
 
   <div class="col">
     <p>
-      <strong>Legend :</strong>
-      <%= @image.image_legend %>
+      <% unless @image.image_legend.blank? %>
+        <strong>Legend :</strong>
+        <%= @image.image_legend %>
+      <% end %>  
     </p>  
 
     <p>
-      <strong>Microscopy technique:</strong>
-      <%= @image.microscopy_technique %> 
-    </p>
-
-    <p>
-      <strong>Life cycle stage:</strong>
-      <%= @image.lifecycle_stage %> 
-    </p>
-
-    <p>
-      <strong>Tissu localization:</strong>
-      <%= @image.tissu_localization %> 
-    </p>
-
-    <p>
-      <strong>Cellular localization:</strong>
-      <%= @image.cellular_localization %> 
-    </p>
-
-    <p>
-      <strong>Image taken by:</strong>
-      <%= @image.person_who_takes_image %> 
-    </p>
-
-    <p>
-      <strong>Objective used:</strong>
-      <%= @image.objective_used %> 
-    </p>
-
-    <p>
-      <strong>Line:</strong>
-      <%= @image.line_id %> 
-    </p>
-
-    <p>
-      <strong>Phenotype:</strong>
-      <%= @image.phenotype_id %> 
+      <% unless @image.microscopy_technique.blank? %>
+        <strong>Microscopy technique :</strong>
+        <%= @image.microscopy_technique %>
+      <% end %>  
     </p> 
 
+    <p>
+      <% unless @image.lifecycle_stage.blank? %>
+        <strong>Life cycle stage :</strong>
+        <%= @image.lifecycle_stage %>
+      <% end %>  
+    </p> 
+
+    <p>
+      <% unless @image.tissu_localization.blank? %>
+        <strong>Tissu localization :</strong>
+        <%= @image.tissu_localization %>
+      <% end %>  
+    </p> 
+
+    <p>
+      <% unless @image.cellular_localization.blank? %>
+        <strong>Cellular localization :</strong>
+        <%= @image.cellular_localization %>
+      <% end %>  
+    </p> 
+
+    <p>
+      <% unless @image.person_who_takes_image.blank? %>
+        <strong>Person who takes the image :</strong>
+        <%= @image.person_who_takes_image %>
+      <% end %>  
+    </p> 
+
+    <p>
+      <% unless @image.objective_used.blank? %>
+        <strong>Objective used :</strong>
+        <%= @image.objective_used %>
+      <% end %>  
+    </p> 
+
+    <p>
+      <% unless @image.line_id.blank? %>
+        <strong>Line ID :</strong>
+        <%= @image.line_id %>
+      <% end %>  
+    </p> 
+
+    <p>
+      <% unless @image.phenotype_id.blank? %>
+        <strong>Phenotype ID :</strong>
+        <%= @image.phenotype_id %>
+      <% end %>  
+    </p> 
   </div>   
 </div>
 
 </br>
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
+<%= link_to 'Edit', edit_image_path(@image), class: 'btn btn-light' %> 
+<%= link_to 'Back', images_path, class: 'btn btn-secondary' %>
 

@@ -56,3 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'irb', '~> 1.3', '>= 1.3.4'
 #gem 'refinerycms', '>= 4.0.3'
 
+gem 'jquery-rails'
+gem "jquery-ui-rails"
+

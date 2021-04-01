@@ -13,27 +13,27 @@
 
   <div class="field form-group">
     <%= form.label :line_id %>
-    <%= form.number_field :line_id, class:"form-control" %>
+    <%= form.collection_select :line_id, Line.all, :id, :id, {:include_blank => "Line ID"} %>
   </div>
 
 
    </br>
   <div class="field form-group">
-    <%= form.label :mutagenic_construction_type %></br> <i> (Mandatory) </i>
-    <%= form.radio_button :mutagenic_construction_type, 'Gain_of_function_KnockIn' %> Knock In (KI) -> Gain of function <br />
-    <%= form.radio_button :mutagenic_construction_type, 'Loss_of_function_KnockIn' %> Knock In (KI) -> Loss of function  <br />
-    <%= form.radio_button :mutagenic_construction_type, 'Loss_of_function_KnockOut' %> Knock Out (KO) -> Loss of function<br />
+    <%= form.label :mutagenic_construction_type %> <i> (Mandatory) </i> </br>
+    <%= form.radio_button :mutagenic_construction_type, 'Gain_of_function_KnockIn' %> Gain of function (KI) <br />
+    <%= form.radio_button :mutagenic_construction_type, 'Loss_of_function_KnockIn' %> Loss of function (KI) <br />
+    <%= form.radio_button :mutagenic_construction_type, 'Loss_of_function_KnockOut' %> Loss of function (KO)<br />
     <%= form.radio_button :mutagenic_construction_type, 'Other_mutagenic' %> Other<br />
         <%= form.radio_button :mutagenic_construction_type, 'None_mutagenic' %> None<br />
   </div>
 
   </br>
   <div class="field form-group">
-    <%= form.label :transgenic_construction_type %></br> <i> (Mandatory) </i>
+    <%= form.label :transgenic_construction_type %> <i> (Mandatory) </i> </br>
     <%= form.radio_button :transgenic_construction_type, 'Overexpression' %> Over-expression<br />
-    <%= form.radio_button :transgenic_construction_type, 'Inducible' %> Inducible<br />
+    <%= form.radio_button :transgenic_construction_type, 'Inducible promoter' %> Inducible<br />
     <%= form.radio_button :transgenic_construction_type, 'Knockdown' %> Knockdown<br />
-    <%= form.radio_button :transgenic_construction_type, 'Reporter' %> Reporter<br />
+    <%= form.radio_button :transgenic_construction_type, 'Reporter gene' %> Reporter<br />
     <%= form.radio_button :transgenic_construction_type, 'Other_transgenic' %> Other<br />
     <%= form.radio_button :transgenic_construction_type, 'None_transgenic' %> None <br />
   </div>
@@ -67,6 +67,7 @@
     <%= form.label :reagent_and_protocol %>
     <%= form.text_field :reagent_and_protocol, class:"form-control" %>
   </div>
+
 
   </br>
   <div class="actions">

@@ -1,3 +1,5 @@
+<h1> Genetic modification information </h1>
+
 <p>
   <strong>Line:</strong>
   <%= @genetic_modification_method.line_id %>
@@ -10,12 +12,19 @@
 
 <p>
   <strong>Mutagenic construction type:</strong>
-  <%= @genetic_modification_method.mutagenic_construction_type %>
+  <% if  @genetic_modification_method.mutagenic_construction_type == 'Gain_of_function_KnockIn' %> Gain of function (KI)
+  <% elsif  @genetic_modification_method.mutagenic_construction_type == 'Loss_of_function_KnockIn' %> Loss of function (KI)
+  <% elsif  @genetic_modification_method.mutagenic_construction_type == 'Loss_of_function_KnockOut' %> Loss of function (KO)
+  <% elsif  @genetic_modification_method.mutagenic_construction_type == 'None_mutagenic' %> No mutagenic construction
+  <% else %> See construction type description
+  <% end %>
 </p>
 
 <p>
-  <strong>Construction type description:</strong>
-  <%= @genetic_modification_method.construction_type_description %>
+  <% unless @genetic_modification_method.construction_type_description.blank? %>
+      <strong>Construction type description:</strong>
+      <%= @genetic_modification_method.construction_type_description %>
+  <% end %>  
 </p>
 
 <p>
@@ -24,24 +33,86 @@
 </p>
 
 <p>
-  <strong>Mutation type:</strong>
-  <%= @genetic_modification_method.mutation_type %>
+  <% unless @genetic_modification_method.mutation_type.blank? %>
+    <strong>Mutation type:</strong>
+    <%= @genetic_modification_method.mutation_type %>
+  <% end %>  
 </p>
 
 <p>
-  <strong>Vector name:</strong>
-  <%= @genetic_modification_method.vector_name %>
+  <% unless @genetic_modification_method.vector_name.blank? %>
+    <strong>Vector name:</strong>
+    <%= @genetic_modification_method.vector_name %>
+  <% end %>
 </p>
 
 <p>
-  <strong>Vector description:</strong>
-  <%= @genetic_modification_method.vector_description %>
+  <% unless @genetic_modification_method.vector_description.blank? %>
+    <strong>Vector description:</strong>
+    <%= @genetic_modification_method.vector_description %>
+  <% end %>
 </p>
 
 <p>
-  <strong>Reagent and protocol:</strong>
-  <%= @genetic_modification_method.reagent_and_protocol %>
+  <% unless @genetic_modification_method.reagent_and_protocol.blank? %>
+    <strong>Reagent and protocol:</strong>
+    <%= @genetic_modification_method.reagent_and_protocol %>
+  <% end %>
 </p>
 
-<%= link_to 'Edit', edit_genetic_modification_method_path(@genetic_modification_method) %> |
-<%= link_to 'Back', genetic_modification_methods_path %>
+<p>
+  <%= link_to 'Edit', edit_genetic_modification_method_path(@genetic_modification_method), class:'btn btn-light' %> 
+  <%= link_to 'Back', genetic_modification_methods_path, class:'btn btn-secondary' %>
+</p>
+
+<hr>
+
+<h4>Associated molecular data : </h4>
+  <% @genetic_modification_method.molecular_data.each do |molecular_datum| %>
+    <table class="table table-bordered table-responsive">
+      <thead>
+        <tr class="header" bgcolor="F8F9FA">
+          <th colspan="6"> Gene information </th>
+          <th colspan="2">Chromosome information </th>
+          <th colspan="2"> Other information </th>
+          <th colspan="1"></th>
+        </tr>
+
+        <tr>
+          <th>Name</th>
+          <th>Sequence</th>
+          <th>Promoter</th>
+          <th>Genbank accession number </th>
+          <th>Ensembl accession number </th>
+          <th>Genome version accession number </th>
+
+          <th>Chromosome's number </th>
+          <th>Locus of insertion </th>
+
+          <th>Mutated region</th>
+          <th>NvERTx ID</th>
+          <th></th>
+
+      </thead>
+
+      <tbody>
+          <tr>
+            <td><%= molecular_datum.gene_name %></td>
+            <td><%= molecular_datum.gene_sequence %></td>
+            <td><%= molecular_datum.gene_promoter %></td>
+            <td><%= molecular_datum.genbank_gene_accession_number %></td>
+            <td><%= molecular_datum.ensembl_gene_accession_number %></td>
+            <td><%= molecular_datum.genome_version_accession_number %></td>
+
+            <td><%= molecular_datum.chromosome_number %></td>
+            <td><%= molecular_datum.locus_insertion %></td>
+
+            <td><%= molecular_datum.NvERTx_id %></td>
+            <td><%= molecular_datum.mutated_region %></td>
+
+            <td><%= link_to 'Show more', molecular_data_path, class:'btn btn-outline-secondary btn-sm' %></td>
+          </tr>
+      </tbody>
+    </table>
+  <% end %>
+  

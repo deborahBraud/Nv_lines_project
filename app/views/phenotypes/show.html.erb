@@ -62,3 +62,17 @@
 
 </br>
 <%= link_to 'Back', phenotypes_path, class: 'btn btn-secondary ' %>
+
+
+<div class='container'>
+  <div class="row"> 
+      <div class="col-sm">
+        <h4>Associated Images : </h4>
+          <% @phenotype.images.each do |image| %>
+            <%= link_to image_path(@phenotype.images.ids) do %> 
+              <%= image_tag image.image, :size => '150x150',:alt => "Image", :class => "img-fluid tm-header-img"%>
+            <% end %>
+          <% end %>
+      </div>
+  </div>
+</div>  

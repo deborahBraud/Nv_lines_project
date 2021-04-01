@@ -1,35 +1,43 @@
 <h1>Genetic Modification Methods</h1>
 
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th>Line </th>
-      <th>Transgenic construction type</th>
-      <th>Mutagenic construction type</th>
-      <th>Molecular tools</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @genetic_modification_methods.each do |genetic_modification_method| %>
+<div class="table-responsive"> </br>
+  <table class="table table-bordered table-responsive">
+    <thead class="header" bgcolor="F8F9FA">
       <tr>
-        <td><%= genetic_modification_method.line_id %></td>
-        <td><%= genetic_modification_method.transgenic_construction_type %></td>
-        <td><%= genetic_modification_method.mutagenic_construction_type %></td>
-        <td><%= genetic_modification_method.molecular_tools %></td>
-        <td><%= link_to 'Show more', genetic_modification_method %></td>
-
-        <% if user_signed_in?%> 
-          <td><%= link_to 'Edit', edit_genetic_modification_method_path(genetic_modification_method) %></td>
-          <td><%= link_to 'Destroy', genetic_modification_method, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <%else%>
-        <%end%>  
+        <th>Line ID (-> line name instead of) </th>
+        <th>Transgenic construction type</th>
+        <th>Mutagenic construction type</th>
+        <th>Molecular tools</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @genetic_modification_methods.each do |genetic_modification_method| %>
+        <tr>
+          <td><%= genetic_modification_method.line_id %></td>
+          <td><%= genetic_modification_method.transgenic_construction_type %></td>
+          <td>
+            <% if  genetic_modification_method.mutagenic_construction_type  == 'Gain_of_function_KnockIn' %> Gain of function (KI)
+            <% elsif  genetic_modification_method.mutagenic_construction_type == 'Loss_of_function_KnockIn' %> Loss of function (KI)
+            <% elsif genetic_modification_method.mutagenic_construction_type == 'Loss_of_function_KnockOut' %> Loss of function (KO)
+            <% elsif genetic_modification_method.mutagenic_construction_type == 'None_mutagenic' %> No mutagenic construction
+            <% else %> See construction type description
+            <% end %>
+          </td>
+          <td><%= genetic_modification_method.molecular_tools %></td>
+          <td><%= link_to 'Show more', genetic_modification_method, class:'btn btn-outline-secondary btn-sm' %></td>
+
+          <% if user_signed_in?%> 
+            <td><%= link_to 'Edit', edit_genetic_modification_method_path(genetic_modification_method), class:'btn btn-outline-secondary btn-sm' %></td>
+            <td><%= link_to 'Destroy', genetic_modification_method, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-outline-danger btn-sm' %></td>
+          <%else%>
+          <%end%>  
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
-<%= link_to 'Add Methods Background', new_genetic_modification_method_path %>
+<%= link_to 'Add Methods Background', new_genetic_modification_method_path, class:'btn btn-light' %>

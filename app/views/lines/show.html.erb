@@ -93,14 +93,18 @@
             <tr>
               <td><%= @line.phenotype.id %></td>
               <td><%= @line.phenotype.tissu_localization %></td>
-              <td><%= link_to 'Show more', phenotype_path(@line.phenotype_id), class: 'btn btn-outline-secondary' %> </td>
+              <td><%= link_to 'Show more', phenotype_path(@line.phenotype_id), class: 'btn btn-outline-secondary btn-sm' %> </td>
             </tr>  
         </tbody>
       </table>
     
-      <p><%= link_to 'Wild-type background', wild_type_backgrounds_path, class: 'btn btn-outline-secondary' %> </p>
-      <p><%= link_to 'Materials & Methods', genetic_modification_methods_path, class: 'btn btn-outline-secondary' %> </p>
-      <p><%= link_to 'Publication', publications_path, class: 'btn btn-outline-secondary' %> </p>
+      <p><%= link_to 'Wild-type background', wild_type_backgrounds_path, class: 'btn btn-outline-secondary btn-sm' %> </p>
+      <p><%= link_to 'Materials & Methods', genetic_modification_methods_path, class: 'btn btn-outline-secondary btn-sm' %> </p>
+      <p> Associated publications : 
+        <% @line.publications.each do |publication| %>
+          <%= publication.publication_name %> , <%= publication.doi_link %>
+        <% end %>   
+      <p><%= link_to 'Publication', publications_path, class: 'btn btn-outline-secondary btn-sm' %> </p>
 
     </div>  
   </div>
@@ -112,10 +116,8 @@
     <div class="col-sm">
       <h4>Associated Images : </h4>
         <% @line.images.each do |image| %>
-          <%= image.id %> 
-          <%= image.image %>
           <%= link_to image_path(@line.images.ids) do %> 
-            <%= image_tag image.image, :size => '355x355',:alt => "Image", :class => "img-fluid tm-header-img"%>
+            <%= image_tag image.image, :size => '150x150',:alt => "Image", :class => "img-fluid tm-header-img"%>
           <% end %>
         <% end %>
     </div>
