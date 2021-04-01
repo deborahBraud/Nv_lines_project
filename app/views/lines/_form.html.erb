@@ -59,6 +59,9 @@
   <div class="field form-group">
     <%= form.label :phenotype_id %>
     <%= form.collection_select :phenotype_id, Phenotype.all, :id, :id, {:include_blank => "Phenotype ID"} %>
+
+    <%= form.label :genetic_modification_method_id %>
+    <%= form.collection_select :genetic_modification_method_id, GeneticModificationMethod.all, :id, :id, {:include_blank => "Method ID"} %>
     
     <%= form.label :user_id %>
     <%= form.collection_select :user_id, User.all, :id, :id, {:include_blank => "User ID"} %>

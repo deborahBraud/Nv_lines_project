@@ -99,7 +99,7 @@
       </table>
     
       <p><%= link_to 'Wild-type background', wild_type_backgrounds_path, class: 'btn btn-outline-secondary btn-sm' %> </p>
-      <p><%= link_to 'Materials & Methods', genetic_modification_methods_path, class: 'btn btn-outline-secondary btn-sm' %> </p>
+      <p><%= link_to 'Methods & molecular data information', genetic_modification_method_path(@line.genetic_modification_method_id), class: 'btn btn-outline-secondary btn-sm' %> </p>
       <p> Associated publications : 
         <% @line.publications.each do |publication| %>
           <%= publication.publication_name %> , <%= publication.doi_link %>
