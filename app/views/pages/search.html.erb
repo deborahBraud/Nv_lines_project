@@ -1,7 +1,11 @@
 <h3>Search Result</h3>  
 
-    <% @results.each do |result| %>  
-        <%= result.line_name %> : 
+    <% @results.each do |result| %> 
+    	<ul>
+    		<li>
+    			<a> <%= result.line_name %> </a>
+    		</li>
+    	</ul>	
 
     <% end %>
 

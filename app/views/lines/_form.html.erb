@@ -58,18 +58,26 @@
   </br>
   <div class="field form-group">
     <%= form.label :phenotype_id %>
-    <%= form.collection_select :phenotype_id, Phenotype.all, :id, :id, {:include_blank => "Phenotype ID"} %>
+    <%= form.collection_select :phenotype_id, Phenotype.all, :id, :id, {:include_blank => "None"} %>
+  </div>
 
+  </br>
+  <div class="field form-group">
     <%= form.label :genetic_modification_method_id %>
-    <%= form.collection_select :genetic_modification_method_id, GeneticModificationMethod.all, :id, :id, {:include_blank => "Method ID"} %>
-    
+    <%= form.collection_select :genetic_modification_method_id, GeneticModificationMethod.all, :id, :id, {:include_blank => "None"} %>
+  </div>
+  
+  </br>
+  <div class="field form-group">  
     <%= form.label :user_id %>
-    <%= form.collection_select :user_id, User.all, :id, :id, {:include_blank => "User ID"} %>
-    
-    <%= form.label :group_id %>
-    <%= form.collection_select :group_id, Group.all, :id, :id, {:include_blank => "Group ID"} %>
-  </div> 
+    <%= form.collection_select :user_id, User.all, :id, :id, {:include_blank => "None"} %>
+  </div>
 
+  </br>
+  <div class="field form-group">
+    <%= form.label :group_id %>
+    <%= form.collection_select :group_id, Group.all, :id, :id, {:include_blank => "None"} %>
+  </div> 
 
   </br>
   <div class="actions">

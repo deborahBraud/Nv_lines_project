@@ -14,9 +14,7 @@
       <tr>
         <% unless @lines.each.blank? %>
           <td><%= line.line_name %>
-          <%= line.synonym_line_name %></td>
           <td><%= line.line_type %>
-          <%= line.person_in_charge %>
           <%= line.generation %>
           <%= line.zygosity %></td>
           <td><%= link_to 'Show more', line, class:'btn btn-outline-secondary btn-sm' %></td>

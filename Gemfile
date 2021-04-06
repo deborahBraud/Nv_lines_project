@@ -59,3 +59,4 @@ gem 'irb', '~> 1.3', '>= 1.3.4'
 gem 'jquery-rails'
 gem "jquery-ui-rails"
 
+#gem 'rails_admin', '~> 2.0'

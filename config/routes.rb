@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    passwords: 'users/passwords',
-    registrations: 'users/registrations'
-}
-
+  get 'lines_management/wt_lines'
+  get 'lines_management/tg_m_lines'
+  devise_for :users
   #resources 
   resources :staffs
   resources :publications
