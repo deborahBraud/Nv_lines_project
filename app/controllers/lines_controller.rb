@@ -6,6 +6,14 @@ class LinesController < ApplicationController
     @lines = Line.all
   end
 
+  def wt_index
+    @lines = Line.all
+  end
+
+  def tg_m_index
+    @lines = Line.all
+  end
+
   # GET /lines/1 or /lines/1.json
   def show
   end

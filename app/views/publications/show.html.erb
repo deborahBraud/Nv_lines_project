@@ -23,5 +23,10 @@
   <%= @publication.doi_link %>
 </p>
 
+<p>
+  <strong>Associated lines:</strong>
+  <%= @publication.line_ids %>
+</p>
+
 <%= link_to 'Edit', edit_publication_path(@publication) %> |
 <%= link_to 'Back', publications_path %>

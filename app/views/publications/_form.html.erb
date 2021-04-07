@@ -41,6 +41,12 @@
   </div>
 
   </br>
+  <div class="field form-group">
+    <%= form.label :line_ids %>
+    <%=  form.collection_check_boxes :line_ids, Line.all, :id, :id%>
+  </div>
+
+  </br>
   <div class="actions">
     <%= form.submit %>
   </div>

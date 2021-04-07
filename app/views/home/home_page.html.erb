@@ -1,14 +1,14 @@
 <!-- HOME PAGE -->
 
 
-<p>  Nematostella vectensis lines database is the first database referencing wild-type, transgenic and mutants lines of Nematostella organism. </p>
-<p>You can search for specific lines and find all molecular information you need.</p>
+<p>  Nematostella vectensis lines database is the first database referencing wild-type, transgenic and mutants lines of Nematostella vectensis organism. </p>
+<p>You can search for a specific line and find all molecular information you need.</p>
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
 
   <div class="col">
     <div class="card h-100">
-      <%= link_to images_path do %>
+      <%= link_to tg_m_lines_index_path do %>
         <%= image_tag "nv_tg.png", :size => '355x355',:alt => "Image", :class => "img-fluid tm-header-img"%>
       <% end %>
     	<div class="card-body">
@@ -17,14 +17,14 @@
 	    </div>
 	    	</br>
 	    <div class="card-footer">
-          <small class="text-muted">image by © Océane Tournière</small>
+          <small class="text-muted">Image by ©Océane Tournière</small>
       	</div>
     </div>
   </div>
 
   <div class="col">
     <div class="card h-100">
-	    <%= link_to images_path do %>
+	    <%= link_to wt_lines_index_path do %>
         <%= image_tag "nv_tg.png", :size => '355x355',:alt => "Image", :class => "img-fluid tm-header-img"%>
       <% end %>
       <div class="card-body">
@@ -33,7 +33,7 @@
       </div>
   		</br>
       <div class="card-footer">
-        <small class="text-muted">image by © Océane Tournière</small>
+        <small class="text-muted">Image by ©Océane Tournière</small>
       </div>
     </div>
   </div>
@@ -48,7 +48,7 @@
         <p class="card-text">Latest entry </p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">image by © Océane Tournière</small>
+        <small class="text-muted">Image by ©Océane Tournière</small>
       </div>
     </div>
   </div>

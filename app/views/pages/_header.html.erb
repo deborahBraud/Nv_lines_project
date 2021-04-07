@@ -30,8 +30,8 @@
           <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Lines </a>
 
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Transgenic & Mutant lines</a></li>
-              <li><a class="dropdown-item" href="#">Wild-type lines</a></li>
+              <li class="dropdown-item"> <%= link_to "Transgenic & Mutant lines", tg_m_lines_index_path, class:"nav-link active"%></li>
+              <li class="dropdown-item"> <%= link_to "Wild-type lines", wt_lines_index_path, class:"nav-link active"%></li>
               <li><hr class="dropdown-divider"></li>
               <li class="dropdown-item"> <%= link_to "All lines", lines_path, class:"nav-link active"%></li>
             </ul>

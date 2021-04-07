@@ -24,7 +24,7 @@
 
   </br>
   <div class="field form-group">
-    <%= form.label :line_type %>
+    <%= form.label :line_type %> <i>(Indicate : Transgenic line, Mutant line or Wild-type line )</i>
     <%= form.text_field :line_type, class:'form-control' %>
   </div>
 
@@ -78,6 +78,12 @@
     <%= form.label :group_id %>
     <%= form.collection_select :group_id, Group.all, :id, :id, {:include_blank => "None"} %>
   </div> 
+
+   </br>
+  <div class="field form-group">
+    <%= form.label :publication_id %>
+    <%=  form.collection_check_boxes :publication_ids, Publication.all, :id, :id%>
+  </div>
 
   </br>
   <div class="actions">

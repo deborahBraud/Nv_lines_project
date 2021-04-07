@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'lines_management/wt_lines'
-  get 'lines_management/tg_m_lines'
+
   devise_for :users
   #resources 
   resources :staffs
@@ -19,6 +18,10 @@ Rails.application.routes.draw do
   get 'pages/about_nematostella'
   get 'pages/contact'
   get 'lines/index'
+  get 'wt_lines/index', action: :wt_index, controller: 'lines'
+  get 'tg_m_lines/index', action: :tg_m_index, controller: 'lines'
+
+
 
   #search bar route
   get '/search' => 'pages#search', :as => 'search_page', :to => "lines#index"
