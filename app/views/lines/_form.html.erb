@@ -70,19 +70,19 @@
   </br>
   <div class="field form-group">  
     <%= form.label :user_id %>
-    <%= form.collection_select :user_id, User.all, :id, :id, {:include_blank => "None"} %>
+    <%= form.collection_select :user_id, User.all, :id, :email, {:include_blank => "None"} %>
   </div>
 
   </br>
   <div class="field form-group">
     <%= form.label :group_id %>
-    <%= form.collection_select :group_id, Group.all, :id, :id, {:include_blank => "None"} %>
+    <%= form.collection_select :group_id, Group.all, :id, :group_name, {:include_blank => "None"} %>
   </div> 
 
    </br>
   <div class="field form-group">
     <%= form.label :publication_id %>
-    <%=  form.collection_check_boxes :publication_ids, Publication.all, :id, :id%>
+    <%= form.collection_check_boxes :publication_ids, Publication.all, :id, :publication_name, {:include_blank => "None"}%>
   </div>
 
   </br>

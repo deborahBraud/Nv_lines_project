@@ -7,7 +7,8 @@ class LinesController < ApplicationController
   end
 
   def wt_index
-    @lines = Line.all
+    #@lines = Line.all
+    @lines = Line.where("line_type LIKE :search", search: "W%")
   end
 
   def tg_m_index

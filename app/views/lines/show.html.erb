@@ -101,8 +101,12 @@
 
       <p> Associated publications : 
         <% @line.publications.each do |publication| %>
-          <%= publication.publication_name %> , <%= publication.doi_link %>   
-          <p><%= link_to publication_path(@line.publications.id), class: 'btn btn-outline-secondary btn-sm' %> </p>
+          <ul>
+            <li>
+              <a> <%= publication.publication_name %>  </a>
+              <a> <%= link_to publication_path(@line.publications.ids), class: 'btn btn-outline-secondary btn-sm' %> </a>
+            </li>
+          </ul>    
         <% end %>  
 
     </div>  

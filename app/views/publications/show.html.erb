@@ -25,7 +25,7 @@
 
 <p>
   <strong>Associated lines:</strong>
-  <%= @publication.line_ids %>
+  <%= render @publication.lines %>
 </p>
 
 <%= link_to 'Edit', edit_publication_path(@publication) %> |
