@@ -1,13 +1,23 @@
-<h1> Genetic modification information </h1>
+<% if @genetic_modification_method.line %>
+  <h1> <%= @genetic_modification_method.line.line_name %>  </h1>
+<% else %> 
+  <h1> Line information </h1>
+<% end %>    
 
-<p>
-  <strong>Line:</strong>
-  <%= @genetic_modification_method.line_id %>
-</p>
+<p> <% if @genetic_modification_method.line %>
+  <%= render genetic_modification_method.line %> 
+    <% end %>
+</p>  
 
 <p>
   <strong>Transgenic construction type:</strong>
-  <%= @genetic_modification_method.transgenic_construction_type %>
+  <% if  @genetic_modification_method.transgenic_construction_type == 'Overexpression' %> Overexpression
+  <% elsif  @genetic_modification_method.transgenic_construction_type == 'Inducible' %> Inducible promoter
+  <% elsif  @genetic_modification_method.transgenic_construction_type == 'Knockdown' %> Knockdown
+  <% elsif  @genetic_modification_method.transgenic_construction_type == 'Reporter' %> Reporter gene
+  <% elsif  @genetic_modification_method.transgenic_construction_type == 'None_transgenic' %> No transgenic construction
+  <% else %> See construction type description
+  <% end %>
 </p>
 
 <p>

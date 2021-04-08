@@ -1,5 +1,5 @@
-<h1>Editing Line</h1>
+<h1>Editing <%=@line.line_name %> line information</h1>
 
 <%= render 'form', line: @line %>
-
-<%= link_to 'Back', lines_path %>
+</br>
+<%= link_to 'Back', lines_path, class: 'btn btn-secondary' %>

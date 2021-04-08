@@ -7,8 +7,7 @@ class LinesController < ApplicationController
   end
 
   def wt_index
-    #@lines = Line.all
-    @lines = Line.where("line_type LIKE :search", search: "W%")
+    @lines = Line.where("line_type LIKE :search", search: "wild%")
   end
 
   def tg_m_index
@@ -73,7 +72,7 @@ class LinesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def line_params
-      params.require(:line).permit(:line_name, :synonym_line_name, :line_type, :person_in_charge, :breeding_type, :generation, :zygosity, :phenotype_id, :line_id, :genetic_modification_method_id, :user_id, :group_id, :wild_type_background)
+      params.require(:line).permit(:line_name, :synonym_line_name, :line_type, :person_in_charge, :breeding_type, :generation, :zygosity, :phenotype_id, :line_id, :genetic_modification_method_id, :user_id, :group_id, :wild_type_background, publication_ids: [])
     end
 
 

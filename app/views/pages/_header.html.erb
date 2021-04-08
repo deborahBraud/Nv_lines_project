@@ -13,12 +13,14 @@
   <div class="container-fluid">
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"> </span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-      <%= image_tag("logo_scheme.png", :size => '70x70', :alt => "Nvlines", :class => "d-inline-block align-top" )%> 
+      <%= link_to root_path do %>
+        <%= image_tag("logo_scheme.png", :size => '70x70', :alt => "Nvlines", :class => "d-inline-block align-top" )%> 
+      <% end %>  
 
       <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0">
 

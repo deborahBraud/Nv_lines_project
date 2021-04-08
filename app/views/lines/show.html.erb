@@ -99,12 +99,12 @@
       </table>
     
 
-      <p> Associated publications : 
+      <strong>Associated publications : </strong>
         <% @line.publications.each do |publication| %>
           <ul>
             <li>
-              <a> <%= publication.publication_name %>  </a>
-              <a> <%= link_to publication_path(@line.publications.ids), class: 'btn btn-outline-secondary btn-sm' %> </a>
+              <a> <%= publication.publication_name %>  </a> </br>
+              <a> <%= link_to "Go to publication", publication_path(@line.publications.ids)%> </a>
             </li>
           </ul>    
         <% end %>  

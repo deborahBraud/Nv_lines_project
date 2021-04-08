@@ -24,6 +24,8 @@ th, td {
 	vertical-align: middle;
 	font-size: 0.9em; }
 
+.checkbox_container input {
+  display: inline; }
 
 
 
@@ -44,4 +46,6 @@ th, td {
 	float: left;
 }
 
+/* */
 *= require jquery-ui
+

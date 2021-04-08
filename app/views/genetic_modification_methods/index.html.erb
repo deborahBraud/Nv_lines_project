@@ -4,7 +4,7 @@
   <table class="table table-bordered table-responsive">
     <thead class="header" bgcolor="F8F9FA">
       <tr>
-        <th>Line ID (-> line name instead of) </th>
+        <th>Associated line name </th>
         <th>Transgenic construction type</th>
         <th>Mutagenic construction type</th>
         <th>Molecular tools</th>
@@ -15,7 +15,12 @@
     <tbody>
       <% @genetic_modification_methods.each do |genetic_modification_method| %>
         <tr>
-          <td><%= genetic_modification_method.line_id %></td>
+          <td>
+            <% if genetic_modification_method.line %>
+               <%= genetic_modification_method.line.line_name %>
+            <% end %>
+
+          </td>
           <td><%= genetic_modification_method.transgenic_construction_type %></td>
           <td>
             <% if  genetic_modification_method.mutagenic_construction_type  == 'Gain_of_function_KnockIn' %> Gain of function (KI)

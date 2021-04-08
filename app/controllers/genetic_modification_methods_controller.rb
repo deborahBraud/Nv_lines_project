@@ -3,7 +3,7 @@ class GeneticModificationMethodsController < ApplicationController
 
   # GET /genetic_modification_methods or /genetic_modification_methods.json
   def index
-    @genetic_modification_methods = GeneticModificationMethod.all
+    @genetic_modification_methods = GeneticModificationMethod.includes(:line).all
   end
 
   # GET /genetic_modification_methods/1 or /genetic_modification_methods/1.json

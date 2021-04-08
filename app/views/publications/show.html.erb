@@ -1,7 +1,5 @@
-<p>
-  <strong>Title:</strong>
-  <%= @publication.publication_name %>
-</p>
+<h1> <%= @publication.publication_name %> </h1>
+</br>
 
 <p>
   <strong>Date of publication:</strong>
@@ -28,5 +26,6 @@
   <%= render @publication.lines %>
 </p>
 
-<%= link_to 'Edit', edit_publication_path(@publication) %> |
-<%= link_to 'Back', publications_path %>
+</br>
+<%= link_to 'Edit information', edit_publication_path(@publication), class: 'btn btn-light' %>
+<%= link_to 'Back', publications_path, class: 'btn btn-secondary'%>

@@ -5,7 +5,7 @@
   <thead class="thead-light">
     <tr>
       <th>Publication name</th>
-      <th>Publication date</th>
+      <th>Date</th>
       <th>Authors</th>
       <th>Pubmed link</th>
       <th>Doi link</th>
@@ -22,8 +22,9 @@
         <td> <p> <a href= <%= publication.pubmed_link %> > <%= publication.pubmed_link %> </a> </p> </td>
 
         <td> <p> <a href= <%= publication.doi_link %> > <%= publication.doi_link %> </a> </p> </td>
-        <td><%= link_to 'Edit', edit_publication_path(publication) %></td>
-        <td><%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_publication_path(publication), class: 'btn btn-outline-secondary btn-sm' %></td>
+        <td><%= link_to 'Show', publication_path(publication), class: 'btn btn-outline-secondary btn-sm' %></td>
+        <td><%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,4 +32,4 @@
 
 </br>
 
-<%= link_to 'New Publication', new_publication_path, class: "btn btn-info" %>
+<%= link_to 'New Publication', new_publication_path, class: "btn btn-light" %>

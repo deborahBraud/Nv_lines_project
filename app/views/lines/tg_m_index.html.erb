@@ -11,7 +11,7 @@
 
   <tbody>
     <% @lines.each do |line| %>
-    	 <% if line.line_type =~ /Transgenic line$/ %>
+       <% if line.line_type =~ /Transgenic line$/ %>
       <tr>
         <% unless @lines.each.blank? %>
           <td><%= line.line_name %>
@@ -26,7 +26,6 @@
           <% else %>
           <% end %>
          <% end %> 
-
         <% elsif line.line_type =~ /Mutant line$/%>
         <tr>
         <% unless @lines.each.blank? %>
@@ -42,7 +41,6 @@
           <% else %>
           <% end %>
          <% end %> 
-
         <% else %>
         <%end%>
 
