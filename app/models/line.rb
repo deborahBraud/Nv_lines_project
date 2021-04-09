@@ -9,6 +9,7 @@ class Line < ApplicationRecord
 	has_and_belongs_to_many :publications
 	has_one :genetic_modification_method
 
+
 	validates :line_name, :presence => true
 	validates :line_type, :presence => true
 end
