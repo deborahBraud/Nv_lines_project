@@ -6,9 +6,9 @@
     <thead class="header" bgcolor="F8F9FA">
 
       <tr>
-        <th> Associated Line name </th>
         <th> Tissu / Cellular localization</th>
         <th> Supplementary description</th>
+        <th> Associated Line name </th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -16,9 +16,9 @@
     <tbody>
       <% @phenotypes.each do |phenotype| %>
 
-        <td><%= render phenotype.lines %></td>
         <td><%= phenotype.tissu_localization %> <%= phenotype.cell_localization %></td>
         <td><%= phenotype.other_phenotype_description %></td>
+        <td><%= render phenotype.lines %></td>
 
         <td><%= link_to 'Show more', phenotype, class: 'btn btn-outline-secondary btn-sm' %></td>
 

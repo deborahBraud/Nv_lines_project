@@ -1,6 +1,6 @@
 class LinesController < ApplicationController
   before_action :set_line, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [ :index, :show]
+  
   # GET /lines or /lines.json
   def index
     @lines = Line.all
