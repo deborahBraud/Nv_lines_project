@@ -7,12 +7,18 @@ class LinesController < ApplicationController
   end
 
   def wt_index
-    @lines = Line.where("line_type LIKE :search", search: "wild%")
+    @lines = Line.where("line_type LIKE :search", search: "wild")
   end
 
-  def tg_m_index
+  def reporter_index
     @lines = Line.all
   end
+
+  def functional_index
+    @lines = Line.all
+  end
+
+ 
 
   # GET /lines/1 or /lines/1.json
   def show
@@ -42,6 +48,8 @@ class LinesController < ApplicationController
     end
   end
 
+
+
   # PATCH/PUT /lines/1 or /lines/1.json
   def update
     respond_to do |format|
@@ -64,6 +72,7 @@ class LinesController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_line
@@ -74,6 +83,7 @@ class LinesController < ApplicationController
     def line_params
       params.require(:line).permit(:line_name, :synonym_line_name, :line_type, :person_in_charge, :breeding_type, :generation, :zygosity, :phenotype_id, :line_id, :genetic_modification_method_id, :user_id, :group_id, :wild_type_background, publication_ids: [])
     end
+
 
 
 end

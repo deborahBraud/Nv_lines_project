@@ -1,10 +1,28 @@
-<h3>Search Result</h3>  
+<h1>Search Results </h1> 
+<hr> 
 
-    <% @results.each do |result| %> 
+    <% @lines.each do |line| %> 
     	<ul>
     		<li>
-    			<a> <%= result.line_name %> </a>
+    			<a> <%= link_to "#{line.line_name} #{line.generation}", line_path(line) %> </a>
     		</li>
     	</ul>	
-
     <% end %>
+
+    <% @molecular_data.each do |molecular_datum| %> 
+    	<ul>
+    		<li>
+    			<a> <%= link_to "#{molecular_datum.gene_name}", molecular_datum_path(molecular_datum) %> </a>
+    		</li>
+    	</ul>	
+    <% end %>
+
+     <% @lines.each do |line| %> 
+    	<ul>
+    		<li>
+    			<a> <%= link_to "#{line.line_name} #{line.line_type}", line_path(line) %> </a>
+    		</li>
+    	</ul>	
+    <% end %>
+
+  

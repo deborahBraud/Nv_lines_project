@@ -19,9 +19,8 @@ Rails.application.routes.draw do
   get 'pages/contact'
   get 'lines/index'
   get 'wt_lines/index', action: :wt_index, controller: 'lines'
-  get 'tg_m_lines/index', action: :tg_m_index, controller: 'lines'
-
-
+  get 'reporter_lines/index', action: :reporter_index, controller: 'lines'
+  get 'functional_lines/index', action: :functional_index, controller: 'lines'
 
   #search bar route
   get '/search' => 'pages#search', :as => 'search_page', :to => "lines#index"

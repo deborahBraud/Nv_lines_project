@@ -12,4 +12,5 @@ class Line < ApplicationRecord
 
 	validates :line_name, :presence => true
 	validates :line_type, :presence => true
+
 end

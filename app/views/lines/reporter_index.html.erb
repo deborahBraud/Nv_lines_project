@@ -1,33 +1,24 @@
-<h1>All Lines</h1>
+<h1>Reporter Lines</h1>
 <hr>
+
 <table class="table">
   <thead class="thead-light">
     <tr>
       <th>Line name</th>
-      <th>Short Description</th>
+      <th>Generation</th>
+      <th>Zygosity</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @lines.each do |line| %>
+      <% if line.line_type == 'reporter' %>
       <tr>
         <% unless @lines.each.blank? %>
-          <td><%= line.line_name %>
-          <td>
-            <% if  line.line_type == 'reporter' %> Reporter line
-            <% elsif  line.line_type == 'functional_conditional_loss' %> Functional conditional line (loss of function)
-            <% elsif  line.line_type == 'functional_conditional_gain' %> Functional conditional line (gain of function)
-            <% elsif  line.line_type == 'functional_constitutive_loss' %> Functional constitutive line (loss of function)
-            <% elsif  line.line_type == 'functional_constitutive_gain' %> Functional constitutive line (gain of function)
-            <% elsif  line.line_type == 'wildtype' %> Wild-type line
-            <% else %> Other
-            <% end %>
-
-          <%= line.generation %>
-          <%= line.zygosity %>
-            
-          </td>
+          <td><%= line.line_name %></td>
+          <td><%= line.generation %></td>
+          <td><%= line.zygosity %></td>
           <td><%= link_to 'Show more', line, class:'btn btn-outline-secondary btn-sm' %></td>
 
           <% if user_signed_in?%> 
@@ -35,10 +26,14 @@
             <td><%= link_to 'Destroy', line, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-outline-danger btn-sm' %></td>
           <% else %>
           <% end %>
-         <% end %> 
-
+        <% end %>
+  
+      <% else %>    
+      <% end %> 
+    
       </tr>
     <% end %>
+
   </tbody>
 </table>
 

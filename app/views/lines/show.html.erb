@@ -24,11 +24,15 @@
       </p>
 
       <p>
-        <% unless @line.line_type.blank? %>
-          <strong>Line type:</strong>
-          <%= @line.line_type %>
-        <% end %> 
-
+        <strong>Line type:</strong>
+          <% if  @line.line_type == 'reporter' %> Reporter line
+          <% elsif  @line.line_type == 'functional_conditional_loss' %> Functional conditional line (loss of function)
+          <% elsif  @line.line_type == 'functional_conditional_gain' %> Functional conditional line (gain of function)
+          <% elsif  @line.line_type == 'functional_constitutive_loss' %> Functional constitutive line (loss of function)
+          <% elsif  @line.line_type == 'functional_constitutive_gain' %> Functional constitutive line (gain of function)
+          <% elsif  @line.line_type == 'wildtype' %> Wild-type line
+          <% else %> Other
+          <% end %>
       </p>
 
       <p>

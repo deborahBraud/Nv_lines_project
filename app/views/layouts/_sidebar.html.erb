@@ -1,0 +1,55 @@
+<div class="navbar nav nav-sidebar">
+	<ul class="nav flex-column">
+		<li class="nav-item">
+			<a> <p> SEARCH By </p> </a>
+		</li>
+		
+		<li class="nav-item">
+			<p>
+			<%= form_tag(search_page_path, :method => "get",  class: 'navbar-form navbar-left') do %>  
+          		<div class="input-group">  
+          			<%= search_field_tag :search, params[:search], placeholder: "Line name" %>   
+          		</div>  
+        	<% end %>
+        	</p>
+        </li>
+	
+		<li class="nav-item">
+			<p>	
+			<%= form_tag(search_page_path, :method => "get",  class: 'navbar-form navbar-left') do %>  
+          		<div class="input-group">  
+          			<%= search_field_tag :search, params[:search], placeholder: "Gene name" %>   
+          		</div>  
+        	<% end %>
+        </p>
+        </li>
+
+		<li class="nav-item">
+			<a> <p> Line type </p> </a>
+		</li>  
+
+		<li class="nav-item">
+			<a> <p> Tag type </p> </a>
+		</li>  
+
+		<li class="nav-item">
+			<a> <p> Tag sub-localization </p> </a>
+		</li>  
+
+		<li class="nav-item">
+			<a> <p> Cell type </p> </a>
+		</li>  
+
+		<li class="nav-item">
+			<a> <p> Phenotype </p> </a>
+		</li> 
+
+		<li class="nav-item">
+			<a> <p> Laboratory </p> </a>
+		</li> 
+
+		<li>
+		   <%= submit_tag("Search") %> 
+		</li>
+    </ul>
+</div>

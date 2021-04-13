@@ -19,16 +19,25 @@
   </head>
 
   <body>
-
     <%= render 'pages/header' %>
-    </br>
-
-    <div class="container">
-      <% if notice %>
-        <%=render 'layouts/alerts'%>
-      <% end %>
-      <%= yield %>
-    </div>
+    <div class="container-flex">
+      <div class= "row">
+        <nav class= "col-md-2 d-none d-md-block sidebar"> 
+          <div class="sidebar-sticky">
+            <%= render 'layouts/sidebar' %>
+          </div>
+        </nav>
+        
+        <div class="col-ml-9 ml-sm-auto col-lg-10 pt-2 px-4" role="main">
+          <div class="container-main">
+          <% if notice %>
+            <%=render 'layouts/alerts'%>
+          <% end %>
+          <%= yield %>
+        </div>
+        </div>  
+      </div>
+    </div>     
 
     <%= render 'pages/footer' %>
   </body>

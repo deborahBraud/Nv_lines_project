@@ -8,69 +8,53 @@
 <script src="js/jquery.autocompleter.min.js"></script>
 <!-- Nav -->
 <div id="page-content-wrapper"> 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light">
 
   <div class="container-fluid">
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"> </span>
-    </button>
+    </button> 
+
+    <%= link_to root_path do %>
+      <%= image_tag("logo_scheme.png", :size => '60x60', :alt => "Nvlines", :class => "d-inline-block align-top" )%>
+    <% end %> 
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-      <%= link_to root_path do %>
-        <%= image_tag("logo_scheme.png", :size => '70x70', :alt => "Nvlines", :class => "d-inline-block align-top" )%> 
-      <% end %>  
-
-      <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav mx-auto me-auto mb-auto mb-lg-0">
 
         <li class="nav-item">
-          <%= link_to "Home", root_path, class:"nav-link active"%> 
+          <%= link_to "HOME", root_path, class:"nav-link active"%> 
         </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Lines </a>
-
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li class="dropdown-item"> <%= link_to "Transgenic & Mutant lines", tg_m_lines_index_path, class:"nav-link active"%></li>
-              <li class="dropdown-item"> <%= link_to "Wild-type lines", wt_lines_index_path, class:"nav-link active"%></li>
-              <li><hr class="dropdown-divider"></li>
-              <li class="dropdown-item"> <%= link_to "All lines", lines_path, class:"nav-link active"%></li>
-            </ul>
-
-        </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> About </a>
+          <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> ABOUT </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li class="dropdown-item"> <%= link_to "Nematostella vectensis", pages_about_nematostella_path, class:"nav-link active" %> </li>
               <li class="dropdown-item"> <%= link_to "Teams & Facilities", staffs_path, class:"nav-link active" %> </li>
             </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> LINES </a>
+
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li class="dropdown-item"> <%= link_to "Reporter lines", reporter_lines_index_path, class:"nav-link active"%></li>
+              <li class="dropdown-item"> <%= link_to "Functional lines", functional_lines_index_path, class:"nav-link active"%></li>
+              <li class="dropdown-item"> <%= link_to "Wild-type lines", wt_lines_index_path, class:"nav-link active"%></li>
+              <li><hr class="dropdown-divider"></li>
+              <li class="dropdown-item"> <%= link_to "All lines", lines_path, class:"nav-link active"%></li>
+            </ul>
+        </li>     
+        
 
         <li class="nav-item">
-          <%= link_to "Phenotypes", phenotypes_path, class:"nav-link active"%>
-        </li>    
-        
-        <%= form_tag(search_page_path, :method => "get",   
-            class: 'navbar-form navbar-left') do %>  
-          <div class="input-group">  
-            <div class="input-group-prepend ">
-                  <select id="oCategorie" name="oCategorie" class="form-control" >
-                    <option selected="selected" value="0" >Search by : </option>
-                    <option value="line_name">Line name</option>
-                    <option value="gene_name">Gene name</option>
-                    <option value="phenotype">Phenotype</option>
-                    <option value="image_name">Image</option>
-                    <option value="all">Others</option>
-                  </select>
-            </div>
-            <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
-            
-            <div class="input-group-btn">  
-              <%= button_tag "search", :class => 'btn btn-outline-secondary',:name => nil%>  
-            </div>  
-          </div>  
-        <% end %>
+          <%= link_to "https://kahikai.org/science/nematostella-central/" do %>
+            <%= image_tag("kahikai-logo.png", :size => '60x60', :alt => "KahiKai", :class => "d-inline-block align-top" )%>
+          <% end %>
+        </li>   
+
 
 <!-- IF LOGIN -->
 

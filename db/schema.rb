@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_29_082332) do
+ActiveRecord::Schema.define(version: 2021_04_09_132718) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 2021_03_29_082332) do
   create_table "lines", force: :cascade do |t|
     t.string "line_name"
     t.string "synonym_line_name"
-    t.string "line_type"
+    t.integer "line_type"
     t.string "person_in_charge"
     t.string "breeding_type"
     t.integer "generation"
