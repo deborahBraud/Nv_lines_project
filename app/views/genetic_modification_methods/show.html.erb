@@ -1,30 +1,16 @@
 <h1> Line information </h1>
 
 <p>
-  <strong>Transgenic construction type:</strong>
-  <% if  @genetic_modification_method.transgenic_construction_type == 'Overexpression' %> Overexpression
-  <% elsif  @genetic_modification_method.transgenic_construction_type == 'Inducible' %> Inducible promoter
-  <% elsif  @genetic_modification_method.transgenic_construction_type == 'Knockdown' %> Knockdown
-  <% elsif  @genetic_modification_method.transgenic_construction_type == 'Reporter' %> Reporter gene
-  <% elsif  @genetic_modification_method.transgenic_construction_type == 'None_transgenic' %> No transgenic construction
-  <% else %> See construction type description
-  <% end %>
-</p>
-
-<p>
-  <strong>Mutagenic construction type:</strong>
-  <% if  @genetic_modification_method.mutagenic_construction_type == 'Gain_of_function_KnockIn' %> Gain of function (KI)
-  <% elsif  @genetic_modification_method.mutagenic_construction_type == 'Loss_of_function_KnockIn' %> Loss of function (KI)
-  <% elsif  @genetic_modification_method.mutagenic_construction_type == 'Loss_of_function_KnockOut' %> Loss of function (KO)
-  <% elsif  @genetic_modification_method.mutagenic_construction_type == 'None_mutagenic' %> No mutagenic construction
-  <% else %> See construction type description
-  <% end %>
-</p>
-
-<p>
   <% unless @genetic_modification_method.construction_type_description.blank? %>
       <strong>Construction type description:</strong>
       <%= @genetic_modification_method.construction_type_description %>
+  <% end %>  
+</p>
+
+<p>
+  <% unless @genetic_modification_method.tag_type.blank? %>
+      <strong>Tag type :</strong>
+      <%= @genetic_modification_method.tag_type %>
   <% end %>  
 </p>
 

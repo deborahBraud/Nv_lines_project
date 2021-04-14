@@ -18,16 +18,15 @@ class LinesController < ApplicationController
     @lines = Line.all
   end
 
- 
-
   # GET /lines/1 or /lines/1.json
   def show
   end
 
   # GET /lines/new
   def new
-    @line = Line.new
-  end
+     @line = Line.new
+     @line.build_owner 
+  end 
 
   # GET /lines/1/edit
   def edit
@@ -81,9 +80,6 @@ class LinesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def line_params
-      params.require(:line).permit(:line_name, :synonym_line_name, :line_type, :person_in_charge, :breeding_type, :generation, :zygosity, :phenotype_id, :line_id, :genetic_modification_method_id, :user_id, :group_id, :wild_type_background, publication_ids: [])
+      params.require(:line).permit(:line_name, :synonym_line_name, :line_type, :person_in_charge, :breeding_type, :generation, :zygosity, :phenotype_id, :line_id, :genetic_modification_method_id, :user_id, :group_id, :wild_type_background, publication_ids: [], phenotype_attributes: [:name])
     end
-
-
-
 end

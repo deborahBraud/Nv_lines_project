@@ -13,30 +13,21 @@
 
   <div class="field form-group">
     <%= form.label :line_id %>
-    <%= form.collection_select :line_id, Line.all, :id, :id, {:include_blank => "Line name"} %>
-  </div>
-
-
-   </br>
-  <div class="field form-group">
-    <%= form.label :mutagenic_construction_type %> <i> (Mandatory) </i> </br>
-    <%= form.radio_button :mutagenic_construction_type, 'Gain_of_function_KnockIn' %> Gain of function (KI) <br />
-    <%= form.radio_button :mutagenic_construction_type, 'Loss_of_function_KnockIn' %> Loss of function (KI) <br />
-    <%= form.radio_button :mutagenic_construction_type, 'Loss_of_function_KnockOut' %> Loss of function (KO)<br />
-    <%= form.radio_button :mutagenic_construction_type, 'Other_mutagenic' %> Other<br />
-        <%= form.radio_button :mutagenic_construction_type, 'None_mutagenic' %> None<br />
+    <%= form.collection_select :line_id, Line.all, :id, :combined_value, {:include_blank => "Line name"} %>
   </div>
 
   </br>
   <div class="field form-group">
-    <%= form.label :transgenic_construction_type %> <i> (Mandatory) </i> </br>
-    <%= form.radio_button :transgenic_construction_type, 'Overexpression' %> Over-expression<br />
-    <%= form.radio_button :transgenic_construction_type, 'Inducible' %> Inducible promoter<br />
-    <%= form.radio_button :transgenic_construction_type, 'Knockdown' %> Knockdown<br />
-    <%= form.radio_button :transgenic_construction_type, 'Reporter' %> Reporter gene<br />
-    <%= form.radio_button :transgenic_construction_type, 'Other_transgenic' %> Other<br />
-    <%= form.radio_button :transgenic_construction_type, 'None_transgenic' %> None <br />
+    <%= form.label :tag_type %> 
+    <%= form.text_field :tag_type, class:"form-control" %>
   </div>
+
+  </br>
+  <div class="field form-group">
+    <%= form.label :construction_type_description %> 
+    <%= form.text_field :construction_type_description, class:"form-control" %>
+  </div>
+
 
   </br>
   <div class="field form-group">

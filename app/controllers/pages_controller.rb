@@ -18,6 +18,7 @@ class PagesController < ApplicationController
     	@lines = Line.all.where("lower(line_type) LIKE :search", search: "%#{@parameter}%")
 
     end	
+    
 end
 
 end

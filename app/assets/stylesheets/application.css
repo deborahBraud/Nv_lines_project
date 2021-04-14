@@ -5,7 +5,7 @@
 
 h1{
 	text-align: left;
-	font-size: 1.3em;
+	font-size: 1.4em;
 	 /* couleur du titre de la page*/}
 
 h2{
@@ -60,6 +60,13 @@ th, td {
 	padding-right:30px;
 	text-align: left;
 
+}
+
+.container-home{
+	padding-top:30px;
+	padding-left:50px;
+	padding-right:50px;
+	text-align: left;
 }
 
 

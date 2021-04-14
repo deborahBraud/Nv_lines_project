@@ -1,5 +1,7 @@
 class Line < ApplicationRecord
 	belongs_to :phenotype
+	accepts_nested_attributes_for :phenotype
+
 	has_many :lines
 	has_one :wild_type_background
 	has_and_belongs_to_many :publications
@@ -12,5 +14,10 @@ class Line < ApplicationRecord
 
 	validates :line_name, :presence => true
 	validates :line_type, :presence => true
+
+
+	def combined_value
+  		"#{self.line_name} #{self.generation}"
+	end
 
 end

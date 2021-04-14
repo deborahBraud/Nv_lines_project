@@ -1,12 +1,13 @@
 <h1>Phenotypes</h1>
-
+<hr>
 
 <div class="table-responsive"> </br>
   <table class="table table-bordered table-responsive">
     <thead class="header" bgcolor="F8F9FA">
 
       <tr>
-        <th> Tissu / Cellular localization</th>
+        <th> Name </th>
+        <th> Region type</th>
         <th> Supplementary description</th>
         <th> Associated Line name </th>
         <th colspan="3"></th>
@@ -16,7 +17,8 @@
     <tbody>
       <% @phenotypes.each do |phenotype| %>
 
-        <td><%= phenotype.tissu_localization %> <%= phenotype.cell_localization %></td>
+        <td><%= phenotype.name %></td>
+        <td><%= phenotype.region_type %></td>
         <td><%= phenotype.other_phenotype_description %></td>
         <td><%= render phenotype.lines %></td>
 

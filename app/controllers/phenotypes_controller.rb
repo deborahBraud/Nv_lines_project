@@ -64,6 +64,6 @@ class PhenotypesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def phenotype_params
-      params.require(:phenotype).permit(:embryo_letality, :larva_swimming_perturbation, :larva_letality, :metamorphosis_perturbation, :post_metamorphosis_growth, :regeneration, :adult_letality, :adult_fecondity, :other_phenotype_description, :tissu_localization, :cell_localization)
+      params.require(:phenotype).permit(:name, :embryo_letality, :larva_swimming_perturbation, :larva_letality, :metamorphosis_perturbation, :post_metamorphosis_growth, :regeneration, :adult_letality, :adult_fecondity, :other_phenotype_description, :sublocalization_type, :cell_type, :region_type)
     end
 end

@@ -2,51 +2,59 @@
 <h1>NvLines - A database referencing wild-type, transgenic and mutant Nematostella vectensis lines </h1>
 <hr>
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
-
-  <div class="col">
-    <div class="card h-100">
-      <%= link_to reporter_lines_index_path do %>
-        <%= image_tag "nv_tg.png", :size => '450x450',:alt => "Image", :class => "img-fluid tm-header-img"%>
-      <% end %>
-    	<div class="card-body">
-	        <h5 class="card-title">Reporter Lines</h5>
-	        <p class="card-text">All transgenic and mutant lines referenced.</p>
-	    </div>
-	    	</br>
-	    <div class="card-footer">
-          <small class="text-muted">Image by ©Océane Tournière</small>
-      	</div>
-    </div>
-  </div>
-
-  <div class="col">
-    <div class="card h-100">
-	    <%= link_to wt_lines_index_path do %>
-        <%= image_tag "nv_tg.png", :size => '450x450',:alt => "Image", :class => "img-fluid tm-header-img"%>
-      <% end %>
-      <div class="card-body">
-        <h5 class="card-title">Wild-type Lines</h5>
-        <p class="card-text"> All wild-type lines referenced.</p>
+<div class= "container-home">
+  <div class="card mb-3" >
+    <div class="row g-0">
+      <div class="col-md-4">
+        <%= link_to reporter_lines_index_path do %>
+          <%= image_tag "nv_tg.png", :size => '350x350',:alt => "Image", :class => "img-fluid tm-header-img"%>
+        <% end %>
       </div>
-  		</br>
-      <div class="card-footer">
-        <small class="text-muted">Image by ©Océane Tournière</small>
+      <div class="col-md-8 ">
+        <div class="card-body">
+          <h5 class="card-title">Latest Entry</h5>
+          <p class="card-text">information</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="col">
-    <div class="card h-100">
-      <%= link_to images_path do %>
-        <%= image_tag "nv_tg.png", :size => '450x450',:alt => "Image", :class => "img-fluid tm-header-img"%>
-      <% end %>
-      <div class="card-body">
-        <h5 class="card-title">Latest entry</h5>
+</br>
+
+  <div class="row row-cols-2 row-cols-md-3">
+
+    <div class="card-group">
+      <div class="card h-100 w-75">
+        <%= link_to reporter_lines_index_path do %>
+          <%= image_tag "nv_tg.png", :size => '350x350',:alt => "Image", :class => "img-fluid tm-header-img"%>
+        <% end %>
+      	<div class="card-body">
+  	        <h5 class="card-title">Reporter Lines</h5>
+  	    </div>
       </div>
-      <div class="card-footer">
-        <small class="text-muted">Image by ©Océane Tournière</small>
+    </div>
+
+    <div class="card-group">
+      <div class="card h-100 w-75">
+  	    <%= link_to functional_lines_index_path do %>
+          <%= image_tag "nv_tg.png", :size => '350x350',:alt => "Image", :class => "img-fluid tm-header-img"%>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title">Functional Lines</h5>
+        </div>
+    		</br>
+      </div>
+    </div>
+
+    <div class="card-group">
+      <div class="card h-100 w-75">
+        <%= link_to wt_lines_index_path do %>
+          <%= image_tag "nv_tg.png", :size => '350x350',:alt => "Image", :class => "img-fluid tm-header-img"%>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title">Wild-type Lines</h5>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</div>  

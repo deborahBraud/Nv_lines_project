@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_09_132718) do
+ActiveRecord::Schema.define(version: 2021_04_14_125520) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -40,8 +40,6 @@ ActiveRecord::Schema.define(version: 2021_04_09_132718) do
 
   create_table "genetic_modification_methods", force: :cascade do |t|
     t.integer "line_id"
-    t.integer "transgenic_construction_type"
-    t.integer "mutagenic_construction_type"
     t.string "construction_type_description"
     t.string "molecular_tools"
     t.string "mutation_type"
@@ -50,6 +48,7 @@ ActiveRecord::Schema.define(version: 2021_04_09_132718) do
     t.string "reagent_and_protocol"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "tag_type"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -130,10 +129,12 @@ ActiveRecord::Schema.define(version: 2021_04_09_132718) do
     t.float "adult_letality"
     t.float "adult_fecondity"
     t.string "other_phenotype_description"
-    t.string "tissu_localization"
-    t.string "cell_localization"
+    t.integer "sublocalization_type"
+    t.integer "cell_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "region_type"
+    t.string "name"
   end
 
   create_table "publications", force: :cascade do |t|

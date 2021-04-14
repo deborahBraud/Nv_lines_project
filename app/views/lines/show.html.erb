@@ -1,5 +1,5 @@
 <h1> <%= @line.line_name %> </h1>
-</br>
+<hr>
 
 <div class="container">
   <div class="row">
@@ -9,6 +9,7 @@
 
 
     <div class="col-sm">
+      <h5> Line information</h5> </br>
       <p>
         <% unless @line.line_name.blank? %>
           <strong>Line name:</strong>
@@ -63,20 +64,6 @@
         <% end %>  
       </p>
 
-      <p>
-      <% unless @line.user_id.blank? %>
-        <strong>User ID:</strong>
-        <%= @line.user_id %>
-      <% end %>  
-      </p>
-
-
-      <p>
-      <% unless @line.group_id.blank? %>
-        <strong>Group ID:</strong>
-        <%= @line.group_id %>
-      <% end %>  
-      </p>
 
       <p>
         <%= link_to 'Edit line information', edit_line_path(@line), class: 'btn btn-light' %> 
@@ -84,26 +71,17 @@
     </div>       
 
     <div class="col-sm">
-      <table class="table">
-        <thead class="thead-light">
-          <tr>
-            <th>Phenotype ID</th>
-            <th>Tissu / Cellular localization </th>
-            <th colspan="1"></th>
-          </tr>
-        </thead>
+      <h5> Associated Phenotype </h5></br>
+        <p><strong>Name:</strong> <%= @line.phenotype.name%></p>
+        <p><strong>Region:</strong> <%= @line.phenotype.region_type%>
+        <p><strong>Sub-localization type:</strong> <%= @line.phenotype.sublocalization_type %>
+        <p><strong>Cell type:</strong> <%= @line.phenotype.cell_type %>
+        <p><%= link_to 'Show more', phenotype_path(@line.phenotype_id), class: 'btn btn-outline-secondary btn-sm' %> </p>
+    </div>  
+  </div>
 
-        <tbody>
-            <tr>
-              <td><%= @line.phenotype.id %></td>
-              <td><%= @line.phenotype.tissu_localization %></td>
-              <td><%= link_to 'Show more', phenotype_path(@line.phenotype_id), class: 'btn btn-outline-secondary btn-sm' %> </td>
-            </tr>  
-        </tbody>
-      </table>
-    
-
-      <strong>Associated publications : </strong>
+</br>
+ <strong>Associated publications : </strong>
         <% @line.publications.each do |publication| %>
           <ul>
             <li>
@@ -112,11 +90,6 @@
             </li>
           </ul>    
         <% end %>  
-
-    </div>  
-  </div>
-
-</br>
 <p>
   <%= link_to 'Wild-type background', wild_type_backgrounds_path, class: 'btn btn-outline-secondary btn-sm' %>
 </p>
