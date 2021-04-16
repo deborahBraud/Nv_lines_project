@@ -10,15 +10,11 @@
       </ul>
     </div>
   <% end %>
- 
-  <div class="input-group mb-3">
-    <label class="input-group-text" for="inputGroupFile01">Upload</label>
-    <input type="file" class="form-control" id="inputGroupFile01">
-  </div>
 
-  <div class="field form-group">
+
+  <div class="inputGroupFile01">
     <%= form.label :image %>
-    <%= form.text_field :image, class:'form-control' %>
+    <%= form.file_field :image, class:'form-control' %>
   </div>
 
   </br>

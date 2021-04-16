@@ -62,23 +62,30 @@
   </div>
 
   </br>
+  <h5> Associated phenotype : </h5>
+  <div class='row'>
+    <div class= 'col'>
+      Existing phenotype :
+      <%= form.collection_select :phenotype_id, Phenotype.all, :id, :name, {:include_blank => "Phenotype not listed"}%> 
+    <div id="phenotypeHelp" class="form-text">If no phenotype corresponds, please select 'Phenotype not listed'and create a new one.</div>
+    </div>
+
+    <div class= 'col'>
+      Or create a new associated phenotype:
+      <%= form.fields_for :phenotype, Phenotype.new do |phenotype_attributes|%>
+          <%= phenotype_attributes.text_field :name, placeholder: "Enter phenotype's name" %>
+      <div id="phenotypeHelp" class="form-text">You will be authorized to fill the new phenotype's information once the name phenotype created.</div>
+      <% end %>
+    </div>
+  </div>  
+    
+      
+  </br>
   <div class="field form-group">
     <h5><%= form.label :genetic_modification_method_id %> : </h5>
     <%= form.collection_select :genetic_modification_method_id, GeneticModificationMethod.all, :id, :id, {:include_blank => "None"} %>
   </div>
 
-    <h5> Associated phenotype : </h5>
-  <div>
-    <%= form.label :phenotype_id %> 
-    <%= form.collection_select :phenotype_id, Phenotype.all, :id, :name, {:include_blank => "Select"}%>
-  </div><br>
-  <div>
-    Or create a new associated phenotype:
-    <%= form.fields_for :phenotype, Phenotype.new do |phenotype_attributes|%>
-        <%= phenotype_attributes.label :name,  "Enter phenotype's name" %>
-        <%= phenotype_attributes.text_field :name, placeholder: "Enter phenotype's name" %>
-    <% end %>
-  </div>
   </br>
   <div class="field form-group">  
     <h5>Line added by : </h5>
@@ -87,7 +94,7 @@
 
   </br>
   <div class="field form-group">
-    <h5><%= form.label :group_id %> : <h5>
+    <h5><%= form.label :group_id %> : </h5>
     <%= form.collection_select :group_id, Group.all, :id, :group_name, {:include_blank => "None"} %>
   </div> 
 
@@ -95,7 +102,7 @@
   <div class="field form-group">
     <h5><%= form.label :publication_id %> : </h5>
     <%= form.collection_check_boxes :publication_ids, Publication.all, :id, :publication_name, {:include_blank => "None"}%>
-  </div>
+  </div> 
 
   </br>
   <div class="actions">

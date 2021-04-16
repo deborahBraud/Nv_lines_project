@@ -9,7 +9,7 @@
 			<p>
 			<%= form_tag(search_page_path, :method => "get",  class: 'navbar-form navbar-left') do %>  
           		<div class="input-group">  
-          			<%= search_field_tag :search, params[:search], placeholder: "Line name" %>   
+          			<%= search_field_tag :search, params[:search], placeholder: "Line name", class: "search search_line", value: "" %>
           		</div>  
         	<% end %>
         	</p>
@@ -19,8 +19,8 @@
 			<p>	
 			<%= form_tag(search_page_path, :method => "get",  class: 'navbar-form navbar-left') do %>  
           		<div class="input-group">  
-          			<%= search_field_tag :search, params[:search], placeholder: "Gene name" %>   
-          		</div>  
+          			<%= search_field_tag :search, params[:search], placeholder: "Gene name", class: "search search_gene", value: "" %>
+          		</div>
         	<% end %>
         </p>
         </li>
@@ -55,3 +55,4 @@
 		</li>
     </ul>
 </div>
+

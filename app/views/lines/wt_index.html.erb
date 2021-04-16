@@ -12,12 +12,12 @@
 
   <tbody>
     <% @lines.each do |line| %>
+      <% if line.line_type == 'wildtype' %>
       <tr>
         <% unless @lines.each.blank? %>
           <td><%= line.line_name %>
-          <td><%= line.line_type %>
-          <%= line.generation %>
-          <%= line.zygosity %></td>
+          <td><%= line.generation %>
+              <%= line.zygosity %></td>
           <td><%= link_to 'Show more', line, class:'btn btn-outline-secondary btn-sm' %></td>
 
           <% if user_signed_in?%> 
@@ -27,6 +27,7 @@
           <% end %>
          <% end %>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

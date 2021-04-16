@@ -7,10 +7,14 @@ class Line < ApplicationRecord
 	has_and_belongs_to_many :publications
 	belongs_to :user
 	belongs_to :group
-	has_many :images
-	has_and_belongs_to_many :publications
-	has_one :genetic_modification_method
 
+	has_many :images
+	has_many_attached :images
+
+	has_and_belongs_to_many :publications
+
+	has_one :genetic_modification_method
+	accepts_nested_attributes_for :genetic_modification_method
 
 	validates :line_name, :presence => true
 	validates :line_type, :presence => true

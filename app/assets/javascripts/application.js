@@ -1,4 +1,6 @@
-//= require jquery
-//= require jquery_ujs
-//= require jquery-ui.all
-//= require jquery-ui/autocomplete
+//= require select2
+
+$(document).ready(function() {
+	console.log("READY");
+    $('.js-example-basic-single').select2();
+});

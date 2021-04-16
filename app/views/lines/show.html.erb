@@ -74,19 +74,21 @@
       <h5> Associated Phenotype </h5></br>
         <p>
           <% if @line.phenotype%>
-            <strong>Name:</strong> <%= @line.phenotype.name%>
-            <% unless @line.phenotype.region_type.blank? %>
+
+            <strong>Name:</strong> <%= @line.phenotype.name%></br>
+
+            <p><% unless @line.phenotype.region_type.blank? %>
               <strong>Region:</strong> <%= @line.phenotype.region_type%>
-            <% end %>  
-            <% unless @line.phenotype.sublocalization_type.blank? %>
+            <% end %> </p>
+
+            <p><% unless @line.phenotype.sublocalization_type.blank? %>
               <strong>Sub-localization type:</strong> <%= @line.phenotype.sublocalization_type %>
-            <% end %>
-            <% unless @line.phenotype.cell_type.blank? %> 
+            <% end %> <p>
+
+            <p><% unless @line.phenotype.cell_type.blank? %> 
               <strong>Cell/Tissu type:</strong> <%= @line.phenotype.cell_type %>
-            <% end %>  
-            <% unless @line.phenotype.region_type.blank? %> 
-              <strong>Region type:</strong> <%= @line.phenotype.region_type %>
-            <% end %> 
+            <% end %>  </p>
+
 
             <p><%= link_to 'Show more', phenotype_path(@line.phenotype_id), class: 'btn btn-outline-secondary btn-sm' %> </p>
           <%else%> No phenotype associated
@@ -96,17 +98,21 @@
   </div>
 
 </br>
- <strong>Associated publications : </strong>
-        <% @line.publications.each do |publication| %>
-          <ul>
-            <li>
-              <a> <%= publication.publication_name %>  </a> </br>
-              <a> <%= link_to "Go to publication", publication_path(@line.publications.ids)%> </a>
-            </li>
-          </ul>    
-        <% end %>  
+  <strong>Associated publications : </strong>
+    <% @line.publications.each do |publication| %>
+      <ul>
+        <li>
+          <a> <%= publication.publication_name %>  </a> </br>
+          <a> <%= link_to "Go to publication", publication_path(@line.publications.ids)%> </a>
+        </li>
+      </ul>    
+    <% end %>  
+
+
 <p>
-  <%= link_to 'Wild-type background', wild_type_backgrounds_path, class: 'btn btn-outline-secondary btn-sm' %>
+  <% unless @line.wild_type_background_id.blank?%>
+    <%= link_to 'Wild-type background', wild_type_backgrounds_path, class: 'btn btn-outline-secondary btn-sm' %>
+  <% end %>
 </p>
 
 <% unless @line.genetic_modification_method_id.blank?%>
