@@ -72,11 +72,26 @@
 
     <div class="col-sm">
       <h5> Associated Phenotype </h5></br>
-        <p><strong>Name:</strong> <%= @line.phenotype.name%></p>
-        <p><strong>Region:</strong> <%= @line.phenotype.region_type%>
-        <p><strong>Sub-localization type:</strong> <%= @line.phenotype.sublocalization_type %>
-        <p><strong>Cell type:</strong> <%= @line.phenotype.cell_type %>
-        <p><%= link_to 'Show more', phenotype_path(@line.phenotype_id), class: 'btn btn-outline-secondary btn-sm' %> </p>
+        <p>
+          <% if @line.phenotype%>
+            <strong>Name:</strong> <%= @line.phenotype.name%>
+            <% unless @line.phenotype.region_type.blank? %>
+              <strong>Region:</strong> <%= @line.phenotype.region_type%>
+            <% end %>  
+            <% unless @line.phenotype.sublocalization_type.blank? %>
+              <strong>Sub-localization type:</strong> <%= @line.phenotype.sublocalization_type %>
+            <% end %>
+            <% unless @line.phenotype.cell_type.blank? %> 
+              <strong>Cell/Tissu type:</strong> <%= @line.phenotype.cell_type %>
+            <% end %>  
+            <% unless @line.phenotype.region_type.blank? %> 
+              <strong>Region type:</strong> <%= @line.phenotype.region_type %>
+            <% end %> 
+
+            <p><%= link_to 'Show more', phenotype_path(@line.phenotype_id), class: 'btn btn-outline-secondary btn-sm' %> </p>
+          <%else%> No phenotype associated
+          <%end%>
+        </p> 
     </div>  
   </div>
 

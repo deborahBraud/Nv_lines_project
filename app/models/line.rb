@@ -1,6 +1,6 @@
 class Line < ApplicationRecord
 	belongs_to :phenotype
-	accepts_nested_attributes_for :phenotype
+	accepts_nested_attributes_for :phenotype, allow_destroy: true, reject_if: :all_blank 
 
 	has_many :lines
 	has_one :wild_type_background
