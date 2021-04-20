@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   def contact
   end
 
+
  def search
   	if params[:search].blank?  
     	redirect_to(root_path, notice: "Empty field!") and return 

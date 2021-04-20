@@ -1,0 +1,12 @@
+<p>
+  <% unless @user.email.blank? %>
+    <strong>Name:</strong>
+    <%= @user.email %>
+  <% end %>
+</p>
+
+</br>
+<p>
+<%= link_to 'Edit information', edit_user_registration_path(@user), class:'btn btn-light' %> 
+<%= link_to 'Back', users_path, class:'btn btn-secondary' %>
+</p>

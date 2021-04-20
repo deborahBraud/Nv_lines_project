@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   devise_for :users
   #resources 
   resources :staffs
@@ -28,7 +27,7 @@ Rails.application.routes.draw do
   # Display Images
   get 'show/lines/images/:id', to: "images#line_images"
 
-
+  
   #home page
   root'home#home_page'
   end

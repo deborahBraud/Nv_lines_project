@@ -1,6 +1,9 @@
+//= require jquery
 //= require select2
+//= require jquery_ujs
 
-$(document).ready(function() {
-	console.log("READY");
-    $('.js-example-basic-single').select2();
-});
+var options = {
+	data: ["blue", "green", "pink", "red", "yellow"]
+};
+
+$("#basics").easyAutocomplete(options);

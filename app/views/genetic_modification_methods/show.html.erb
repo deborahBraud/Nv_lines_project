@@ -62,7 +62,6 @@
           <th colspan="6"> Gene information </th>
           <th colspan="2">Chromosome information </th>
           <th colspan="2"> Other information </th>
-          <th colspan="1"></th>
         </tr>
 
         <tr>
@@ -78,7 +77,7 @@
 
           <th>Mutated region</th>
           <th>NvERTx ID</th>
-          <th></th>
+
 
       </thead>
 
@@ -90,14 +89,13 @@
             <td><%= molecular_datum.genbank_gene_accession_number %></td>
             <td><%= molecular_datum.ensembl_gene_accession_number %></td>
             <td><%= molecular_datum.genome_version_accession_number %></td>
-
+      
             <td><%= molecular_datum.chromosome_number %></td>
             <td><%= molecular_datum.locus_insertion %></td>
 
             <td><%= molecular_datum.NvERTx_id %></td>
             <td><%= molecular_datum.mutated_region %></td>
 
-            <td><%= link_to 'Show more', molecular_data_path, class:'btn btn-outline-secondary btn-sm' %></td>
           </tr>
       </tbody>
     </table>
