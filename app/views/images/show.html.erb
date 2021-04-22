@@ -1,13 +1,16 @@
 <div class="row row-cols-1 row-cols-md-2 g-2">
   <div class="col">
     <div class="card h-100">
-       <%= image_tag(@image.image, :alt => "image") %>
+
+       <%= image_tag(@image, :alt => "image") %>
       <div class="card-body">
         <h5 class="card-title"><%= @image.image_name %></h5>
         <p class="card-text"><%= @image.image_date %></p>
       </div>
     </div>
   </div>
+
+
 
   <div class="col">
     <p>

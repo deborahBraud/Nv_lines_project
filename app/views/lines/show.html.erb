@@ -122,8 +122,14 @@
 </br>
 <hr>
 
-
-
+<%= @line.images %>
+<% if @line.images.attached? %>
+<p>
+  <% @line.images.each do |image| %>
+    <%= image_tag @line.image.variant(resize: "100x100") %>
+  <%end%>  
+</p>
+<% end %>  
 </br>
   <div class="row">   
     <div class="col-sm">   

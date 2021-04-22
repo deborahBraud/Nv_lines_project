@@ -3,7 +3,7 @@ class LinesController < ApplicationController
   
   # GET /lines or /lines.json
   def index
-    @lines = Line.all
+    @lines = Line.all.with_attached_images
   end
 
   def wt_index
@@ -20,6 +20,7 @@ class LinesController < ApplicationController
 
   # GET /lines/1 or /lines/1.json
   def show
+    @line = Line.find(params[:id])
   end
 
   # GET /lines/new
@@ -34,6 +35,9 @@ class LinesController < ApplicationController
   # POST /lines or /lines.json
   def create
     @line = Line.new(line_params)
+    #params.require(:line).permit(:title, :content)
+    @line.images.attach(params[:images]) 
+    #redirect_to @line
 
     respond_to do |format|
       if @line.save
@@ -79,6 +83,6 @@ class LinesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def line_params
-      params.require(:line).permit(:line_name, :synonym_line_name, :line_type, :person_in_charge, :breeding_type, :generation, :zygosity, :phenotype_id, :line_id, :genetic_modification_method_id, :user_id, :group_id, :wild_type_background, publication_ids: [], phenotype_attributes: [:name, :id], genetic_modification_method_attributes: [:id, :tag_type, :molecular_tools, :mutation_type], images: [] )
+      params.require(:line).permit( :line_name, :synonym_line_name, :line_type, :person_in_charge, :breeding_type, :generation, :zygosity, :phenotype_id, :line_id, :genetic_modification_method_id, :user_id, :group_id, :wild_type_background, publication_ids: [], phenotype_attributes: [:name, :id], genetic_modification_method_attributes: [:id, :tag_type, :molecular_tools, :mutation_type], images: [] )
     end
 end
