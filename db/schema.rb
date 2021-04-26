@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_16_123816) do
+ActiveRecord::Schema.define(version: 2021_04_26_074633) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -124,6 +124,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_123816) do
     t.integer "line_id"
     t.integer "user_id"
     t.integer "group_id"
+    t.string "lab_of_origin"
   end
 
   create_table "lines_publications", id: false, force: :cascade do |t|

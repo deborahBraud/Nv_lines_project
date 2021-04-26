@@ -9,7 +9,7 @@
 
 
     <div class="col-sm">
-      <h5> Line information</h5> </br>
+      <h5> Line information <%= link_to 'Edit', edit_line_path(@line), class: 'btn btn-light' %> </h5></br>
       <p>
         <% unless @line.line_name.blank? %>
           <strong>Line name:</strong>
@@ -64,10 +64,12 @@
         <% end %>  
       </p>
 
-
       <p>
-        <%= link_to 'Edit line information', edit_line_path(@line), class: 'btn btn-light' %> 
-      </p>  
+        <% unless @line.lab_of_origin.blank? %>
+          <strong>Lab of origin:</strong>
+          <%= @line.lab_of_origin %>
+        <% end %>  
+
     </div>       
 
     <div class="col-sm">
@@ -99,13 +101,16 @@
 
 </br>
   <strong>Associated publications : </strong>
-    <% @line.publications.each do |publication| %>
-      <ul>
-        <li>
-          <a> <%= publication.publication_name %>  </a> </br>
-          <a> <%= link_to "Go to publication", publication_path(@line.publications.ids)%> </a>
-        </li>
-      </ul>    
+    <% if @line.publications.ids.blank? %> NA
+    <% else%>
+      <% @line.publications.each do |publication| %>
+        <ul>
+          <li>
+            <a> <%= publication.publication_name %>  </a> </br>
+            <a> <%= link_to "Go to publication", publication_path(@line.publications.ids)%> </a>
+          </li>
+        </ul>    
+      <% end %>  
     <% end %>  
 
 
@@ -130,9 +135,4 @@
   <%end%>  
 </p>
 <% end %>  
-</br>
-  <div class="row">   
-    <div class="col-sm">   
-      <%= link_to 'Back', lines_path, class: 'btn btn-secondary' %>
-    </div>
-  </div>            
+           
