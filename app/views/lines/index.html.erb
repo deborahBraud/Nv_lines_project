@@ -26,15 +26,17 @@
             <% else %> Other
             <% end %>
 
-          <%= line.generation %>
-          <%= line.zygosity %>
+            <% if  line.generation == "F2"%> F2 (or more)
+              <% else %> <%= line.generation %>
+              <% end %> 
+              <%= line.zygosity %>
           </td>
           <td><%= line.lab_of_origin %></td>
           <td><%= link_to 'Show more', line, class:'btn btn-outline-secondary btn-sm' %></td>
 
           <% if user_signed_in?%> 
             <td><%= link_to 'Edit', edit_line_path(line), class:'btn btn-outline-secondary btn-sm' %></td>
-            <td><%= link_to 'Destroy', line, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-outline-danger btn-sm' %></td>
+            <td><%= link_to 'Delete', line, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-outline-danger btn-sm' %></td>
           <% else %>
           <% end %>
          <% end %> 

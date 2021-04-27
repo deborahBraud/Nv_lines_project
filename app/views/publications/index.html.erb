@@ -24,7 +24,7 @@
         <td> <p> <a href= <%= publication.doi_link %> > <%= publication.doi_link %> </a> </p> </td>
         <td><%= link_to 'Edit', edit_publication_path(publication), class: 'btn btn-outline-secondary btn-sm' %></td>
         <td><%= link_to 'Show', publication_path(publication), class: 'btn btn-outline-secondary btn-sm' %></td>
-        <td><%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' %></td>
+        <td><%= link_to 'Delete', publication, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>

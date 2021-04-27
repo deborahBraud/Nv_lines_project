@@ -49,9 +49,9 @@
   </br>
   <div class="field form-group">
     <h5><%= form.label :generation %> : </h5>
-    <%= form.radio_button :generation, 'F0' %> F0<br />
-    <%= form.radio_button :generation, 'F1' %> F1<br />
-    <%= form.radio_button :generation, 'F2' %> F2<br />
+    <%= form.radio_button :generation, 'F0' %> F0 <br />
+    <%= form.radio_button :generation, 'F1' %> F1 <br />
+    <%= form.radio_button :generation, 'F2' %> F2 (or more) <br />
   </div>
   
   </br>
@@ -80,7 +80,7 @@
       Or create a new associated phenotype:
       <%= form.fields_for :phenotype, Phenotype.new do |phenotype_attributes|%>
           <%= phenotype_attributes.text_field :name, placeholder: "Enter phenotype's name" %>
-      <div id="phenotypeHelp" class="form-text">You will be authorized to fill the new phenotype's information once the name phenotype created.</div>
+      <div id="phenotypeHelp" class="form-text">You will be enable to fill the new phenotype's information once the name phenotype created.</div>
       <% end %>
     </div>
   </div>  

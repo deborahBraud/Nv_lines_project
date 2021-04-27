@@ -53,7 +53,9 @@
       <p>
         <% unless @line.generation.blank? %>
           <strong>Generation:</strong>
-          <%= @line.generation %>
+          <% if  @line.generation == "F2"%> F2 (or more)
+          <% else %> <%= @line.generation %></td>
+          <% end %>  
         <% end %>  
       </p>
 

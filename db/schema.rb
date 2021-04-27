@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_26_074633) do
+ActiveRecord::Schema.define(version: 2021_04_27_131339) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -157,7 +157,7 @@ ActiveRecord::Schema.define(version: 2021_04_26_074633) do
     t.string "regeneration"
     t.float "adult_letality"
     t.float "adult_fecondity"
-    t.string "other_phenotype_description"
+    t.text "other_phenotype_description"
     t.integer "sublocalization_type"
     t.integer "cell_type"
     t.datetime "created_at", precision: 6, null: false
