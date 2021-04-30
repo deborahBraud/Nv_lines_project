@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'reporter_lines/index', action: :reporter_index, controller: 'lines'
   get 'functional_lines/index', action: :functional_index, controller: 'lines'
 
+
   #search bar route
   get '/search' => 'pages#search', :as => 'search_page', :to => "lines#index"
 

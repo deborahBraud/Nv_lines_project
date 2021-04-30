@@ -4,6 +4,13 @@ class MolecularDataController < ApplicationController
   # GET /molecular_data or /molecular_data.json
   def index
     @molecular_data = MolecularDatum.all
+
+    if params[:search_key_gene]
+      @molecular_data = MolecularDatum.where("gene_name LIKE ?", 
+          "%#{params[:search_key_gene]}%")
+    else
+      @molecular_data = MolecularDatum.all
+    end
   end
 
   # GET /molecular_data/1 or /molecular_data/1.json

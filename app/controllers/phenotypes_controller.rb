@@ -4,7 +4,15 @@ class PhenotypesController < ApplicationController
   # GET /phenotypes or /phenotypes.json
   def index
     @phenotypes = Phenotype.all
+
+    if params[:search_key_pheno_name]
+      @phenotypes = Phenotype.where("name LIKE ?", 
+          "%#{params[:search_key_pheno_name]}%")
+    else
+      @phenotypes = Phenotype.all
+    end
   end
+
 
   # GET /phenotypes/1 or /phenotypes/1.json
   def show

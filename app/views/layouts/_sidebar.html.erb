@@ -6,40 +6,49 @@
 		</li>
 		
 		<li class="nav-item">
-			<p>
-			<%= form_tag(search_page_path, :method => "get",  class: 'navbar-form navbar-left') do %>  
-          		<div class="input-group">  
-          			<%= search_field_tag :search, params[:search], placeholder: "Line name", class: "search search_line", value: "" %>
-          		</div>  
-        	<% end %>
-        	</p>
+			<form action="<%= lines_path %>">
+		      <input type="text" placeholder="Line name" name="search_key">
+		    </form>
         </li>
 	
 		<li class="nav-item">
-			<p>	
-			<%= form_tag(search_page_path, :method => "get",  class: 'navbar-form navbar-left') do %>  
-          		<div class="input-group">  
-          			<%= search_field_tag :search, params[:search], placeholder: "Gene name", class: "search search_gene", value: "" %>
-          		</div>
-        	<% end %>
-        </p>
+			<form action="<%= molecular_data_path %>">
+		      <input type="text" placeholder="Gene name" name="search_key_gene">
+		    </form>
         </li>
 
-		<li class="nav-item">
-			<a> <p> Line type </p> </a>
-		</li>  
+        <li class="nav-item">
+			<form action="<%= lines_path %>">
+		      <input type="text" placeholder="Line type" name="search_key_gene">
+		    </form>
+        </li>
 
-		<li class="nav-item">
-			<a> <p> Sub-localization type</p> </a>
-		</li>  
+        <li class="nav-item">
+			<form action="<%= genetic_modification_methods_path %>">
+		      <input type="text" placeholder="Tag type" name="search_key_tag">
+		    </form>
+        </li>
+
+		<div class="dropdown">
+		  <button onclick="myFunction()" class="dropbtn">Sublocalization type</button>
+		  <div id="myDropdown" class="dropdown-content">
+		    <%= link_to "Nuclei membrane", reporter_lines_index_path %> 
+		    <%= link_to "Cellular membrane", functional_lines_index_path %> 
+		    <%= link_to "Nuclei", wt_lines_index_path %> 
+		    <%= link_to "Cytoplasm", lines_path %>
+		  </div>
+		</div> 
+
 
 		<li class="nav-item">
 			<a> <p> Cell type </p> </a>
 		</li>  
 
-		<li class="nav-item">
-			<a> <p> Phenotype name </p> </a>
-		</li> 
+        <li class="nav-item">
+			<form action="<%= phenotypes_path %>">
+		      <input type="text" placeholder="Phenotype name " name="search_key_pheno_name">
+		    </form>
+        </li> 
 
 		<li class="nav-item">
 			<a> <p> Laboratory </p> </a>
@@ -48,6 +57,9 @@
 		<li>
 		   <%= submit_tag("Search") %> 
 		</li>
+
+
+
     </ul>
 </div>
 

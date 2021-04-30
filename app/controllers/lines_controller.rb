@@ -4,6 +4,13 @@ class LinesController < ApplicationController
   # GET /lines or /lines.json
   def index
     @lines = Line.all.with_attached_images
+
+    if params[:search_key]
+      @lines = Line.where("line_name LIKE ? OR synonym_line_name LIKE ?", 
+          "%#{params[:search_key]}%", "%#{params[:search_key]}%")
+    else
+      @lines = Line.all
+    end
   end
 
   def wt_index
@@ -83,6 +90,7 @@ class LinesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def line_params
-      params.require(:line).permit( :line_name, :synonym_line_name, :line_type, :person_in_charge, :breeding_type, :generation, :zygosity, :phenotype_id, :line_id, :lab_of_origin, :genetic_modification_method_id, :user_id, :group_id, :wild_type_background, publication_ids: [], phenotype_attributes: [:name, :id], genetic_modification_method_attributes: [:id, :tag_type, :molecular_tools, :mutation_type], images: [])
+      params.require(:line).permit( :line_name, :synonym_line_name, :line_type, :person_in_charge, :breeding_type, :generation, :zygosity, :phenotype_id, :line_id, :lab_of_origin, :genetic_modification_method_id, :user_id, :group_id, :wild_type_background, publication_ids: [], phenotype_attributes: [:name, :id], publication_attributes: [:id, :publication_name, :authors,:pubmed_link], genetic_modification_method_attributes: [:id, :tag_type, :molecular_tools, :mutation_type], images: [])
     end
+
 end

@@ -1,44 +1,59 @@
 <h1>Molecular Data</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Gene name</th>
-      <th>Genbank gene accession number</th>
-      <th>Ensembl gene accession number</th>
-      <th>Genome version accession number</th>
-      <th>Gene sequence</th>
-      <th>Chromosome number</th>
-      <th>Gene promoter</th>
-      <th>Nvertx</th>
-      <th>Locus insertion</th>
-      <th>Mutated region</th>
-      <th>Genetic modification method</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="table-responsive"> </br>
+  <table class="table table-bordered table-responsive">
+    <thead>
+       <tr class="header" bgcolor="F8F9FA">
+        <th colspan ="6"> Gene information</th>
+        <th colspan ="5"> Other information </th>
+        <th colspan ="3"> </th>
 
-  <tbody>
-    <% @molecular_data.each do |molecular_datum| %>
-      <tr>
-        <td><%= molecular_datum.gene_name %></td>
-        <td><%= molecular_datum.genbank_gene_accession_number %></td>
-        <td><%= molecular_datum.ensembl_gene_accession_number %></td>
-        <td><%= molecular_datum.genome_version_accession_number %></td>
-        <td><%= molecular_datum.gene_sequence %></td>
-        <td><%= molecular_datum.chromosome_number %></td>
-        <td><%= molecular_datum.gene_promoter %></td>
-        <td><%= molecular_datum.NvERTx_id %></td>
-        <td><%= molecular_datum.locus_insertion %></td>
-        <td><%= molecular_datum.mutated_region %></td>
-        <td><%= molecular_datum.genetic_modification_method_id %></td>
-        <td><%= link_to 'Show', molecular_datum %></td>
-        <td><%= link_to 'Edit', edit_molecular_datum_path(molecular_datum) %></td>
-        <td><%= link_to 'Delete', molecular_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
-    <% end %>
-  </tbody>
-</table>
+
+      <tr>
+        <th>Name</th>
+        <th>Genbank ID</th>
+        <th>Ensembl ID</th>
+        <th>Promoter</th>
+        <th>Sequence</th>
+
+        <th>Genome version accession number</th>
+        <th>Chromosome number</th>
+
+        <th>Nvertx</th>
+        <th>Locus insertion</th>
+        <th>Mutated region</th>
+        
+        <th>Associated line</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @molecular_data.each do |molecular_datum| %>
+        <tr>
+          <td><%= molecular_datum.gene_name %></td>
+          <td><%= molecular_datum.genbank_gene_accession_number %></td>
+          <td><%= molecular_datum.ensembl_gene_accession_number %></td>
+          <td><%= molecular_datum.gene_promoter %></td>
+          <td><%= molecular_datum.gene_sequence %></td>
+
+          <td><%= molecular_datum.genome_version_accession_number %></td>
+          <td><%= molecular_datum.chromosome_number %></td>
+
+          <td><%= molecular_datum.NvERTx_id %></td>
+          <td><%= molecular_datum.locus_insertion %></td>
+          <td><%= molecular_datum.mutated_region %></td>
+
+          <td><%= molecular_datum.genetic_modification_method.line.line_name%></td>
+          <td><%= link_to 'Show', molecular_datum %></td>
+          <td><%= link_to 'Edit', edit_molecular_datum_path(molecular_datum) %></td>
+          <td><%= link_to 'Delete', molecular_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 <br>
 
