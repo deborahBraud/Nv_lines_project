@@ -1,7 +1,7 @@
 <div class="navbar nav nav-sidebar">
 	<ul class="nav flex-column">
 
-		<li class="nav-item">
+		<li class=" nav nav-item">
 			<a> <p> SEARCH By </p> </a>
 		</li>
 		
@@ -29,20 +29,29 @@
 		    </form>
         </li>
 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Line Type </a>
+
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li class="dropdown-item"> <%= link_to "Reporter lines", reporter_lines_index_path, class:"nav-link active"%></li>
+              <li class="dropdown-item"> <%= link_to "Functional lines", functional_lines_index_path, class:"nav-link active"%></li>
+              <li class="dropdown-item"> <%= link_to "Wild-type lines", wt_lines_index_path, class:"nav-link active"%></li>
+              <li><hr class="dropdown-divider"></li>
+            </ul>
+        </li> 
+
+
+        <li class="nav-item">
 		<div class="dropdown">
-		  <button onclick="myFunction()" class="dropbtn">Sublocalization type</button>
+		  <button onclick="myFunction()" class="dropbtn">Cell type ↓</button>
 		  <div id="myDropdown" class="dropdown-content">
-		    <%= link_to "Nuclei membrane", reporter_lines_index_path %> 
+		    <%= link_to "Nuclei membrane", lines_path%> 
 		    <%= link_to "Cellular membrane", functional_lines_index_path %> 
 		    <%= link_to "Nuclei", wt_lines_index_path %> 
 		    <%= link_to "Cytoplasm", lines_path %>
 		  </div>
 		</div> 
-
-
-		<li class="nav-item">
-			<a> <p> Cell type </p> </a>
-		</li>  
+		</li>
 
         <li class="nav-item">
 			<form action="<%= phenotypes_path %>">
@@ -50,11 +59,13 @@
 		    </form>
         </li> 
 
-		<li class="nav-item">
-			<a> <p> Laboratory </p> </a>
-		</li> 
+        <li class="nav-item">
+			<form action="<%= staffs_path %>">
+		      <input type="text" placeholder="Laboratory " name="search_key_lab">
+		    </form>
+        </li>
 
-		<li>
+		<li class="nav-search">
 		   <%= submit_tag("Search") %> 
 		</li>
 

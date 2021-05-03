@@ -111,6 +111,7 @@
     <%= form.collection_check_boxes :publication_ids, Publication.all, :id, :publication_name, {:include_blank => "None"}%>
   </div> 
 
+
   </br>
   <div class="form-group">
     <% if @line.images.attached? %>

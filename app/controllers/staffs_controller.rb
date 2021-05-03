@@ -4,6 +4,13 @@ class StaffsController < ApplicationController
   # GET /staffs or /staffs.json
   def index
     @staffs = Staff.all
+
+    if params[:search_key_lab]
+      @staffs = Staff.where("staff_name LIKE ? OR staff_header LIKE ? OR institut_name LIKE ?", 
+          "%#{params[:search_key_lab]}%", "%#{params[:search_key_lab]}%", "%#{params[:search_key_lab]}%")
+    else
+      @staffs = Staff.all
+    end
   end
 
   # GET /staffs/1 or /staffs/1.json
