@@ -17,18 +17,6 @@
 		    </form>
         </li>
 
-        <li class="nav-item">
-			<form action="<%= lines_path %>">
-		      <input type="text" placeholder="Line type" name="search_key_gene">
-		    </form>
-        </li>
-
-        <li class="nav-item">
-			<form action="<%= genetic_modification_methods_path %>">
-		      <input type="text" placeholder="Tag type" name="search_key_tag">
-		    </form>
-        </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Line Type </a>
 
@@ -40,10 +28,16 @@
             </ul>
         </li> 
 
+        <li class="nav-item">
+			<form action="<%= genetic_modification_methods_path %>">
+		      <input type="text" placeholder="Tag type" name="search_key_tag">
+		    </form>
+        </li>
+
 
         <li class="nav-item">
 		<div class="dropdown">
-		  <button onclick="myFunction()" class="dropbtn">Cell type ↓</button>
+		  <button onclick="myFunction()" class="dropbtn">Tag sub-localization ↓</button>
 		  <div id="myDropdown" class="dropdown-content">
 		    <%= link_to "Nuclei membrane", lines_path%> 
 		    <%= link_to "Cellular membrane", functional_lines_index_path %> 
@@ -53,11 +47,19 @@
 		</div> 
 		</li>
 
+		<li class="nav-item">
+			<form action="<%= phenotypes_path %>">
+		      <input type="text" placeholder="Cell type " name="search_key_pheno_name">
+		    </form>
+        </li>
+
         <li class="nav-item">
 			<form action="<%= phenotypes_path %>">
-		      <input type="text" placeholder="Phenotype name " name="search_key_pheno_name">
+		      <input type="text" placeholder="Phenotype " name="search_key_pheno_name">
 		    </form>
         </li> 
+
+
 
         <li class="nav-item">
 			<form action="<%= staffs_path %>">
@@ -68,8 +70,6 @@
 		<li class="nav-search">
 		   <%= submit_tag("Search") %> 
 		</li>
-
-
 
     </ul>
 </div>
