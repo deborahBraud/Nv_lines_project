@@ -50,6 +50,8 @@
 		<li class="nav-item">
 			<form action="<%= phenotypes_path %>">
 		      <input type="text" placeholder="Cell type " name="search_key_pheno_name">
+		      <%= select_tag 'phenotypes_id', options_for_select(@phenotypes.collect{ |u| [u.@sublocalization_type[u.sublocalisation_type], u.id] })
+		      %>
 		    </form>
         </li>
 
