@@ -34,6 +34,13 @@
 		    </form>
         </li>
 
+		<li class="nav-item">
+			<form action="<%= phenotypes_path %>">
+		     <input type="text" placeholder="Cell type " name="search_key_pheno_name">
+		     <%= select_tag(:phenotype_id, options_from_collection_for_select(Phenotype.all, :id, :cell_type), include_blank: "Select Category") %>
+		   	</form>
+		</li>
+
 
         <li class="nav-item">
 		<div class="dropdown">
@@ -46,6 +53,7 @@
 		  </div>
 		</div> 
 		</li>
+
 
 		<li class="nav-item">
 			<form action="<%= phenotypes_path %>">
@@ -67,6 +75,7 @@
 		    </form>
         </li>
 
+			
 		<li class="nav-search">
 		   <%= submit_tag("Search") %> 
 		</li>
