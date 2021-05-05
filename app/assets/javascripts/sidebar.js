@@ -6,10 +6,11 @@ $('#phenotypes_id').change(function(){
   $.ajax({
     url: "/home/",
     data: {
+
     phenotype_id : phenotype
     }
+
   }).done(function(e) {
     console.log(e);
   });
 
-});

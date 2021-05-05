@@ -77,7 +77,7 @@ class LinesController < ApplicationController
     @line.destroy
     respond_to do |format|
       format.html { redirect_to lines_url, notice: "Line was successfully destroyed." }
-      format.json { head :no_content }
+      format.json { head :no_content } 
     end
   end
 
@@ -92,5 +92,6 @@ class LinesController < ApplicationController
     def line_params
       params.require(:line).permit( :line_name, :synonym_line_name, :line_type, :person_in_charge, :breeding_type, :generation, :zygosity, :phenotype_id, :line_id, :lab_of_origin, :genetic_modification_method_id, :user_id, :group_id, :wild_type_background, publication_ids: [], phenotype_attributes: [:name, :id], publication_attributes: [:id, :publication_name, :authors,:pubmed_link], genetic_modification_method_attributes: [:id, :tag_type, :molecular_tools, :mutation_type], images: [])
     end
+
 
 end
