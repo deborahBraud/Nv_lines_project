@@ -90,7 +90,28 @@ class LinesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def line_params
-      params.require(:line).permit( :line_name, :synonym_line_name, :line_type, :person_in_charge, :breeding_type, :generation, :zygosity, :phenotype_id, :line_id, :lab_of_origin, :genetic_modification_method_id, :user_id, :group_id, :wild_type_background, publication_ids: [], phenotype_attributes: [:name, :id], publication_attributes: [:id, :publication_name, :authors,:pubmed_link], genetic_modification_method_attributes: [:id, :tag_type, :molecular_tools, :mutation_type], images: [])
+      params.require(:line).permit( :line_name,
+       :synonym_line_name,
+       :line_type,
+       :person_in_charge,
+       :breeding_type, 
+       :generation,
+       :zygosity, 
+       :lab_of_origin,
+       :phenotype_id, 
+       :line_id, 
+       :genetic_modification_method_id, 
+       :user_id, 
+       :group_id, 
+
+       :wild_type_background_id, 
+       wild_type_background_attributes: [:sampling_geographical_zone, :id], 
+       
+       publication_ids: [], 
+       phenotype_attributes: [:name, :id], 
+       publication_attributes: [:id, :publication_name, :authors,:pubmed_link], 
+       genetic_modification_method_attributes: [:id, :tag_type, :molecular_tools, :mutation_type], 
+       images: [])
     end
 
 

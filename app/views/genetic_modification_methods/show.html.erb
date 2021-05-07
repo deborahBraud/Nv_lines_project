@@ -1,6 +1,13 @@
 <h1> Line information </h1>
 
 <p>
+  <% unless @genetic_modification_method.id.blank? %>
+      <strong>Genetic modification method ID :</strong>
+      <%= @genetic_modification_method.id %>
+  <% end %>  
+</p>
+
+<p>
   <% unless @genetic_modification_method.construction_type_description.blank? %>
       <strong>Construction type description:</strong>
       <%= @genetic_modification_method.construction_type_description %>

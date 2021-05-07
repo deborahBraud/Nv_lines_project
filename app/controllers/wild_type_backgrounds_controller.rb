@@ -12,7 +12,8 @@ class WildTypeBackgroundsController < ApplicationController
 
   # GET /wild_type_backgrounds/new
   def new
-    @wild_type_background = WildTypeBackground.new
+    @wild_type_background = WildTypeBackground.new  
+    @wild_type_background.build.line_attributes 
   end
 
   # GET /wild_type_backgrounds/1/edit
@@ -64,6 +65,9 @@ class WildTypeBackgroundsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def wild_type_background_params
-      params.require(:wild_type_background).permit(:sampling_conditions, :sampling_geographical_zone, :supplementary_information)
+      params.require(:wild_type_background).permit(:sampling_conditions, 
+        :sampling_geographical_zone, 
+        :supplementary_information, 
+        line_attributes: [:wild_type_background_id])
     end
 end

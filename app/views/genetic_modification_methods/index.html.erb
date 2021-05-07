@@ -4,6 +4,7 @@
   <table class="table table-bordered table-responsive">
     <thead class="header" bgcolor="F8F9FA">
       <tr>
+        <th> ID </th>
         <th>Associated line name </th>
         <th>Tag type</th>
         <th>Molecular tools</th>
@@ -13,7 +14,8 @@
 
     <tbody>
       <% @genetic_modification_methods.each do |genetic_modification_method| %>
-        <tr>
+        <tr> 
+          <td><%= genetic_modification_method.id %></td>
           <td>
             <% if genetic_modification_method.line %>
                <%= genetic_modification_method.line.line_name %> <%= genetic_modification_method.line.generation %>

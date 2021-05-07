@@ -41,7 +41,6 @@
 		   	</form>
 		</li>
 
-
         <li class="nav-item">
 		<div class="dropdown">
 		  <button onclick="myFunction()" class="dropbtn">Tag sub-localization ↓</button>
@@ -54,29 +53,17 @@
 		</div> 
 		</li>
 
-
-		<li class="nav-item">
-			<form action="<%= phenotypes_path %>">
-		      <input type="text" placeholder="Cell type " name="search_key_pheno_name">
-		      <%= select_tag 'phenotypes_id', options_for_select(@phenotypes.collect{ |u| [u.@sublocalization_type[u.sublocalisation_type], u.id] })
-		      %>
-		    </form>
-        </li>
-
         <li class="nav-item">
 			<form action="<%= phenotypes_path %>">
 		      <input type="text" placeholder="Phenotype " name="search_key_pheno_name">
 		    </form>
         </li> 
 
-
-
         <li class="nav-item">
 			<form action="<%= staffs_path %>">
 		      <input type="text" placeholder="Laboratory " name="search_key_lab">
 		    </form>
         </li>
-
 			
 		<li class="nav-search">
 		   <%= submit_tag("Search") %> 

@@ -3,7 +3,10 @@ class Line < ApplicationRecord
 	accepts_nested_attributes_for :phenotype, allow_destroy: true, reject_if: :all_blank 
 
 	has_many :lines
+	
 	has_one :wild_type_background
+	accepts_nested_attributes_for :wild_type_background, allow_destroy: true, reject_if: :all_blank 
+
 	has_and_belongs_to_many :publications
 	belongs_to :user
 	belongs_to :group
