@@ -67,3 +67,4 @@ gem "select2-rails"
 gem 'bundler', '~> 2.1.4' 
 
 gem 'jquery-rails'
+gem "cocoon"

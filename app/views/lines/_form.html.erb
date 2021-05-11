@@ -109,8 +109,17 @@
   <div class='row'>
     <div class= 'col'>
       Existing publication :
-      <%= form.collection_select :publication_id, Publication.all, :id, :publication_name, {:include_blank => "Publication not listed"}%>
-  <div id="phenotypeHelp" class="form-text">If no publication corresponds, please create a new one.</div>
+      <%= form.collection_check_boxes(:publication_ids, Publication.all, :id, :publication_name) do |b| %>
+      <div class="row">
+        <%= b.label(class: "check_box") do %>
+          <div class="col-xs-4">
+            <%= b.check_box(class: "check_box") %>
+            <%= b.object.publication_name %>
+          </div>       
+        <% end %>
+      </div>
+    <% end %>  
+    <div id="phenotypeHelp" class="form-text">If no publication corresponds, please create a new one.</div>
     </div>
 
     <div class= 'col'>
@@ -131,7 +140,8 @@
     
     <%= form.label :image %>
     <%= form.file_field :image, multiple: true, class:"form-control"%> 
- </div>
+  </div>
+  
 
   </br>
   <div class="actions">

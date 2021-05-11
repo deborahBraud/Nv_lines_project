@@ -109,7 +109,7 @@ class LinesController < ApplicationController
        
        publication_ids: [], 
        phenotype_attributes: [:name, :id], 
-       publication_attributes: [:id, :publication_name, :authors,:pubmed_link], 
+       publications_attributes: [:id, :publication_name, :authors, :publication_date, :_destroy], 
        genetic_modification_method_attributes: [:id, :tag_type, :molecular_tools, :mutation_type], 
        images: [])
     end
