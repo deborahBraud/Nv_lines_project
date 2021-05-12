@@ -13,11 +13,11 @@ class Line < ApplicationRecord
 
 	has_many_attached :images
 
-	has_and_belongs_to_many :publications, inverse_of: :lines
-	accepts_nested_attributes_for :publications, allow_destroy: true, reject_if: :all_blank 
+	has_and_belongs_to_many :publications
+	accepts_nested_attributes_for :publications, allow_destroy: true 
 
 	has_one :genetic_modification_method
-	accepts_nested_attributes_for :genetic_modification_method
+	accepts_nested_attributes_for :genetic_modification_method, allow_destroy: true, reject_if: :all_blank 
 
 	validates :line_name, :presence => true
 	validates :line_type, :presence => true

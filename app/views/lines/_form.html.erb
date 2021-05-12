@@ -97,12 +97,12 @@
       <h5 class="card-title">Associated publication :</h5>
       <p class="card-text">
         <p>Existing publication :</p>
-          <%= form.collection_check_boxes(:publication_ids, Publication.all, :id, :publication_name) do |b| %>
+          <%= form.collection_check_boxes(:publication_ids, Publication.all, :id, :publication_name) do |publication| %>
           <div class="row">
-            <%= b.label(class: "check_box") do %>
+            <%= publication.label(class: "check_box") do %>
               <div class="col-xs-4">
-                <%= b.check_box(class: "check_box") %>
-                <%= b.object.publication_name %>
+                <%= publication.check_box(class: "check_box") %>
+                <%= publication.object.publication_name %>
               </div>       
             <% end %>
           </div>
@@ -120,6 +120,30 @@
   </div>
 
 </br>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Genetic modification method associated :</h5>
+      <p class="card-text">
+        <div class ="row">
+          <div class="col">
+          <%= form.fields_for :genetic_modification_method, GeneticModificationMethod.new do |genetic_modification_method_attributes|%></br>
+            <p><%= genetic_modification_method_attributes.text_field :molecular_tools, placeholder: "Molecular tools" %></p>
+            <p><%= genetic_modification_method_attributes.text_field :mutation_type, placeholder: "Mutation type" %></p>
+            <p><%= genetic_modification_method_attributes.text_field :vector_name, placeholder: "Vector name" %></p>
+          </div>
+
+          <div class = "col"> </br>
+            <p><%= genetic_modification_method_attributes.text_field :vector_description, placeholder: "Vector description" %></p>
+            <p><%= genetic_modification_method_attributes.text_field :construction_type_description, placeholder: "Construction type description" %></p>
+            <p><%= genetic_modification_method_attributes.text_field :tag_type, placeholder: "Tag type" %></p>
+          </div>
+          <% end %>
+        </div>  
+      </p>  
+    </div>
+  </div>
+
+</br>
   <div class="field form-group">
     <h5>Genetic modification method associated ID : </h5>
     <%= form.collection_select :genetic_modification_method_id, GeneticModificationMethod.all, :id, :id, {:include_blank => "None"} %>
@@ -127,8 +151,8 @@
 
   </br>
   <div class="field form-group">
-    <h5>Line added by : </h5>
-    <%= form.text_field :user_id, class:"form-control", value: current_user.email %>
+    <h5>Line added or modified by : </h5>
+    <%= form.text_field :user_email, class:"form-control", value: current_user.email %>
    </div> 
 
   </br>
