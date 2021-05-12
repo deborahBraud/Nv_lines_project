@@ -71,6 +71,6 @@ class GeneticModificationMethodsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def genetic_modification_method_params
-      params.require(:genetic_modification_method).permit(:line_id, :construction_type_description, :molecular_tools, :mutation_type, :vector_name, :vector_description, :reagent_and_protocol, :tag_type)
+      params.require(:genetic_modification_method).permit(:line_id, :construction_type_description, :molecular_tools, :mutation_type, :vector_name, :vector_description, :reagent_and_protocol, :tag_type, line_attributes: [:genetic_modification_method_id])
     end
 end

@@ -1,0 +1,19 @@
+<div class="nested-fields">
+	<%= form.hidden_field :_destroy %>
+    <div>
+        <%= form.label :publication_name %>
+        <%= form.text_field :publication_name %>
+    </div>
+     <div>
+        <%= form.label :authors %>
+        <%= form.text_field :authors %>
+    </div>
+     <div>
+        <%= form.label :publication_date %>
+        <%= form.text_field :publication_date %>
+    </div>
+    
+    <div>
+        <%= link_to "Remove", '#', class: "remove_fields" %>
+    </div>
+</div>

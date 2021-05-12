@@ -42,8 +42,8 @@
 
   </br>
   <div class="field form-group">
-    <h5><%= form.label :breeding_type %> : </h5>
-    <%= form.text_field :breeding_type, class:'form-control' %>
+    <h5><%= form.label :breeding_type %> : </h5> 
+    <%= form.text_field :breeding_type, class:'form-control' %> <i> (Outbreed or Inbreed) </i> 
   </div>
 
   </br>
@@ -68,59 +68,98 @@
   </div>
 
   </br>
-  <h5> Associated phenotype : </h5>
-  <div class='row'>
-    <div class= 'col'>
-      Existing phenotype :
-      <%= form.collection_select :phenotype_id, Phenotype.all, :id, :name, {:include_blank => "Phenotype not listed"}%> 
-    <div id="phenotypeHelp" class="form-text">If no phenotype corresponds, please select 'Phenotype not listed'and create a new one.</div>
-    </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Associated phenotype :</h5>
+      <p class="card-text">
+        <div class='row'>
+          <div class= 'col'>
+            Existing phenotype :
+            <%= form.collection_select :phenotype_id, Phenotype.all, :id, :name, {:include_blank => "Phenotype not listed"}%> 
+          <div id="phenotypeHelp" class="form-text">If no phenotype corresponds, please select 'Phenotype not listed'and create a new one.</div>
+          </div>
 
-    <div class= 'col'>
-      Or create a new associated phenotype:
-      <%= form.fields_for :phenotype, Phenotype.new do |phenotype_attributes|%>
-          <%= phenotype_attributes.text_field :name, placeholder: "Enter phenotype's name" %>
-      <div id="phenotypeHelp" class="form-text">You will be able to fill the new phenotype's information once the name phenotype created.</div>
-      <% end %>
+          <div class= 'col'>
+            Or create a new associated phenotype:
+            <%= form.fields_for :phenotype, Phenotype.new do |phenotype_attributes|%>
+                <%= phenotype_attributes.text_field :name, placeholder: "Enter phenotype's name" %>
+            <div id="phenotypeHelp" class="form-text">You will be able to fill the new phenotype's information once the name phenotype created.</div>
+            <% end %>
+          </div>
+        </div>  
+      </p>
     </div>
-  </div>  
+  </div>      
     
-      
   </br>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Associated publication :</h5>
+      <p class="card-text">
+        <p>Existing publication :</p>
+          <%= form.collection_check_boxes(:publication_ids, Publication.all, :id, :publication_name) do |publication| %>
+          <div class="row">
+            <%= publication.label(class: "check_box") do %>
+              <div class="col-xs-4">
+                <%= publication.check_box(class: "check_box") %>
+                <%= publication.object.publication_name %>
+              </div>       
+            <% end %>
+          </div>
+        <% end %> 
+        <div id="publicationHelp" class="form-text">If no publication corresponds, please create a new one.</div></br>
+
+        Add a new associated publication:
+          <%= form.fields_for :publications, Publication.new do |publication_attributes|%></br>
+            <p><%= publication_attributes.text_field :publication_name, placeholder: "Publication's name" %></p>
+            <p><%= publication_attributes.text_field :authors, placeholder: "Publication's authors" %></p>
+            <p><%= publication_attributes.date_select :publication_date, :start_year => 1970, :end_year => 2120 %></p>
+          <% end %>
+      </p>  
+    </div>
+  </div>
+
+</br>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Genetic modification method associated :</h5>
+      <p class="card-text">
+        <div class ="row">
+          <div class="col">
+          <%= form.fields_for :genetic_modification_method, GeneticModificationMethod.new do |genetic_modification_method_attributes|%></br>
+            <p><%= genetic_modification_method_attributes.text_field :molecular_tools, placeholder: "Molecular tools" %></p>
+            <p><%= genetic_modification_method_attributes.text_field :mutation_type, placeholder: "Mutation type" %></p>
+            <p><%= genetic_modification_method_attributes.text_field :vector_name, placeholder: "Vector name" %></p>
+          </div>
+
+          <div class = "col"> </br>
+            <p><%= genetic_modification_method_attributes.text_field :vector_description, placeholder: "Vector description" %></p>
+            <p><%= genetic_modification_method_attributes.text_field :construction_type_description, placeholder: "Construction type description" %></p>
+            <p><%= genetic_modification_method_attributes.text_field :tag_type, placeholder: "Tag type" %></p>
+          </div>
+          <% end %>
+        </div>  
+      </p>  
+    </div>
+  </div>
+
+</br>
   <div class="field form-group">
     <h5>Genetic modification method associated ID : </h5>
     <%= form.collection_select :genetic_modification_method_id, GeneticModificationMethod.all, :id, :id, {:include_blank => "None"} %>
   </div>
 
   </br>
-  <div class="field form-group">  
-    <h5>Line added by : </h5>
-    <%= form.collection_select :user_id, User.all, :id, :email, {:include_blank => "None"} %>
-  </div>
+  <div class="field form-group">
+    <h5>Line added or modified by : </h5>
+    <%= form.text_field :user_email, class:"form-control", value: current_user.email %>
+   </div> 
 
   </br>
   <div class="field form-group">
     <h5><%= form.label :group_id %> : </h5>
     <%= form.collection_select :group_id, Group.all, :id, :group_name, {:include_blank => "None"} %>
   </div> 
-
-  </br>
-  <h5> Associated publication : </h5>
-  <div class='row'>
-    <div class= 'col'>
-      Existing publication :
-      <%= form.collection_select :publication_id, Publication.all, :id, :publication_name, {:include_blank => "Publication not listed"}%>
-  <div id="phenotypeHelp" class="form-text">If no publication corresponds, please create a new one.</div>
-    </div>
-
-    <div class= 'col'>
-      Or create a new associated publication:
-      <%= form.fields_for :publications, Publication.new do |publication_attributes|%>
-          <%= publication_attributes.text_field :publication_name, placeholder: "Enter publication's name" %>
-      <div id="publicationHelp" class="form-text">You will be able to fill the new publication's information once the name publication created.</div>
-      <% end %>
-    </div>
-  </div>  
 
 
   </br>
@@ -131,7 +170,8 @@
     
     <%= form.label :image %>
     <%= form.file_field :image, multiple: true, class:"form-control"%> 
- </div>
+  </div>
+  
 
   </br>
   <div class="actions">
