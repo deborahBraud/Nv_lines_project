@@ -31,7 +31,7 @@ class PublicationsController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @publication.errors, status: :unprocessable_entity }
       end
-    end
+    end 
   end
 
   # PATCH/PUT /publications/1 or /publications/1.json

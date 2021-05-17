@@ -8,6 +8,8 @@ class LinesController < ApplicationController
     if params[:search_key]
       @lines = Line.where("line_name LIKE ? OR synonym_line_name LIKE ?", 
           "%#{params[:search_key]}%", "%#{params[:search_key]}%")
+    elsif params[:search_key]
+      @lines = Line.where(("lines.line_type = reporter")) 
     else
       @lines = Line.all
     end

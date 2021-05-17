@@ -106,16 +106,15 @@
               </div>       
             <% end %>
           </div>
-        <% end %> 
-        <div id="publicationHelp" class="form-text">If no publication corresponds, please create a new one.</div></br>
+          <% end %> 
+          <div id="publicationHelp" class="form-text">If no publication corresponds, please create a new one.</div></br>
 
         Add a new associated publication:
           <%= form.fields_for :publications, Publication.new do |publication_attributes|%></br>
             <p><%= publication_attributes.text_field :publication_name, placeholder: "Publication's name" %></p>
             <p><%= publication_attributes.text_field :authors, placeholder: "Publication's authors" %></p>
             <p><%= publication_attributes.date_select :publication_date, :start_year => 1970, :end_year => 2120 %></p>
-          <% end %>
-      </p>  
+          <% end %> 
     </div>
   </div>
 
