@@ -8,6 +8,12 @@ class PhenotypesController < ApplicationController
     if params[:search_key_pheno_name]
       @phenotypes = Phenotype.where("name LIKE ?", 
           "%#{params[:search_key_pheno_name]}%")
+    elsif params[:search_cell_type]
+      @phenotypes = Phenotype.where("cell_type LIKE ?", 
+          "%#{params[:search_cell_type]}%")
+    elsif params[:search_sub_type]
+      @phenotypes = Phenotype.where("sublocalization_type LIKE ?", 
+          "%#{params[:search_sub_type]}%")
     else
       @phenotypes = Phenotype.all
     end

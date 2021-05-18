@@ -17,16 +17,6 @@
 		    </form>
         </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Line Type </a>
-
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li class="dropdown-item"> <%= link_to "Reporter lines", reporter_lines_index_path, class:"nav-link active"%></li>
-              <li class="dropdown-item"> <%= link_to "Functional lines", functional_lines_index_path, class:"nav-link active"%></li>
-              <li class="dropdown-item"> <%= link_to "Wild-type lines", wt_lines_index_path, class:"nav-link active"%></li>
-              <li><hr class="dropdown-divider"></li>
-            </ul>
-        </li> 
 
         <li class="nav-item">
 			<form action="<%= genetic_modification_methods_path %>">
@@ -34,24 +24,50 @@
 		    </form>
         </li>
 
-		<li class="nav-item">
-			<form action="<%= phenotypes_path %>">
-		     <input type="text" placeholder="Cell type " name="search_key_pheno_name">
-		     <%= select_tag(:phenotype_id, options_from_collection_for_select(Phenotype.all, :id, :cell_type), include_blank: "Select Category") %>
-		   	</form>
-		</li>
+        <li class="nav-item">
+        	<form action="<%= lines_path %>">
+				<input list="line_list" placeholder="Line type "name="search_line_type">
+				<datalist id="line_list">
+				  <option value="0">Reporter</option>
+				  <option value="1">Conditional loss of function</option>
+				  <option value="2">Conditional gain of function</option>
+				  <option value="3">Constitutive loss of function</option>
+				  <option value="4">Constitutive gain of function</option>
+				  <option value="5">Wild-type</option>
+				  <option value="6">Other</option>
+				</datalist>
+			</form>	
+		</li>	
 
         <li class="nav-item">
-		<div class="dropdown">
-		  <button onclick="myFunction()" class="dropbtn">Tag sub-localization ↓</button>
-		  <div id="myDropdown" class="dropdown-content">
-		    <%= link_to "Nuclei membrane", lines_path%> 
-		    <%= link_to "Cellular membrane", functional_lines_index_path %> 
-		    <%= link_to "Nuclei", wt_lines_index_path %> 
-		    <%= link_to "Cytoplasm", lines_path %>
-		  </div>
-		</div> 
-		</li>
+        	<form action="<%= phenotypes_path %>">
+				<input list="cell_list" placeholder="Cell type "name="search_cell_type">
+				<datalist id="cell_list">
+				  <option value="0">Epithelial</option>
+				  <option value="1">Cnidocyte</option>
+				  <option value="2">Neuronal</option>
+				  <option value="3">Gland</option>
+				  <option value="4">Muscle</option>
+				  <option value="5">Germline</option>
+				  <option value="6">Stem</option>
+				  <option value="7">Ectoderm</option>
+				  <option value="8">Endoderm</option>
+				</datalist>
+			</form>	
+		</li>	
+
+        <li class="nav-item">
+        	<form action="<%= phenotypes_path %>">
+				<input list="sub_list" placeholder="Sub-localisation tag "name="search_sub_type">
+				<datalist id="sub_list">
+				  <option value="0">Nuclei membrane</option>
+				  <option value="1">Cell membrane</option>
+				  <option value="2">Nuclei</option>
+				  <option value="3">Cytoplasm</option>
+				</datalist>
+			</form>	
+		</li>	
+
 
         <li class="nav-item">
 			<form action="<%= phenotypes_path %>">
@@ -61,24 +77,15 @@
 
         <li class="nav-item">
 			<form action="<%= staffs_path %>">
-		      <input type="text" placeholder="Laboratory " name="search_key_lab">
+		      <input type="text" placeholder="Laboratory" name="search_key_lab">
 		    </form>
         </li>
+
 			
 		<li class="nav-search">
 		   <%= submit_tag("Search") %> 
 		</li>
 
-		<li class="nav-search">
-			<select name="hssub3" id="hssub3" onchange="Func();">
-		        <option value="">OK1</option>
-		        <option value="2">English</option>
-		        <option value="3">Hindi</option>
-		        <option value="4">Physics</option>
-		        <option value="5">Chemistry</option>
-		        <option value="6">Mathematics</option>  
-		    </select>
-		</li>
 
     </ul>
 </div>
