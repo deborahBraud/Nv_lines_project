@@ -76,8 +76,6 @@
   </br>
   <div class="field form-group">
     <%= form.label :sublocalization_type %>: </br>
-    <%= form.radio_button :sublocalization_type, 'Ectoderm' %> Ectoderm<br />
-    <%= form.radio_button :sublocalization_type, 'Endoderm' %> Endoderm<br />
     <%= form.radio_button :sublocalization_type, 'Nuclei_mb' %> Nuclei membrane<br />
     <%= form.radio_button :sublocalization_type, 'Cell_mb' %> Cell membrane<br />
     <%= form.radio_button :sublocalization_type, 'Nuclei' %> Nuclei<br />
@@ -87,6 +85,8 @@
   </br>
   <div class="field form-group">
     <%= form.label :cell_type %>: </br>
+        <%= form.radio_button :cell_type, 'Ectoderm' %> Ectoderm<br />
+    <%= form.radio_button :cell_type, 'Endoderm' %> Endoderm<br />
     <%= form.radio_button :cell_type, 'Epithelial' %> Epithelial cells<br />
     <%= form.radio_button :cell_type, 'Cnidocyte' %> Cnidocyte cells<br />
     <%= form.radio_button :cell_type, 'Neuronal' %> Neuronal cells<br />
@@ -99,13 +99,15 @@
   </br>
   <div class="field form-group">
     <%= form.label :region_type %>: </br>
-    <%= form.radio_button :region_type, 'Head' %> Head<br />
-    <%= form.radio_button :region_type, 'Body' %> Body column<br />
-    <%= form.radio_button :region_type, 'Physa' %> Physa<br />
-    <%= form.radio_button :region_type, 'Mesenteries' %> Mesenteries<br />
-    <%= form.radio_button :region_type, 'Amputation' %> Amputation sites<br />
-    <%= form.radio_button :region_type, 'Nematosome' %> Nematosome<br />
-    <%= form.radio_button :region_type, 'Tentacle' %> Tentacle<br /> 
+    <%= form.radio_button :region_type, 'Head' %> Head (capitulum)<br />
+    <%= form.radio_button :region_type, 'Body' %> Body column (scapus)<br />
+    <%= form.radio_button :region_type, 'Foot' %> Foot (physa) <br />
+    <%= form.radio_button :region_type, 'Mesenteries' %> Mesenteries <br />
+    <%= form.radio_button :region_type, 'Amputation' %> Amputation site <br />
+    <%= form.radio_button :region_type, 'Nematosome' %> Nematosome <br />
+    <%= form.radio_button :region_type, 'Tentacle' %> Tentacle <br /> 
+    <%= form.radio_button :region_type, 'Mouth' %> Mouth <br />
+    <%= form.radio_button :region_type, 'Pharynx' %> Pharynx <br /> 
   </div>
   
   </br>
