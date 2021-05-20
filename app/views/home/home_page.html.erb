@@ -3,17 +3,19 @@
 <hr>
 
 <div class= "container-home">
-  <div class="card mb-3" >
+  <div class="card mb-3" style="max-width: 575px;" >
     <div class="row g-0">
       <div class="col-md-4">
         <%= link_to reporter_lines_index_path do %>
-          <%= image_tag "nv_tg.png", :size => '400x400',:alt => "Image", :class => "img-fluid tm-header-img"%>
+          <%= image_tag "reporter_nv.png", :alt => "Image", :class => "img-fluid tm-header-img"%>
         <% end %>
       </div>
       <div class="col-md-8 ">
         <div class="card-body">
-          <h5 class="card-title">Latest Entry</h5>
-          <p class="card-text">information</p>
+          <h5 class="card-title-home bg-light">Latest Entry</h5>
+          <p class="card-text">Line name :</p>
+          <p> Line type : </p>
+          <p> Laboratory : </p>
         </div>
       </div>
     </div>
@@ -26,10 +28,10 @@
     <div class="card-group">
       <div class="card h-100 w-75">
         <%= link_to reporter_lines_index_path do %>
-          <%= image_tag "nv_tg.png", :size => '400x400',:alt => "Image", :class => "img-fluid tm-header-img"%>
+          <%= image_tag "reporter_nv.png", :size => '400x400',:alt => "Image", :class => "img-fluid tm-header-img"%>
         <% end %>
-      	<div class="card-body">
-  	        <h5 class="card-title">Reporter Lines</h5>
+      	<div class="card-body bg-light">
+  	        <h5 class="card-title-home">Reporter Lines</h5>
   	    </div>
       </div>
     </div>
@@ -37,10 +39,10 @@
     <div class="card-group">
       <div class="card h-100 w-75">
   	    <%= link_to functional_lines_index_path do %>
-          <%= image_tag "nv_tg.png", :size => '400x400',:alt => "Image", :class => "img-fluid tm-header-img"%>
+          <%= image_tag "mutant.png", :size => '400x400',:alt => "Image", :class => "img-fluid tm-header-img"%>
         <% end %>
-        <div class="card-body">
-          <h5 class="card-title">Functional Lines</h5>
+        <div class="card-body bg-light">
+          <h5 class="card-title-home">Functional Lines</h5>
         </div>
     		</br>
       </div>
@@ -49,10 +51,10 @@
     <div class="card-group">
       <div class="card h-100 w-75">
         <%= link_to wt_lines_index_path do %>
-          <%= image_tag "nv_tg.png", :size => '400x400',:alt => "Image", :class => "img-fluid tm-header-img"%>
+          <%= image_tag "logo_scheme.png", :size => '400x400',:alt => "Image", :class => "img-fluid tm-header-img"%>
         <% end %>
-        <div class="card-body">
-          <h5 class="card-title">Wild-type Lines</h5>
+        <div class="card-body bg-light">
+          <h5 class="card-title-home">Wild-type Lines</h5>
         </div>
       </div>
     </div>

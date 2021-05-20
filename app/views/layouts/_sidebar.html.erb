@@ -1,47 +1,70 @@
-<div class="navbar nav nav-sidebar">
+<div class="navbar-side" >
 	<ul class="nav flex-column">
 
-		<li class=" nav nav-item">
-			<a> <p> SEARCH By : </p> </a>
+		<li class=" nav-sidebar nav-item">
+			<a> Search By : </a>
 		</li>
 		
-		<li class="nav-item">
+		<li class="nav-sidebar nav-item">
 			<form action="<%= lines_path %>">
-		      <input type="text" placeholder="Line name" name="search_key">
+		      <input type="text" placeholder="Line name..." name="search_key">
 		    </form>
         </li>
 	
-		<li class="nav-item">
+		<li class="nav-sidebar nav-item">
 			<form action="<%= molecular_data_path %>">
-		      <input type="text" placeholder="Gene name" name="search_key_gene">
+		      <input type="text" placeholder="Gene name..." name="search_key_gene">
 		    </form>
         </li>
 
 
-        <li class="nav-item">
+        <li class=" nav-sidebar nav-item">
 			<form action="<%= genetic_modification_methods_path %>">
-		      <input type="text" placeholder="Tag type" name="search_key_tag">
+		      <input type="text" placeholder="Tag type..." name="search_key_tag">
 		    </form>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-sidebar nav-item">
+			<form action="<%= phenotypes_path %>">
+		      <input type="text" placeholder="Phenotype name... " name="search_key_pheno_name">
+		    </form>
+        </li> 
+
+        <li class="nav-sidebar nav-item">
+			<form action="<%= staffs_path %>">
+		      <input type="text" placeholder="Laboratory name..." name="search_key_lab">
+		    </form>
+        </li>
+
+
+        <li class="nav-sidebar nav-item">
         	<form action="<%= lines_path %>">
-				<input list="line_list" placeholder="Line type "name="search_line_type">
+				<input list="line_list" placeholder="Line type ↓"name="search_line_type">
+				<h6> Please double-click to see avaible options </h6>
 				<datalist id="line_list">
 				  <option value="0">Reporter</option>
 				  <option value="1">Conditional loss of function</option>
+				  <option value="1">Conditional Knock-out</option>
+
 				  <option value="2">Conditional gain of function</option>
+				  <option value="2">Conditional Knock-in</option>
+
 				  <option value="3">Constitutive loss of function</option>
+				  <option value="3">Constitutive Knock-out</option>
+
 				  <option value="4">Constitutive gain of function</option>
+				  <option value="4">Constitutive Knock-in</option>
+
 				  <option value="5">Wild-type</option>
 				  <option value="6">Other</option>
 				</datalist>
 			</form>	
 		</li>	
 
-        <li class="nav-item">
+        <li class=" nav-sidebar nav-item">
         	<form action="<%= phenotypes_path %>">
-				<input list="cell_list" placeholder="Cell type "name="search_cell_type">
+				<input list="cell_list" placeholder="Cell type ↓"name="search_cell_type">
+				<h6> Please double-click to see avaible options </h6>
 				<datalist id="cell_list">
 				  <option value="0">Epithelial</option>
 				  <option value="1">Cnidocyte</option>
@@ -56,9 +79,10 @@
 			</form>	
 		</li>	
 
-        <li class="nav-item">
+        <li class="nav-sidebar nav-item">
         	<form action="<%= phenotypes_path %>">
-				<input list="sub_list" placeholder="Sub-localisation tag "name="search_sub_type">
+				<input list="sub_list" placeholder="Sub-localisation tag ↓"name="search_sub_type">
+				<h6> Please double-click to see avaible options </h6>
 				<datalist id="sub_list">
 				  <option value="0">Nuclei membrane</option>
 				  <option value="1">Cell membrane</option>
@@ -67,24 +91,6 @@
 				</datalist>
 			</form>	
 		</li>	
-
-
-        <li class="nav-item">
-			<form action="<%= phenotypes_path %>">
-		      <input type="text" placeholder="Phenotype " name="search_key_pheno_name">
-		    </form>
-        </li> 
-
-        <li class="nav-item">
-			<form action="<%= staffs_path %>">
-		      <input type="text" placeholder="Laboratory" name="search_key_lab">
-		    </form>
-        </li>
-
-			
-		<li class="nav-search">
-		   <%= submit_tag("Search") %> 
-		</li>
 
 
     </ul>
