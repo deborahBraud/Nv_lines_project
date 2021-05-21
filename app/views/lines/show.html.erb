@@ -4,7 +4,13 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-        <%= image_tag("nv_tg.png", :size => "300x300") %>
+      <% if @line.line_type =='reporter' %>
+        <%= image_tag("reporter_nv.png", :size => "300x300") %>
+      <% elsif @line.line_type =='wildtype' %>
+        <%= image_tag("logo_scheme.png", :size => "300x300") %>
+      <% else %>   
+        <%= image_tag("mutant.png", :size => "300x300") %>
+      <% end %>
     </div> 
 
 
