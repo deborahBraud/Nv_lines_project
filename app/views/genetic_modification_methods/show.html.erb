@@ -62,10 +62,11 @@
   <%= link_to 'Back', genetic_modification_methods_path, class:'btn btn-secondary' %>
 </p>
 
-<hr>
+</br>
+
 
 <% unless @genetic_modification_method.molecular_data.blank? %>
-  <h4>Associated molecular data : </h4>
+  <h1>Associated molecular data </h1><hr>
     <% @genetic_modification_method.molecular_data.each do |molecular_datum| %>
       <table class="table table-bordered table-responsive">
         <thead>

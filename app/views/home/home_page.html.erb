@@ -6,16 +6,18 @@
   <div class="card mb-3" style="max-width: 575px;" >
     <div class="row g-0">
       <div class="col-md-4">
-        <%= link_to reporter_lines_index_path do %>
+        <%= link_to line_path(Line.last) do %>
           <%= image_tag "reporter_nv.png", :alt => "Image", :class => "img-fluid tm-header-img"%>
         <% end %>
       </div>
       <div class="col-md-8 ">
         <div class="card-body">
           <h5 class="card-title-home bg-light">Latest Entry</h5>
-          <p class="card-text">Line name :</p>
-          <p> Line type : </p>
-          <p> Laboratory : </p>
+          <p class="card-text"> Line  : <%= Line.last.line_name %> </br>
+            Type : <%= Line.last.line_type %> </br>
+            Zygosity : <%= Line.last.zygosity %> </br>
+            Generation : <%= Line.last.generation %> </br>
+            Laboratory : <%= Line.last.lab_of_origin %></p>
         </div>
       </div>
     </div>

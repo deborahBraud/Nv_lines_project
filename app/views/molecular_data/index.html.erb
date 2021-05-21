@@ -4,8 +4,8 @@
   <table class="table table-bordered table-responsive">
     <thead>
       <tr class="header" bgcolor="F8F9FA">
-        <th colspan ="6"> Gene information</th>
-        <th colspan ="5"> Other information </th>
+        <th colspan ="5"> Gene information</th>
+        <th colspan ="6"> Other information </th>
         <th colspan ="3"> </th>
       </tr>
 
@@ -18,11 +18,9 @@
 
         <th>Genome version accession number</th>
         <th>Chromosome number</th>
-
         <th>Nvertx</th>
         <th>Locus insertion</th>
         <th>Mutated region</th>
-        
         <th>Associated line</th>
         <th colspan="3"></th>
       </tr>
@@ -44,8 +42,8 @@
           <td><%= molecular_datum.NvERTx_id %></td>
           <td><%= molecular_datum.locus_insertion %></td>
           <td><%= molecular_datum.mutated_region %></td>
-
           <td><%= molecular_datum.genetic_modification_method.line.line_name%></td>
+          
           <td><%= link_to 'Show', molecular_datum %></td>
           <td><%= link_to 'Edit', edit_molecular_datum_path(molecular_datum) %></td>
           <td><%= link_to 'Delete', molecular_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
