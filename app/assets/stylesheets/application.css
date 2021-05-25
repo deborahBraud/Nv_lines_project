@@ -27,6 +27,11 @@ th, td {
 	vertical-align: middle;
 	font-size: 0.9em; }
 
+::placeholder{
+	color :#212529
+	opacity: 10;
+}
+
 .card-title-home{
 	text-align: center;
 	vertical-align: middle;

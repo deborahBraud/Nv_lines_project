@@ -3,9 +3,17 @@
 //= require jquery_ujs
 //= require cocoon
 
-var options = {
-	data: ["blue", "green", "pink", "red", "yellow"]
-};
+
+const map = {
+    0: 'physics url'
+ ,1: 'maths url'
+ ,2: 'chemistry url'
+}
+document.getElementById('submit').addEventListener('click', () =>
+  location.href = map[document.getElementById('select').value])
+
+
+
 
 $("#basics").easyAutocomplete(options);
 
@@ -111,4 +119,6 @@ window.addEventListener('turbolinks:load', () => new removeFields())
 / app/javascript/packs/application.js
 require('./nested-forms/addFields')
 require('./nested-forms/removeFields')
+
+
 
