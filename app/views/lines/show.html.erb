@@ -15,7 +15,12 @@
 
 
     <div class="col-sm">
-      <h5> Line information <%= link_to 'Edit', edit_line_path(@line), class: 'btn btn-light' %> </h5></br>
+      
+      <h5> Line information 
+      <% if user_signed_in? %> 
+        <%= link_to 'Edit', edit_line_path(@line), class: 'btn btn-light' %> </h5></br>
+        <% else %> </h5></br>
+        <% end %> 
       <p>
         <% unless @line.line_name.blank? %>
           <strong>Line name:</strong>
