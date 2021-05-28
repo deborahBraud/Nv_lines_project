@@ -11,20 +11,22 @@
     </div>
   <% end %>
 
+  <div><i> Fields tagged with an (*) are mandatory </i></div></br>
+
   <div class="field form-group"> 
-    <h5><%= form.label :line_name %> <%= mark_required(@line, :line_name) %> : </h5>
+    <h5><%= form.label :line_name %> <%= mark_required(@line, :line_name) %> : <i>*</i> </h5>
     <%= form.text_field :line_name, class:'form-control' %> 
   </div>
 
   </br>
   <div class="field form-group">
-    <h5><%= form.label :synonym_line_name %> : </h5>
+    <h5><%= form.label :synonym_line_name %> : </h5> 
     <%= form.text_field :synonym_line_name, class:'form-control' %>
   </div>
 
   </br>
   <div class="field form-group"><%= mark_required(@line, :line_type) %>
-    <h5><%= form.label :line_type %> : </h5>
+    <h5><%= form.label :line_type %> : <i>*</i></h5> 
     <%= form.radio_button :line_type, 'reporter' %> Reporter line <br />
     <%= form.radio_button :line_type, 'functional_conditional_loss' %> Functional conditional line (loss of function)<br />
     <%= form.radio_button :line_type, 'functional_conditional_gain' %> Functional conditional line (gain of function)<br />
@@ -43,7 +45,7 @@
   </br>
   <div class="field form-group">
     <h5><%= form.label :breeding_type %> : </h5> 
-    <%= form.text_field :breeding_type, class:'form-control' %> <i> (Outbreed or Inbreed) </i> 
+    <%= form.text_field :breeding_type, class:'form-control' %> <em> (Outbreed or Inbreed) </em> 
   </div>
 
   </br>
@@ -70,12 +72,12 @@
   </br>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Associated phenotype :</h5>
+      <h5 class="card-title">Associated phenotype : <i>*</i></h5>
       <p class="card-text">
         Create a new associated phenotype:
         <%= form.fields_for :phenotype, Phenotype.new do |phenotype_attributes|%>
           <%= phenotype_attributes.text_field :name, placeholder: "Enter phenotype's name" %>
-        <div id="phenotypeHelp" class="form-text">You will be able to fill the new phenotype's information once the name phenotype created.</div>
+        <div id="phenotypeHelp" class="form-text">You will be able to fill the new phenotype's information once the name phenotype created.</br> If you don't want to modify this field, juste leave it blank.</div>
         <% end %> 
       </p>
     </div>
@@ -84,7 +86,7 @@
   </br>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Associated publication :</h5>
+      <h5 class="card-title">Associated publication : </h5>
       <p class="card-text">
         <p>Existing publication :</p>
           <%= form.collection_check_boxes(:publication_ids, Publication.all, :id, :publication_name) do |publication| %>
@@ -97,9 +99,9 @@
             <% end %>        
           </div>
           <% end %> 
-          <div id="publicationHelp" class="form-text">If no publication corresponds, please create a new one.</div></p></br>
+          <div id="publicationHelp" class="form-text">If no publication corresponds, please <%= link_to "create", new_publication_path, target: :_blank %> a new one.</div></p></br>
 
-        <p>Add a new associated publication:
+        <p>Add a new associated publication: <i> (NOT FUNCTIONNAL YET) </i>
           <%= form.fields_for :publication, Publication.new do |publication_attributes|%></br>
             <p><%= publication_attributes.text_field :publication_name, placeholder: "Publication's name" %></p>
             <p><%= publication_attributes.text_field :authors, placeholder: "Publication's authors" %></p>
@@ -112,7 +114,7 @@
 </br>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Genetic modification method associated :</h5>
+      <h5 class="card-title">Genetic modification method associated : <i> (NOT FUNCTIONNAL YET) </i></h5>
       <p class="card-text">
         <div class ="row">
           <div class="col">
@@ -136,29 +138,31 @@
 </br>
   <div class="field form-group">
     <h5>Genetic modification method associated ID : </h5>
+    To create a new genetic modification method, please click <%= link_to "here", new_genetic_modification_method_path, target: :_blank %> and refresh the page to display the ID into the list :
     <%= form.collection_select :genetic_modification_method_id, GeneticModificationMethod.all, :id, :id, {:include_blank => "None"} %>
+
   </div>
 
   </br>
   <div class="field form-group">
-    <h5><%= form.label :user_id %> : </h5>
+    <h5><%= form.label :user_id %> : <i>*</i> </h5>
     <%= form.collection_select :user_id, User.all, :id, :email, {:include_blank => "None"} %>
   </div> 
 
   </br>
   <div class="field form-group">
-    <h5><%= form.label :group_id %> : </h5>
+    <h5><%= form.label :group_id %> : <i>*</i> </h5>
     <%= form.collection_select :group_id, Group.all, :id, :group_name, {:include_blank => "None"} %>
   </div> 
 
 
   </br>
-  <div class="form-group">
+  <div class="form-group"> 
     <% if @line.images.attached? %>
       <%= image_tag @line.images %>
     <% end %>
     
-    <%= form.label :image %>
+    <%= form.label :image %> <i> (NOT FUNCTIONNAL YET) </i>
     <%= form.file_field :image, multiple: true, class:"form-control"%> 
   </div>
   
