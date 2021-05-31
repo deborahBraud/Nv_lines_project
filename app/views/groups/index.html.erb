@@ -1,9 +1,9 @@
-<h1>Groups</h1>
+<h1>Groups Index</h1>
+<hr>
 
-<table>
-  <thead>
+<table  class="table">
+  <thead class="thead-light">
     <tr>
-      <th>Group ID</th>
       <th>Name</th>
       <th>Description</th>
       <th colspan="3"></th>
@@ -13,7 +13,6 @@
   <tbody>
     <% @groups.each do |group| %>
       <tr>
-        <td><%= group.id %></td>
         <td><%= group.group_name %></td>
         <td><%= group.group_description %></td>
         <td><%= link_to 'Show', group %></td>
