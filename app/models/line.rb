@@ -27,4 +27,8 @@ class Line < ApplicationRecord
   		"#{self.line_name} #{self.generation}"
 	end
 
+	def line_phenotype
+		"#{self.phenotype.name} (from #{self.line_name})"
+	end	
+
 end

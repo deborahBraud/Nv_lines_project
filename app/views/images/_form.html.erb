@@ -19,67 +19,65 @@
 
   </br>
   <div class="field form-group">
-    <%= form.label :image_name %>
+    Name :
     <%= form.text_field :image_name, class:'form-control' %>
   </div>
 
   </br>
   <div class="field form-group">
-    <%= form.label :image_legend %>
-    <%= form.text_field :image_legend, class:'form-control' %>
+    Legend :
+    <%= form.text_area :image_legend, class:'form-control' %>
   </div>
 
   </br>
   <div class="field form-group">
-    <%= form.label :image_date %>
+    Date :
     <%= form.date_select :image_date, :start_year => 1970, :end_year => 2120, class:'form-control' %>
   </div>
 
   </br>
   <div class="field form-group">
-    <%= form.label :microscopy_technique %>
+    Microscopy technique :
     <%= form.text_field :microscopy_technique, class:'form-control' %>
   </div>
 
   </br>
   <div class="field form-group">
-    <%= form.label :lifecycle_stage %>
+    Stage :
     <%= form.text_field :lifecycle_stage, class:'form-control' %>
   </div>
 
   </br>
   <div class="field form-group">
-    <%= form.label :tissu_localization %>
+    Tissu localisation :
     <%= form.text_field :tissu_localization, class:'form-control' %>
   </div>
 
   </br>
   <div class="field form-group">
-    <%= form.label :cellular_localization %>
+    Cellular localisation :
     <%= form.text_field :cellular_localization, class:'form-control' %>
   </div>
 
   </br>
   <div class="field form-group">
-    <%= form.label :person_who_takes_image %>
+    Person who taked the image :
     <%= form.text_field :person_who_takes_image, class:'form-control' %>
   </div>
 
   </br>
   <div class="field form-group">
-    <%= form.label :objective_used %>
+    Objective used :
     <%= form.text_field :objective_used, class:'form-control' %>
   </div>
 
   </br>
   <div class="field form-group">
-    <%= form.collection_select :line_id, Line.all, :id, :id, {:include_blank => 'Line ID'} %>
+    Associated line :
+    <%= form.collection_select :line_id, Line.all, :id, :line_name, {:include_blank => 'Line name'} %>
   </div> 
 
-  </br>
-  <div class="field form-group">
-    <%= form.collection_select :phenotype_id, Phenotype.all, :id, :id, {:include_blank => 'Phenotype ID'} %>
-  </div> 
+
 
   </br>
   <div class="actions">

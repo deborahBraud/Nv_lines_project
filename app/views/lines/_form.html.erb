@@ -158,12 +158,9 @@
 
   </br>
   <div class="form-group"> 
-    <% if @line.images.attached? %>
-      <%= image_tag @line.images %>
-    <% end %>
-    
-    <%= form.label :image %> <i> (NOT FUNCTIONNAL YET) </i>
-    <%= form.file_field :image, multiple: true, class:"form-control"%> 
+      
+    <%= form.label :images %> <i> (NOT FUNCTIONNAL YET) </i>
+    <%= form.file_field :images, multiple: true,direct_upload: true, class:"form-control"%> 
   </div>
   
 

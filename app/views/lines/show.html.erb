@@ -5,9 +5,9 @@
   <div class="row">
     <div class="col-sm">
       <% if @line.line_type =='reporter' %>
-        <%= image_tag("reporter_nv.png", :size => "300x300") %>
+        <%= image_tag("reporter.png", :size => "300x300") %>
       <% elsif @line.line_type =='wildtype' %>
-        <%= image_tag("logo_scheme.png", :size => "300x300") %>
+        <%= image_tag("logo.png", :size => "300x300") %>
       <% else %>   
         <%= image_tag("mutant.png", :size => "300x300") %>
       <% end %>
@@ -140,6 +140,10 @@
 </br>
 <hr>
 
+<% 
+<p> <%= @line.images.attach %> </p>
+
+    
 
 
            

@@ -1,10 +1,9 @@
 <div class="row row-cols-1 row-cols-md-2 g-2">
   <div class="col">
     <div class="card h-100">
-
-       <%= image_tag(@image, :alt => "image") %>
+      <%= image_tag("MyHC1_mCherry/Figure1A.png") %>
       <div class="card-body">
-        <h5 class="card-title"><%= @image.image_name %></h5>
+        <h5 class= "card-title"><%= @image.image_name %></h5>
         <p class="card-text"><%= @image.image_date %></p>
       </div>
     </div>
@@ -64,21 +63,16 @@
 
     <p>
       <% unless @image.line_id.blank? %>
-        <strong>Line ID :</strong>
-        <%= @image.line_id %>
+        <strong>Associated line  :</strong>
+        <%= @image.line.line_name%>
       <% end %>  
     </p> 
 
-    <p>
-      <% unless @image.phenotype_id.blank? %>
-        <strong>Phenotype ID :</strong>
-        <%= @image.phenotype_id %>
-      <% end %>  
-    </p> 
   </div>   
 </div>
 
 </br>
 <%= link_to 'Edit', edit_image_path(@image), class: 'btn btn-light' %> 
 <%= link_to 'Back', images_path, class: 'btn btn-secondary' %>
+
 
