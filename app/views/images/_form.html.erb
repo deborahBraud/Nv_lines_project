@@ -74,7 +74,13 @@
   </br>
   <div class="field form-group">
     Associated line :
-    <%= form.collection_select :line_id, Line.all, :id, :line_name, {:include_blank => 'Line name'} %>
+    <%= form.collection_select :line_id, Line.all, :id, :line_phenotype, {:include_blank => 'Associated line'} %>
+  </div> 
+
+  </br>
+  <div class="field form-group">
+    Associated line :
+    <%= form.collection_select :phenotype_id, Phenotype.all, :id, :phenotype_line, {:include_blank => 'Associated phenotype'} %>
   </div> 
 
 
