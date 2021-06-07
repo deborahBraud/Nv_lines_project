@@ -25,7 +25,7 @@
   </br>
   <div class="field form-group">
     <%= form.label :construction_type_description %> 
-    <%= form.text_field :construction_type_description, class:"form-control" %>
+    <%= form.text_area :construction_type_description, class:"form-control" %>
   </div>
 
 
@@ -50,7 +50,7 @@
   </br>
   <div class="field form-group">
     <%= form.label :vector_description %>
-    <%= form.text_field :vector_description, class:"form-control" %>
+    <%= form.text_area :vector_description, class:"form-control" %>
   </div>
 
   </br>
@@ -58,6 +58,11 @@
     <%= form.label :reagent_and_protocol %>
     <%= form.text_field :reagent_and_protocol, class:"form-control" %>
   </div>
+
+  </br>
+  <div class="field form-group">
+    To fill molecular information, please click <%= link_to "here", new_molecular_datum_path, target: :_blank %>
+  </div>  
 
 
   </br>

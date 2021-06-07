@@ -139,7 +139,8 @@
   <div class="field form-group">
     <h5>Genetic modification method associated ID : </h5>
     To create a new genetic modification method, please click <%= link_to "here", new_genetic_modification_method_path, target: :_blank %> and refresh the page to display the ID into the list :
-    <%= form.collection_select :genetic_modification_method_id, GeneticModificationMethod.all, :id, :id, {:include_blank => "None"} %>
+    <%= form.collection_select :genetic_modification_method_id, GeneticModificationMethod.all, :id, :id, {:include_blank => "None"} %> 
+
 
   </div>
 
@@ -154,7 +155,6 @@
     <h5><%= form.label :group_id %> : <i>*</i> </h5>
     <%= form.collection_select :group_id, Group.all, :id, :group_name, {:include_blank => "None"} %>
   </div> 
-
 
   </br>
   <div class="form-group"> 

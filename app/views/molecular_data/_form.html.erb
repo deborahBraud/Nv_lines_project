@@ -73,8 +73,8 @@
 
 </br>
   <div class="field form-group">
-    ID of the associated line :
-    <%= form.collection_select :genetic_modification_method_id, GeneticModificationMethod.all, :id, :line_id, {:include_blank => "None"} %>
+    ID of the genetic moification methods :
+    <%= form.collection_select :genetic_modification_method_id, GeneticModificationMethod.all, :id, :id, {:include_blank => "None"} %>
   </div>
 
 </br>  

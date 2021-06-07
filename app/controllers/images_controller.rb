@@ -12,7 +12,7 @@ class ImagesController < ApplicationController
     elsif params[:search_cell_loca]
       @images = Image.where("cellular_localization LIKE ?",
           "%#{params[:search_cell_loca]}%")
-      
+
     else
       @images = Image.all
     end
