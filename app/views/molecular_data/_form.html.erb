@@ -55,7 +55,7 @@
 
 </br>
   <div class="field form-group">
-    <%= form.label :NvERTx_id %>
+    NvERTx ID 
     <%= form.text_field :NvERTx_id, class:'form-control'  %>
   </div>
 
@@ -73,11 +73,13 @@
 
 </br>
   <div class="field form-group">
-    <%= form.label :genetic_modification_method_id %>
-    <%= form.number_field :genetic_modification_method_id, class:'form-control'  %>
+    ID of the associated line :
+    <%= form.collection_select :genetic_modification_method_id, GeneticModificationMethod.all, :id, :line_id, {:include_blank => "None"} %>
   </div>
 
+</br>  
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-outline-secondary'%>
   </div>
 <% end %>

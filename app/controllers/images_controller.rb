@@ -4,6 +4,18 @@ class ImagesController < ApplicationController
   # GET /images or /images.json
   def index
     @images = Image.all
+
+    if params[:search_tissu_loca]
+      @images = Image.where("tissu_localization LIKE ?", 
+          "%#{params[:search_tissu_loca]}%")
+
+    elsif params[:search_cell_loca]
+      @images = Image.where("cellular_localization LIKE ?",
+          "%#{params[:search_cell_loca]}%")
+      
+    else
+      @images = Image.all
+    end
   end
 
   # GET /images/1 or /images/1.json

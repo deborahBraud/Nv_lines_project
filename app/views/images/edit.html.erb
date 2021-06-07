@@ -1,7 +1,7 @@
 <h1>Editing Image</h1>
 <hr>
 
-<%= render 'form', image: @image %>
+<%= render 'form', image: @image %> </br>
 
-<%= link_to 'Show', @image %> |
-<%= link_to 'Back', images_path %>
+<%= link_to 'Show', @image, class: 'btn btn-outline-secondary' %> 
+<%= link_to 'Back to the index page', images_path, class: 'btn btn-secondary' %>

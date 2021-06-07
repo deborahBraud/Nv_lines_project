@@ -11,9 +11,10 @@
     </div>
   <% end %>
 
+<div><i> Fields tagged with an (*) are mandatory </i></div></br>
 
   <div class="inputGroupFile01">
-    <%= form.label :image %>
+    <%= form.label :image %> <i>*</i>
     <%= form.file_field :image, class:'form-control' %>
   </div>
 
@@ -73,20 +74,19 @@
 
   </br>
   <div class="field form-group">
-    Associated line :
+    Associated line : <i>*</i>
     <%= form.collection_select :line_id, Line.all, :id, :line_phenotype, {:include_blank => 'Associated line'} %>
   </div> 
 
   </br>
   <div class="field form-group">
-    Associated line :
+    Associated line : <i>*</i>
     <%= form.collection_select :phenotype_id, Phenotype.all, :id, :phenotype_line, {:include_blank => 'Associated phenotype'} %>
   </div> 
 
 
-
   </br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-light'%>
   </div>
 <% end %>

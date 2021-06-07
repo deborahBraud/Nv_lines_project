@@ -1,7 +1,13 @@
+<h1>Image description </h1>
+<hr>
+
+
 <div class="row row-cols-1 row-cols-md-2 g-2">
   <div class="col">
     <div class="card h-100">
-      <%= image_tag (@image.image) %>
+      <% unless @image.image.blank? %>
+        <%= image_tag (@image.image) %>
+      <% end %> 
       <div class="card-body">
         <h5 class= "card-title"><%= @image.image_name %></h5>
         <p class="card-text"><%= @image.image_date %></p>
@@ -12,12 +18,6 @@
 
 
   <div class="col">
-    <p>
-      <% unless @image.image_legend.blank? %>
-        <strong>Legend :</strong>
-        <%= @image.image_legend %>
-      <% end %>  
-    </p>  
 
     <p>
       <% unless @image.microscopy_technique.blank? %>
@@ -70,7 +70,12 @@
 
   </div>   
 </div>
-
+<p>
+      <% unless @image.image_legend.blank? %>
+        <strong>Legend :</strong>
+        <%= @image.image_legend %>
+      <% end %>  
+    </p>  
 </br>
 <%= link_to 'Edit', edit_image_path(@image), class: 'btn btn-light' %> 
 <%= link_to 'Back', images_path, class: 'btn btn-secondary' %>

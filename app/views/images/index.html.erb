@@ -1,5 +1,27 @@
 <h1>Images</h1>
+<hr>
 
+<div class= 'row'>
+  <div class='col'>
+    <form action="<%= images_path %>">
+      <input type="text" placeholder="Search by tissu localisation..." name="search_tissu_loca">
+    </form>
+  </div>
+
+  <div class='col'>
+    <form action="<%= images_path %>">
+      <input type="text" placeholder="Search by cellular localisation..." name="search_cell_loca">
+    </form>
+  </div>
+
+
+  <div class='col'>
+   <%= link_to 'All images', images_path, class:'btn btn-outline-secondary' %>
+ </div> 
+</div>  
+
+</br>
+<p>
 <table class="table">
   <thead>
     <tr>
@@ -27,3 +49,4 @@
 <br>
 
 <%= link_to 'Add a new Image', new_image_path, class:'btn btn-light' %>
+</p>

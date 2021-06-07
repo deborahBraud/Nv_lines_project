@@ -1,16 +1,18 @@
 <h1>Molecular Data</h1>
+<hr>
 
 <div class="table-responsive"> </br>
   <table class="table table-bordered table-responsive">
     <thead>
       <tr class="header" bgcolor="F8F9FA">
-        <th colspan ="5"> Gene information</th>
-        <th colspan ="6"> Other information </th>
+        <th colspan ="6"> Gene information</th>
+        <th colspan ="5"> Other information </th>
         <th colspan ="3"> </th>
       </tr>
 
       <tr>
-        <th>Name</th>
+        <th>Name</th>        
+        <th>Associated line</th>
         <th>Genbank ID</th>
         <th>Ensembl ID</th>
         <th>Promoter</th>
@@ -21,7 +23,7 @@
         <th>Nvertx</th>
         <th>Locus insertion</th>
         <th>Mutated region</th>
-        <th>Associated line</th>
+
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -30,28 +32,30 @@
       <% @molecular_data.each do |molecular_datum| %>
         <tr>
           <td><%= molecular_datum.gene_name %></td>
+          <td><%= molecular_datum.genetic_modification_method.line.line_name%></td>
           <td><%= molecular_datum.genbank_gene_accession_number %></td>
           <td><%= molecular_datum.ensembl_gene_accession_number %></td>
           <td><%= molecular_datum.gene_promoter %></td>
           <td><%= molecular_datum.gene_sequence %></td>
-          <td>
+
 
           <td><%= molecular_datum.genome_version_accession_number %></td>
           <td><%= molecular_datum.chromosome_number %></td>
-
           <td><%= molecular_datum.NvERTx_id %></td>
           <td><%= molecular_datum.locus_insertion %></td>
           <td><%= molecular_datum.mutated_region %></td>
-          <td><%= molecular_datum.genetic_modification_method.line.line_name%></td>
           
-          <td><%= link_to 'Show', molecular_datum %></td>
-          <td><%= link_to 'Edit', edit_molecular_datum_path(molecular_datum) %></td>
-          <td><%= link_to 'Delete', molecular_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', molecular_datum, class:'btn btn-outline-secondary btn-sm' %> </td>
+          <td><%= link_to 'Edit', edit_molecular_datum_path(molecular_datum), class:'btn btn-outline-secondary btn-sm' %></td>
+          <td><%= link_to 'Delete', molecular_datum, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-outline-danger btn-sm' %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 
+</div>
 <br>
 
-<%= link_to 'New Molecular Datum', new_molecular_datum_path %>
+
+
+<%= link_to 'New Molecular Datum', new_molecular_datum_path, class:'btn btn-light' %>

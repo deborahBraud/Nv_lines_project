@@ -52,14 +52,16 @@
     </tbody>
   </table>
 
-  <p>Other phenotype description : 
+  <p>Supplementary information : 
   <% if @phenotype.other_phenotype_description.blank? %> 
     NA
   <% else %>
     <%=  @phenotype.other_phenotype_description %>
   <% end %>  
   </p> 
+</div>  
 
+</br>
 <% if user_signed_in? %> 
     <td><%= link_to 'Edit', edit_phenotype_path(@phenotype), class: 'btn btn-outline-secondary ' %></td>
     <td><%= link_to 'Destroy', @phenotype, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger ' %>

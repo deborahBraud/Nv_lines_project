@@ -21,6 +21,12 @@
         <%= link_to 'Edit', edit_line_path(@line), class: 'btn btn-light' %> </h5></br>
         <% else %> </h5></br>
         <% end %> 
+
+      <p> <strong> Line ID : </strong>
+      <%= @line.id %>
+      </p>  
+
+
       <p>
         <% unless @line.line_name.blank? %>
           <strong>Line name:</strong>
@@ -134,13 +140,13 @@
 </p>
 
 <% unless @line.genetic_modification_method_id.blank?%>
-  <p><%= link_to 'Methods & molecular data information', genetic_modification_method_path(@line.genetic_modification_method_id), class: 'btn btn-outline-secondary btn-sm' %> </p>
-<% end %>  
+  <p><%= link_to 'Methods & molecular data information', genetic_modification_method_path(@line.genetic_modification_method_id),  class: 'btn btn-outline-secondary btn-sm'%> </p> 
+<% end %> 
+<%= link_to 'Images repertory', images_path,  class: 'btn btn-outline-secondary btn-sm'%>
 
 </br>
 <hr>
-
-
+ 
 <%= @line.images.each do |image| %>
   <%= @line.images %>
 <% end %>  

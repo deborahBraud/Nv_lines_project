@@ -113,4 +113,9 @@
       </table>
     <% end %>
   <%end%>  
+
+  <p>
+  <%= link_to 'Edit', edit_molecular_datum_path(@genetic_modification_method.molecular_data.ids), class:'btn btn-light' %> 
+  <%= link_to 'Back', molecular_datum_path, class:'btn btn-secondary' %>
+</p>
     
