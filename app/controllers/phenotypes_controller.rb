@@ -14,6 +14,9 @@ class PhenotypesController < ApplicationController
     elsif params[:search_sub_type]
       @phenotypes = Phenotype.where("sublocalization_type LIKE ?", 
           "%#{params[:search_sub_type]}%")
+    elsif params[:search_region_type]
+      @phenotypes = Phenotype.where("region_type LIKE ?", 
+          "%#{params[:search_region_type]}%")  
     else
       @phenotypes = Phenotype.all
     end

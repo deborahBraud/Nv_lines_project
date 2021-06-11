@@ -3,7 +3,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm">
+   <div class="col-sm">
       <% if @line.line_type =='reporter' %>
         <%= image_tag("reporter.png", :size => "300x300") %>
       <% elsif @line.line_type =='wildtype' %>
@@ -145,11 +145,13 @@
 <%= link_to 'Images repertory', images_path,  class: 'btn btn-outline-secondary btn-sm'%>
 
 </br>
+<!-- 
 <hr>
- 
+
+
 <%= @line.images.each do |image| %>
   <%= @line.images %>
-<% end %>  
+<% end %> --> 
 
     
 

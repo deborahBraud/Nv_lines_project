@@ -1,6 +1,62 @@
 <h1>Phenotypes</h1>
 <hr>
 
+<div class= 'row'>
+  
+    <div class='col'>
+      <form action="<%= phenotypes_path %>">
+        <input list="sub_list" placeholder="Sub-localisation tag ?"name="search_sub_type">
+        <h6> Please double-click to see avaible options </h6>
+        <datalist id="sub_list">
+          <option value="0">Nuclei membrane</option>
+          <option value="1">Cell membrane</option>
+          <option value="2">Nuclei</option>
+          <option value="3">Cytoplasm</option>
+        </datalist>
+      </form> 
+  </div>
+
+  <div class='col'>
+    <form action="<%= phenotypes_path %>">
+      <input list="cell_list" placeholder="Cell type ?"name="search_cell_type">
+      <h6> Please double-click to see avaible options </h6>
+      <datalist id="cell_list">
+        <option value="0">Epithelial</option>
+        <option value="1">Cnidocyte</option>
+        <option value="2">Neuronal</option>
+        <option value="3">Gland</option>
+        <option value="4">Muscle</option>
+        <option value="5">Germline</option>
+        <option value="6">Stem</option>
+        <option value="7">Ectoderm</option>
+        <option value="8">Endoderm</option>
+      </datalist>
+    </form>
+  </div>
+
+  <div class='col'>
+    <form action="<%= phenotypes_path %>">
+        <input list="region_list" placeholder="Region type ? "name="search_region_type">
+        <h6> Please double-click to see avaible options </h6>
+        <datalist id="region_list">
+          <option value="0">Head</option>
+          <option value="1">Body</option>
+          <option value="2">Foot</option>
+          <option value="3">Mesenteries</option>
+          <option value="4">Amputation</option>
+          <option value="5">Nematosome</option>
+          <option value="6">Tentacle</option>
+          <option value="7">Mouth</option>
+          <option value="8">Pharynx</option>
+        </datalist>
+      </form> 
+  </div>
+
+  <div class='col'>
+   <%= link_to 'All phenotypes', phenotypes_path, class:'btn btn-outline-secondary' %>
+ </div> 
+</div>  
+
 <div class="table-responsive"> </br>
   <table class="table table-bordered table-responsive">
     <thead class="header" bgcolor="F8F9FA">

@@ -1,26 +1,33 @@
 <h1>Molecular Data</h1>
 <hr>
 
+<div class= 'row'>
+  <div class='col'>
+    <form action="<%= molecular_data_path %>">
+      <input type="text" placeholder="Search by gene name ..." name="search_key_gene">
+    </form>
+  </div>
+
+  <div class='col'>
+   <%= link_to 'All data', molecular_data_path, class:'btn btn-outline-secondary' %>
+ </div> 
+</div>  
+
 <div class="table-responsive"> </br>
   <table class="table table-bordered table-responsive">
     <thead>
       <tr class="header" bgcolor="F8F9FA">
-        <th colspan ="6"> Gene information</th>
-        <th colspan ="5"> Other information </th>
+        <th colspan ="3"> Gene information</th>
+        <th colspan ="3"> Other information </th>
         <th colspan ="3"> </th>
       </tr>
 
       <tr>
         <th>Name</th>        
         <th>Associated line</th>
-        <th>Genbank ID</th>
-        <th>Ensembl ID</th>
         <th>Promoter</th>
-        <th>Sequence</th>
 
         <th>Genome version accession number</th>
-        <th>Chromosome number</th>
-        <th>Nvertx</th>
         <th>Locus insertion</th>
         <th>Mutated region</th>
 
@@ -33,15 +40,9 @@
         <tr>
           <td><%= molecular_datum.gene_name %></td>
           <td><%= molecular_datum.genetic_modification_method.line.line_name%></td>
-          <td><%= molecular_datum.genbank_gene_accession_number %></td>
-          <td><%= molecular_datum.ensembl_gene_accession_number %></td>
           <td><%= molecular_datum.gene_promoter %></td>
-          <td><%= molecular_datum.gene_sequence %></td>
-
 
           <td><%= molecular_datum.genome_version_accession_number %></td>
-          <td><%= molecular_datum.chromosome_number %></td>
-          <td><%= molecular_datum.NvERTx_id %></td>
           <td><%= molecular_datum.locus_insertion %></td>
           <td><%= molecular_datum.mutated_region %></td>
           

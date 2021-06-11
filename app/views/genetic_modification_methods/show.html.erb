@@ -114,6 +114,10 @@
     <% end %>
   <%end%>  
 
+  <div class="field form-group">
+    To fill molecular information, please click <%= link_to "here", new_molecular_datum_path, target: :_blank %>
+  </div>  
+
   <p>
     <% unless @genetic_modification_method.molecular_data.ids.blank?%>
       <%= link_to 'Edit', edit_molecular_datum_path(@genetic_modification_method.molecular_data.ids), class:'btn btn-light' %> 
