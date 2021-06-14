@@ -10,7 +10,7 @@
         <th colspan ="2"> Larval stage </th>
         <th colspan ="2"> Metamorphosis </th>
         <th colspan ="2"> Adult stage </th>
-        <th colspan="4"> Other Caracterization </th
+        <th colspan="4"> Other Caracterization </th>
       </tr>
 
       <tr>
@@ -61,14 +61,13 @@
 
 </div>  
 
-</br>
+</br> <p>
 <% if user_signed_in? %> 
     <td><%= link_to 'Edit', edit_phenotype_path(@phenotype), class: 'btn btn-outline-secondary ' %></td>
     <td><%= link_to 'Destroy', @phenotype, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger ' %> 
-<% else %>
-<% end %> 
+<% end %> </td>
+
+
+<p> <%= link_to 'Back to the index', phenotypes_path, class: 'btn btn-secondary ' %></p>
 
 </div>
-</br>
-<p> <%= link_to 'Back to phenotypes index', phenotypes_path, class: 'btn btn-secondary ' %></p>
-

@@ -11,7 +11,7 @@ class Line < ApplicationRecord
 	belongs_to :user
 	belongs_to :group
 
-	has_many_attached :images
+	has_one_attached :image
 
 	has_and_belongs_to_many :publications
 	accepts_nested_attributes_for :publications, allow_destroy: true, reject_if: :all_blank 

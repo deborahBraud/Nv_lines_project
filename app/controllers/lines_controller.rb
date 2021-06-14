@@ -3,7 +3,7 @@ class LinesController < ApplicationController
   
   # GET /lines or /lines.json
   def index
-    @lines = Line.all.with_attached_images
+    @lines = Line.all
 
     if params[:search_key]
       @lines = Line.where("line_name LIKE ? OR synonym_line_name LIKE ?", 
