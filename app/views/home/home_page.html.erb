@@ -12,7 +12,7 @@
       </div>
       <div class="col-md-8 ">
         <div class="card-body">
-          <h5 class="card-title-home bg-light">Latest Entry</h5>
+          <h5 class="card-title-home bg-dark">Latest Entry</h5>
           <p class="card-text"> Line : <%= Line.last.line_name %> </br>
             Type : <%= Line.last.line_type %> </br>
             Zygosity : <%= Line.last.zygosity %> </br>
@@ -32,7 +32,7 @@
         <%= link_to reporter_lines_index_path do %>
           <%= image_tag "home_reporter.png", :size => '400x400',:alt => "Image", :class => "img-fluid tm-header-img"%>
         <% end %>
-      	<div class="card-body bg-light">
+      	<div class="card-body bg-dark">
   	        <h5 class="card-title-home">Reporter Lines</h5>
   	    </div>
       </div>
@@ -43,10 +43,9 @@
   	    <%= link_to functional_lines_index_path do %>
           <%= image_tag "home_functionnal.png", :size => '400x400',:alt => "Image", :class => "img-fluid tm-header-img"%>
         <% end %>
-        <div class="card-body bg-light">
+        <div class="card-body bg-dark">
           <h5 class="card-title-home">Functional Lines</h5>
         </div>
-    		</br>
       </div>
     </div>
 
@@ -55,7 +54,7 @@
         <%= link_to wt_lines_index_path do %>
           <%= image_tag "home_wt.jpg", :size => '400x400',:alt => "Image", :class => "img-fluid tm-header-img"%>
         <% end %>
-        <div class="card-body bg-light">
+        <div class="card-body bg-dark">
           <h5 class="card-title-home">Wild-type Lines</h5>
         </div>
       </div>

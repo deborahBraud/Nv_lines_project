@@ -48,6 +48,21 @@
     <%= f.password_field :current_password, autocomplete: "current-password", class:'form-control' %>
   </div>
 
+  <div class="field form-group">
+    <%= f.label :staff_ids %>
+    <%= f.collection_check_boxes(:staff_ids, Staff.all, :id, :staff_name) do |b| %>
+      <div class="row">
+        <%= b.label(class: "check_box") do %>
+          <div class="col-xs-4">
+            <%= b.check_box(class: "check_box") %>
+            <%= b.object.staff_name %>
+          </div>       
+        <% end %>
+      </div>
+    <% end %>  
+  </div>
+
+
 </br>
   <div class="actions">
     <%= f.submit "Update", class: 'btn btn-light' %>

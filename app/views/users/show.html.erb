@@ -9,12 +9,14 @@
     <%= @user.groups.ids %>
   <% end %>
 
-
-
 </p>
 
-</br>
 <p>
-<%= link_to 'Edit information', edit_user_registration_path(@user), class:'btn btn-light' %> 
-<%= link_to 'Back', users_path, class:'btn btn-secondary' %>
+<% if @user == current_user %>
+	<%= link_to 'Edit information', edit_user_registration_path(@user), class:'btn btn-light' %> 
+	<%= link_to 'Back', users_path, class:'btn btn-secondary' %>
+<% else %>
+	<%= link_to 'Back', users_path, class:'btn btn-secondary' %>
+<% end %>	
+
 </p>
