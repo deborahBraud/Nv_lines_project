@@ -47,8 +47,12 @@
           <td><%= molecular_datum.mutated_region %></td>
           
           <td><%= link_to 'Show', molecular_datum, class:'btn btn-outline-secondary btn-sm' %> </td>
+
+          <% if user_signed_in?%> 
           <td><%= link_to 'Edit', edit_molecular_datum_path(molecular_datum), class:'btn btn-outline-secondary btn-sm' %></td>
           <td><%= link_to 'Delete', molecular_datum, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-outline-danger btn-sm' %></td>
+          <% end %>
+
         </tr>
       <% end %>
     </tbody>
@@ -57,6 +61,9 @@
 </div>
 <br>
 
+<% if user_signed_in?%>
+  <%= link_to 'New Molecular Datum', new_molecular_datum_path, class:'btn btn-light' %>
+ <% else %>
+  <p> To add molecular data, please <%= link_to "login",new_user_session_path, class:"link" %> </p>
+ <% end %>  
 
-
-<%= link_to 'New Molecular Datum', new_molecular_datum_path, class:'btn btn-light' %>

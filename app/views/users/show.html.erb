@@ -1,8 +1,16 @@
 <p>
   <% unless @user.email.blank? %>
-    <strong>Name:</strong>
+    <strong>User mail:</strong>
     <%= @user.email %>
   <% end %>
+
+  <% unless @user.groups.blank? %>
+    <strong>Associated groups:</strong>
+    <%= @user.groups.ids %>
+  <% end %>
+
+
+
 </p>
 
 </br>

@@ -38,14 +38,19 @@
         <td><%= image.lifecycle_stage %></td>
         <td><%= image.tissu_localization %></td>
         <td><%= link_to 'Show', image, class:'btn btn-outline-secondary btn-sm' %></td>
-        <td><%= link_to 'Edit', edit_image_path(image), class:'btn btn-outline-secondary btn-sm' %></td>
-        <td><%= link_to 'Delete', image, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-outline-danger btn-sm' %></td>
+
+        <% if user_signed_in?%> 
+          <td><%= link_to 'Edit', edit_image_path(image), class:'btn btn-outline-secondary btn-sm' %></td>
+          <td><%= link_to 'Delete', image, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-outline-danger btn-sm' %></td>
+        <% end %>  
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'Add a new Image', new_image_path, class:'btn btn-light' %>
-</p>
+<% if user_signed_in?%>
+  <%= link_to 'Add a new image', new_image_path, class:'btn btn-light' %>
+ <% else %>
+  <p> To add a new image, please <%= link_to "login",new_user_session_path, class:"link" %> </p>
+ <% end %> 

@@ -134,14 +134,14 @@
 
 
 <p>
-  <% unless @line.wild_type_background_id.blank?%>
+  <% unless @line.wild_type_background_id.blank?%> 
     <%= link_to 'Wild-type background', wild_type_backgrounds_path, class: 'btn btn-outline-secondary btn-sm' %>
   <% end %>
 </p>
 
 <% unless @line.genetic_modification_method_id.blank?%>
   <p><%= link_to 'Methods & molecular data information', genetic_modification_method_path(@line.genetic_modification_method_id),  class: 'btn btn-outline-secondary btn-sm'%> </p> 
-<% end %> 
+<% end %>
 <%= link_to 'Images repertory', images_path,  class: 'btn btn-outline-secondary btn-sm'%>
 
 </br>
