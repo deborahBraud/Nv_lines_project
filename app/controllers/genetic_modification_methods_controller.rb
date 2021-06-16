@@ -5,7 +5,7 @@ class GeneticModificationMethodsController < ApplicationController
   def index
     @genetic_modification_methods = GeneticModificationMethod.includes(:line).all
 
-    if params[:search_key_tag]
+    if params[:search_key_tag] # for the HOME "tag_type" search bar
       @genetic_modification_methods = GeneticModificationMethod.where("tag_type LIKE ?", 
           "%#{params[:search_key_tag]}%")
     else

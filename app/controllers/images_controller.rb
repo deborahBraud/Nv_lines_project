@@ -5,7 +5,7 @@ class ImagesController < ApplicationController
   def index
     @images = Image.all
 
-    if params[:search_tissu_loca]
+    if params[:search_tissu_loca] # for the HOME "tissu_localization" search bar
       @images = Image.where("tissu_localization LIKE ?", 
           "%#{params[:search_tissu_loca]}%")
 
