@@ -46,7 +46,7 @@ class LinesController < ApplicationController
   def create
     @line = Line.new(line_params)
     #params.require(:line).permit(:title, :content)
-    @line.images.attach(params[:images]) 
+    @line.image.attach(params[:image]) 
     #redirect_to @line
 
     respond_to do |format|

@@ -1,67 +1,85 @@
 <!-- HOME PAGE -->
-<h1> NvLines - A database referencing wild-type, transgenic and mutant Nematostella vectensis lines </h1>
-<hr>
-<style>
+<center>
+  <h1> NvLines - A database referencing wild-type, transgenic and mutant Nematostella vectensis lines </h1>
+  <hr>
+  <style>
 
-.img-fluid{width:100%;height:auto}
-</style>
+  .img-fluid{width:100%;height:auto}
+  </style>
 
-<div class= "container-home">
-  <div class="card mb-3" style="max-width: 575px;" >
-    <div class="row g-0">
-      <div class="col-md-4">
-        <%= link_to line_path(Line.last) do %>
-          <%= image_tag "reporter.png", :alt => "Image", :class => "img-fluid tm-header-img"%>
-        <% end %>
-      </div>
-      <div class="col-md-8 ">
-        <div class="card-body">
-          <h5 class="card-title-home bg-dark">Latest Entry</h5>
-          <p class="card-text style=color"> Line : <%= Line.last.line_name %> </br>
-            Type : <%= Line.last.line_type %> </br>
-            Zygosity : <%= Line.last.zygosity %> </br>
-            Generation : <%= Line.last.generation %> </br>
-            Laboratory : <%= Line.last.lab_of_origin %></p>
+  <div class= "container-home">
+    <div class="card mb-3"  >
+      <div class="row g-0">
+        <div class="col-md-4">
+          <%= link_to line_path(Line.last) do %>
+            <%= image_tag "home_latest.png", :alt => "Image", :class => "img-fluid tm-header-img"%>
+          <% end %>
         </div>
-      </div>
-    </div>
-  </div>
-
-</br>
-
-  <div class="row row-cols-2 row-cols-md-3">
-
-    <div class="card-group">
-      <div class="card h-100 w-75">
-        <%= link_to reporter_lines_index_path do %>
-          <%= image_tag "home_reporter.png", :size => '400x400',:alt => "Image", :class => "img-fluid tm-header-img" %>
-        <% end %>
-      	<div class="card-body bg-dark">
-          <h5 class="card-title-home">Reporter Lines</h5>
-  	    </div>
-      </div>
-    </div>
-
-    <div class="card-group">
-      <div class="card h-100 w-75">
-  	    <%= link_to functional_lines_index_path do %>
-          <%= image_tag "home_functionnal.png", :size => '400x400',:alt => "Image", :class => "img-fluid tm-header-img"%>
-        <% end %>
-        <div class="card-body bg-dark">
-          <h5 class="card-title-home">Functional Lines</h5>
+        <div class="col-md-8 ">
+          <div class="card-body">
+            <h5 class="card-title-home bg-dark">Latest Entry</h5>
+            <p class="card-text style=color">
+            <p>Line : <%= Line.last.line_name %> </p>
+            <p>Type : 
+              <% if Line.last.line_type == "reporter" %> 
+                Reporter line
+              <% elsif Line.last.line_type == "functional_constitutive_loss" %> 
+                Functional constitutive line (loss of function)
+              <% elsif Line.last.line_type == "functional_constitutive_gain" %> 
+                Functional constitutive line (gain of function) 
+              <% elsif Line.last.line_type == "functional_conditional_loss" %> 
+                Functional conditional line (loss of function) 
+              <% elsif Line.last.line_type == "functional_conditional_gain" %> 
+                Functional conditional line (gain of function)
+              <% elsif Line.last.line_type == "wildtype" %> 
+                Wild-type line  
+              <% else %> 
+                Other type of line  
+              <% end %></p>
+            <p>Zygosity : <%= Line.last.zygosity %> </p>
+            <p>Generation : <%= Line.last.generation %> </p>
+            <p>Laboratory : <%= Line.last.lab_of_origin %></p>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="card-group">
-      <div class="card h-100 w-75">
-        <%= link_to wt_lines_index_path do %>
-          <%= image_tag "home_wt.jpg", :size => '400x400',:alt => "Image", :class => "img-fluid tm-header-img"%>
-        <% end %>
-        <div class="card-body bg-dark">
-          <h5 class="card-title-home">Wild-type Lines</h5>
+  </br>
+
+    <div class="row row-cols-2 row-cols-md-3">
+
+      <div class="card-group">
+        <div class="card h-100 w-75">
+          <%= link_to reporter_lines_index_path do %>
+            <%= image_tag "home_reporter.png", :size => '400x400',:alt => "Image", :class => "img-fluid tm-header-img" %>
+          <% end %>
+        	<div class="card-body bg-dark">
+            <h5 class="card-title-home">Reporter Lines</h5>
+    	    </div>
+        </div>
+      </div>
+
+      <div class="card-group">
+        <div class="card h-100 w-75">
+    	    <%= link_to functional_lines_index_path do %>
+            <%= image_tag "home_functionnal.png", :size => '400x400',:alt => "Image", :class => "img-fluid tm-header-img"%>
+          <% end %>
+          <div class="card-body bg-dark">
+            <h5 class="card-title-home">Functional Lines</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-group">
+        <div class="card h-100 w-75">
+          <%= link_to wt_lines_index_path do %>
+            <%= image_tag "home_wt.jpg", :size => '400x400',:alt => "Image", :class => "img-fluid tm-header-img"%>
+          <% end %>
+          <div class="card-body bg-dark">
+            <h5 class="card-title-home">Wild-type Lines</h5>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>  
+  </div>  
+</center>  
