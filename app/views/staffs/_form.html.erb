@@ -12,10 +12,23 @@
     </div>
   <% end %>
 
-  <div class="field form-group">
-    <%= form.label :Team_Name %>
-    <%= form.text_field :staff_name, class:'form-control', placeholder: 'Name' %>
-  </div>
+<div class="field form-group">
+  Lab name 
+  <%= form.text_field :staff_name, class:'form-control', placeholder: 'Name' %>
+</div>
+
+</br>
+<div class="field form-group">
+  Lab topic 
+  <%= form.text_field :topic, class:'form-control', placeholder: 'Name' %>
+</div>
+
+</br>
+<div class="field form-group">
+  Lab website 
+  <%= form.text_field :url, class:'form-control', placeholder: 'Name' %>
+</div>
+
 
 </br>
 <div class="field form-group">
@@ -26,7 +39,7 @@
 
 </br>
   <div class="field form-group">
-    <%= form.label :Header %>
+    Head 
     <%= form.text_field :staff_header, class:'form-control', placeholder: "Header's name" %>
   </div>
 
@@ -58,7 +71,7 @@
 
 </br>
   <div class="field form-group">
-    <%= form.label :Institut_name %>
+    Department (or Institut name) 
     <%= form.text_field :institut_name, class:'form-control', placeholder: 'Institut name' %>
   </div>
 

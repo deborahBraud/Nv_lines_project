@@ -4,11 +4,10 @@
 <table class="table table-bordered">
   <thead class="header" bgcolor="F8F9FA">
     <tr>
-      <th>Name</th>
-      <th>Head of the team</th>
-      <th>Adress</th>
-      <th>Team or Facility </th>
-      <th>Institut name</th>
+      <th>Lab Name</th>
+      <th>Topic</th>
+      <th>Website</th>
+      <th>Department</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,20 +15,15 @@
 
     <% @staffs.each do |staff| %>
       <tr>
-       <td><%= staff.staff_name %></td>
-        <td><%= staff.staff_header %></td>
-        <td><%= staff.staff_adress %>
-            <%= staff.postalcode %>
-            <%= staff.city %>
-            <%= staff.country %></td>
-        <td><%= staff.staff_type %></td>
-        <td><%= staff.institut_name %></td>
-        <td><%= link_to 'Show', staff, class: 'btn btn-outline-secondary btn-sm'  %></td>
+       <td><%= link_to staff.staff_name, staff %></td>
+       <td><%= staff.topic %></td>
+       <td><%= link_to "Click here", staff.url, target: :blank%></td>
+       <td><%= staff.institut_name %></td>
 
-        <% if user_signed_in?%>
-            <td><%= link_to 'Edit', edit_staff_path(staff), class: 'btn btn-outline-secondary btn-sm' %></td>
-            <td><%= link_to 'Delete', staff, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' %></td>
-        <%end%>
+       <% if user_signed_in?%>
+          <td><%= link_to 'Edit', edit_staff_path(staff), class: 'btn btn-outline-secondary btn-sm' %></td>
+          <td><%= link_to 'Delete', staff, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' %></td>
+       <%end%>
 
       </tr>
     <% end %>

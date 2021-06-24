@@ -19,8 +19,8 @@
           <div class="card-body">
             <h5 class="card-title-home bg-dark">Latest Entry</h5>
             <p class="card-text style=color">
-            <p>Line : <%= Line.last.line_name %> </p>
-            <p>Type : 
+            <p><strong> Line : </strong> <%= link_to Line.last.line_name, line_path(Line.last) %> </p>
+            <p><strong> Type : </strong>
               <% if Line.last.line_type == "reporter" %> 
                 Reporter line
               <% elsif Line.last.line_type == "functional_constitutive_loss" %> 
@@ -36,9 +36,10 @@
               <% else %> 
                 Other type of line  
               <% end %></p>
-            <p>Zygosity : <%= Line.last.zygosity %> </p>
-            <p>Generation : <%= Line.last.generation %> </p>
-            <p>Laboratory : <%= Line.last.lab_of_origin %></p>
+            <p><strong> Zygosity : </strong> <%= Line.last.zygosity %> </p>
+            <p><strong> Generation : </strong> <%= Line.last.generation %> </p>
+            <p><strong> Laboratory : </strong> <%= Line.last.lab_of_origin %></p>
+            <p> <strong> Last update : </strong> <%= Line.last.updated_at %> </p>
           </div>
         </div>
       </div>

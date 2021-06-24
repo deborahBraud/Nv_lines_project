@@ -8,16 +8,16 @@
 
 <p>
   <strong>Authors:</strong>
-  <%= @publication.authors %>
+  <%= link_to "Click here", @publication.authors, target: :blank %>
 </p>
 
 <p>
-  <strong>Pubmed link:</strong>
-  <%= @publication.pubmed_link %>
+  <strong>Pubmed access:</strong>
+  <%= link_to "Click here", @publication.pubmed_link, target: :blank %>
 </p>
 
 <p>
-  <strong>Doi link:</strong>
+  <strong>Doi access:</strong>
   <%= @publication.doi_link %>
 </p>
 

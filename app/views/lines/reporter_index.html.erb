@@ -8,7 +8,7 @@
       <th>Generation</th>
       <th>Zygosity</th>
       <th>Lab of origin</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -17,14 +17,13 @@
       <% if line.line_type == 'reporter' %>
       <tr>
         <% unless @lines.each.blank? %>
-          <td><%= line.line_name %></td>
+          <td><%= link_to line.line_name, line, class:'link-info'%></td>
           <td><% if  line.generation == "F2"%> F2 (or more)
               <% else %> <%= line.generation %>
               <% end %> </td>
           <td><%= line.zygosity %></td>
           <td><%= line.lab_of_origin %></td>
-          <td><%= link_to 'Show more', line, class:'btn btn-outline-secondary btn-sm' %></td>
-
+          
           <% if user_signed_in?%> 
             <td><%= link_to 'Edit', edit_line_path(line), class:'btn btn-outline-secondary btn-sm' %></td>
             <td><%= link_to 'Delete', line, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-outline-danger btn-sm' %></td>

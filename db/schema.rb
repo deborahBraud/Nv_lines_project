@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_29_125454) do
+ActiveRecord::Schema.define(version: 2021_06_24_094402) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -183,6 +183,19 @@ ActiveRecord::Schema.define(version: 2021_04_29_125454) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "searches", force: :cascade do |t|
+    t.string "line_name"
+    t.string "gene_name"
+    t.string "line_type"
+    t.string "tag_type"
+    t.string "tag_sublocalisation_string"
+    t.string "cell_type"
+    t.string "phenotype"
+    t.string "laboratory"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "staffs", force: :cascade do |t|
     t.string "staff_name"
     t.string "staff_header"
@@ -195,6 +208,8 @@ ActiveRecord::Schema.define(version: 2021_04_29_125454) do
     t.string "city"
     t.string "postalcode"
     t.integer "staff_type"
+    t.string "topic"
+    t.string "url"
   end
 
   create_table "staffs_users", id: false, force: :cascade do |t|
@@ -227,4 +242,3 @@ ActiveRecord::Schema.define(version: 2021_04_29_125454) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
 end
- 

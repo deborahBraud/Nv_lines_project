@@ -9,6 +9,20 @@
 </p>
 
 <p>
+  <% unless @staff.topic.blank? %>
+    <strong>Topic:</strong>
+    <%= @staff.topic %>
+  <% end %>
+</p>
+
+<p>
+  <% unless @staff.url.blank? %>
+    <strong>Website:</strong>
+    <%= link_to "Click here", @staff.url, target: :blank %>
+  <% end %>
+</p>
+
+<p>
   <% unless @staff.staff_header.blank? %>
     <strong>Header's team or facility:</strong>
     <%= @staff.staff_header %>
