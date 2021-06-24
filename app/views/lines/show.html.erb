@@ -93,45 +93,46 @@
 
 <!-- GENETIC MODIFICATION METHODS -->
     <div class="col-sm">
+
     <h5> Genetic modifications 
-         <% if user_signed_in?%> 
-            <%= link_to 'Edit', genetic_modification_method_path(@line.genetic_modification_method_id), class:'btn btn-light' %> </h5></br>
-          <% else %> </h5></br>
-          <% end %> 
+      <% unless @line.genetic_modification_method_id.blank? %> 
+        <% if user_signed_in?%> 
+          <%= link_to 'Edit', genetic_modification_method_path(@line.genetic_modification_method_id), class:'btn btn-light' %> </h5></br>
+        <% else %> </h5></br>
+        <% end %> 
 
-      <% if @line.genetic_modification_method_id%>
-
-          <% unless @line.genetic_modification_method.tag_type.blank? %><p>
+      
+        <p> <% unless @line.genetic_modification_method.tag_type.blank? %>
               <strong>Tag type :</strong>
               <%=@line.genetic_modification_method.tag_type%>
             <%end%> 
 
-        <p> <% unless @line.genetic_modification_method.construction_type_description.blank? %><p>
+        <p> <% unless @line.genetic_modification_method.construction_type_description.blank? %>
               <strong>Construction description :</strong>
               <%=@line.genetic_modification_method.construction_type_description%>
             <%end%> </p>
 
-        <p> <% unless @line.genetic_modification_method.molecular_tools.blank? %><p>
+        <p> <% unless @line.genetic_modification_method.molecular_tools.blank? %>
               <strong>Molecular tools :</strong>
               <%=@line.genetic_modification_method.molecular_tools %>
             <%end%> </p>
 
-        <p> <% unless @line.genetic_modification_method.mutation_type.blank? %><p>
+        <p> <% unless @line.genetic_modification_method.mutation_type.blank? %>
               <strong>Mutation type:</strong>
               <%=@line.genetic_modification_method.mutation_type %>
             <%end%> </p>  
 
-        <p> <% unless @line.genetic_modification_method.vector_name.blank? %><p>
+        <p> <% unless @line.genetic_modification_method.vector_name.blank? %>
               <strong>Vector name :</strong>
               <%=@line.genetic_modification_method.vector_name %>
             <%end%> </p> 
 
-        <p> <% unless @line.genetic_modification_method.vector_description.blank? %><p>
+        <p> <% unless @line.genetic_modification_method.vector_description.blank? %>
               <strong>Vector description :</strong>
               <%=@line.genetic_modification_method.vector_description %>
             <%end%> </p> 
 
-        <p> <% unless @line.genetic_modification_method.reagent_and_protocol.blank? %><p>
+        <p> <% unless @line.genetic_modification_method.reagent_and_protocol.blank? %>
               <strong>Reagents and protocols :</strong>
               <%=@line.genetic_modification_method.reagent_and_protocol %>
             <%end%> </p> 

@@ -1,13 +1,7 @@
+<h1>  <%= @staff.staff_name %> </h1> 
+<hr>
 
-<h1>  <%= @staff.staff_name %> </h1> </br>
-
-<p>
-  <% unless @staff.staff_name.blank? %>
-    <strong>Name:</strong>
-    <%= @staff.staff_name %>
-  <% end %>
-</p>
-
+</br>
 <p>
   <% unless @staff.topic.blank? %>
     <strong>Topic:</strong>
@@ -31,7 +25,7 @@
 
 <p>
   <% unless @staff.staff_type.blank? %>
-    <strong>Type of staff:</strong>
+    <strong>Type :</strong>
     <%= @staff.staff_type %>
   <% end %>  
 </p>
@@ -67,7 +61,7 @@
 
 <p>
   <% unless @staff.institut_name.blank? %>
-    <strong>Institut name:</strong>
+    <strong>Department or Institut:</strong>
     <%= @staff.institut_name %>
   <% end %>     
 </p>
