@@ -77,7 +77,7 @@
         Create a new associated phenotype:
         <%= form.fields_for :phenotype, Phenotype.new do |phenotype_attributes|%>
           <%= phenotype_attributes.text_field :name, placeholder: "Enter phenotype's name" %>
-        <div id="phenotypeHelp" class="form-text">You will be able to fill the new phenotype's information once the name phenotype created.</br> If you don't want to modify this field, juste leave it blank.</div>
+        <div id="phenotypeHelp" class="form-text">You will be able to fill in the new phenotype's information once the name phenotype created.</br> If you don't want to modify this field, juste leave it blank.</div>
         <% end %> 
       </p>
     </div>

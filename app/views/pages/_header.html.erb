@@ -27,6 +27,13 @@
               <li class="dropdown-item"> <%= link_to "Teams & Facilities", staffs_path, class:"nav-link active" %> </li>
             </ul>
         </li>
+
+        <li class="nav-item">
+          <%= link_to "https://kahikai.org/science/nematostella-central/" do %>
+            <%= image_tag("kahikai-logo.png", :size => '60x60', :alt => "KahiKai", :class => "d-inline-block align-top" )%>
+          <% end %>
+        </li>   
+
         
         <li class="nav-item dropdown">
           <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Lines </a>
@@ -41,11 +48,6 @@
         </li>     
         
 
-        <li class="nav-item">
-          <%= link_to "https://kahikai.org/science/nematostella-central/" do %>
-            <%= image_tag("kahikai-logo.png", :size => '60x60', :alt => "KahiKai", :class => "d-inline-block align-top" )%>
-          <% end %>
-        </li>   
 
 
 <!-- IF LOGIN -->

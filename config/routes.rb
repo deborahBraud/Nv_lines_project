@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'pages/about_nematostella'
   get 'pages/contact'
   get 'pages/reporting'
+  get 'pages/about_nvlines'
   get 'lines/index'
   get 'wt_lines/index', action: :wt_index, controller: 'lines'
   get 'reporter_lines/index', action: :reporter_index, controller: 'lines'
