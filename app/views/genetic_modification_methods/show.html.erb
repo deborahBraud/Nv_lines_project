@@ -59,9 +59,9 @@
 
 <p> <% if user_signed_in?%> 
       <%= link_to 'Edit', edit_genetic_modification_method_path(@genetic_modification_method), class:'btn btn-light' %> 
-      <%= link_to 'Back', lines_path, class:'btn btn-secondary' %>
+      <%= link_to 'Back', line_path(@genetic_modification_method.line.id), class:'btn btn-secondary' %>
     <% else %>
-      <%= link_to 'Back', line_path, class:'btn btn-secondary' %>
+      <%= link_to 'Back', line_path(@genetic_modification_method.line.id), class:'btn btn-secondary' %>
     <% end %>  
 </p>
 
@@ -126,10 +126,7 @@
   <p><% if user_signed_in?%> 
       <% unless @genetic_modification_method.molecular_data.ids.blank?%>
         <%= link_to 'Edit', edit_molecular_datum_path(@genetic_modification_method.molecular_data.ids), class:'btn btn-light' %> 
-        <%= link_to 'Back', lines_path, class:'btn btn-secondary' %>
-      <%end%>  
-     <% else %>
-      <%= link_to 'Back', lines_path, class:'btn btn-secondary' %>
+      <%end%> 
      <% end %> 
 </p>
     

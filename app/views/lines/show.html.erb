@@ -1,4 +1,19 @@
-<h1> <%= @line.line_name %> </h1>
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm">
+      <h1> <%= @line.line_name %>   </h1>
+    </div>
+
+    <div class="col-sm">
+    </div>
+
+    <div class="col-sm">
+    <%= link_to 'Index Lines Page', lines_path, class: 'btn btn-info' %>   
+    </div>
+  </div>
+</div>    
+
 <hr>
 
 <div class="container">
@@ -102,7 +117,7 @@
         <% end %> 
 
       
-        <p> <% unless @line.genetic_modification_method.tag_type.blank? %>
+          <% unless @line.genetic_modification_method.tag_type.blank? %>
               <strong>Tag type :</strong>
               <%=@line.genetic_modification_method.tag_type%>
             <%end%> 
@@ -147,6 +162,8 @@
 <!-- MOLECULAR DATA -->
 </br>
 <h5>Molecular data 
+  <% if @line.publications.ids.blank? %> : NA
+  <% else%>
     <% if user_signed_in?%> 
       <%= link_to 'Edit', genetic_modification_method_path(@line.genetic_modification_method_id), class:'btn btn-light' %> </h5></br>
     <% else %> </h5></br>
@@ -175,8 +192,6 @@
               <th>Mutated region</th>
               <th>NvERTx ID</th>
             </tr>  
-
-
           </thead>
 
           <tbody>
@@ -199,7 +214,7 @@
         </table>
       <% end %> 
     <% end %>  
-
+  <%end %>  
 
 <!-- PHENOTYPE -->
 </br>
