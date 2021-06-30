@@ -34,7 +34,7 @@
     <% @images.each do |image| %>
       <% unless image.line.nil? %>
       <tr>
-        <td><%= link_to image.line.combined_value, image.line %>, <%= image.image_name%> </td> 
+        <td><%= link_to image.line.combined_value, image %>, <%= image.image_name%> </td> 
         <td><%= image.lifecycle_stage %></td>
         <td><%= image.tissu_localization %></td>
 
