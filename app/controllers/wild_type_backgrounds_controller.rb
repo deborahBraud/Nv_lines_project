@@ -12,9 +12,7 @@ class WildTypeBackgroundsController < ApplicationController
 
   # GET /wild_type_backgrounds/new
   def new
-    @wild_type_background = WildTypeBackground.new  
-    @wild_type_background.build.line_attributes 
-  end
+    @wild_type_background = WildTypeBackground.new    end
 
   # GET /wild_type_backgrounds/1/edit
   def edit

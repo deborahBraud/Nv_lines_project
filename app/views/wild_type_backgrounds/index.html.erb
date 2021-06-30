@@ -1,4 +1,25 @@
-<h1>Wild Type Backgrounds</h1>
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm">
+      <h1>Wild Type Backgrounds</h1>
+    </div>
+
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+    </div>
+
+    <div class="col-sm">
+    <%= link_to new_wild_type_background_path do %>
+      <%= image_tag "add.png", :size => '30x30', :alt => "Image", :class => "img-fluid tm-header-img", :title => "Add a new wild type background" %>
+    <% end %>
+    </div>
+  </div>
+</div>    
+
+<hr>
+</br>
 
 <table class="table">
   <thead class="thead-light">
@@ -13,12 +34,14 @@
   <tbody>
     <% @wild_type_backgrounds.each do |wild_type_background| %>
       <tr>
-        <td><%= wild_type_background.sampling_conditions %></td>
+        <td><%= link_to wild_type_background.sampling_conditions, wild_type_background  %></td>
         <td><%= wild_type_background.sampling_geographical_zone %></td>
         <td><%= wild_type_background.supplementary_information %></td>
-        <td><%= link_to 'Show', wild_type_background %></td>
-        <td><%= link_to 'Edit', edit_wild_type_background_path(wild_type_background) %></td>
-        <td><%= link_to 'Delete', wild_type_background, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <% if user_signed_in?%>
+          <td><%= link_to 'Edit', edit_wild_type_background_path(wild_type_background), class: 'btn btn-outline-secondary btn-sm' %></td>
+          <td><%= link_to 'Delete', wild_type_background, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' %></td>
+       <%end%>
       </tr>
     <% end %>
   </tbody>

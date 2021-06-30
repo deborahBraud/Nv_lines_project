@@ -1,5 +1,26 @@
-<h1> Lines <em>(<%= @lines.count %>)</em> </h1>
-<hr>
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm">
+      <h1> Lines <em>(<%= @lines.count %>)</em> </h1>
+    </div>
+
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+    </div>
+
+    <div class="col-sm">
+    <%= link_to new_line_path do %>
+      <%= image_tag "add.png", :size => '30x30', :alt => "Image", :class => "img-fluid tm-header-img", :title => "Add a new line" %>
+    <% end %>
+    </div>
+  </div>
+</div>    
+
+<hr> 
 
 <table class="table">
   <thead class="thead-light">

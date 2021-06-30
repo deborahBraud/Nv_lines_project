@@ -1,5 +1,27 @@
-<h1>Publications</h1>
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm">
+      <h1>Publications</h1>
+    </div>
+
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+    </div>
+
+    <div class="col-sm">
+    <%= link_to new_publication_path do %>
+      <%= image_tag "add.png", :size => '30x30', :alt => "Image", :class => "img-fluid tm-header-img", :title => "Add a new publication" %>
+    <% end %>
+    </div>
+  </div>
+</div>    
+
 <hr>
+
 
 <div class="table-responsive">
   <table class="table table-responsive">

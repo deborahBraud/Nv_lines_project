@@ -1,4 +1,23 @@
-<h1>Images Repertory</h1>
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm">
+      <h1>Images Repertory</h1>
+    </div>
+
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+    </div>
+
+    <div class="col-sm">
+    <%= link_to new_image_path do %>
+      <%= image_tag "add.png", :size => '30x30', :alt => "Image", :class => "img-fluid tm-header-img", :title => "Add a new image" %>
+    <% end %>
+    </div>
+  </div>
+</div>    
+
 <hr>
 
 <div class= 'row'>
@@ -34,7 +53,7 @@
     <% @images.each do |image| %>
       <% unless image.line.nil? %>
       <tr>
-        <td><%= link_to image.line.combined_value, image %>, <%= image.image_name%> </td> 
+        <td><%= image.line.combined_value%>, <%= link_to image.image_name, image%> </td> 
         <td><%= image.lifecycle_stage %></td>
         <td><%= image.tissu_localization %></td>
 
@@ -44,7 +63,7 @@
         <% end %>  
       </tr>
       <% end %>
-    <% end %>a
+    <% end %>
   </tbody>
 </thead>
 </table>

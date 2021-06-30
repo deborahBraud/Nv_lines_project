@@ -1,5 +1,5 @@
-<p id="notice"><%= notice %></p>
-
+<h1> Wild type background </h1>
+<hr>
 <p>
   <strong>Sampling conditions:</strong>
   <%= @wild_type_background.sampling_conditions %>
@@ -15,5 +15,6 @@
   <%= @wild_type_background.supplementary_information %>
 </p>
 
-<%= link_to 'Edit', edit_wild_type_background_path(@wild_type_background) %> |
-<%= link_to 'Back', wild_type_backgrounds_path %>
+<%= link_to 'Edit information', edit_wild_type_background_path(@wild_type_background), class:'btn btn-light' %> 
+<%= link_to 'Back', wild_type_backgrounds_path, class:'btn btn-secondary' %>
+

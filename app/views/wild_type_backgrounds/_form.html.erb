@@ -11,22 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :sampling_conditions %>
-    <%= form.text_area :sampling_conditions %>
+    <%= form.text_area :sampling_conditions, class:'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :sampling_geographical_zone %>
-    <%= form.text_field :sampling_geographical_zone %>
+  </br>
+  <div class="field form-group">
+    Geographic zone of the sampling
+    <%= form.text_field :sampling_geographical_zone, class:'form-control' %>
   </div>
 
-  <div class="field">
+  </br>
+  <div class="field form-group">
     <%= form.label :supplementary_information %>
-    <%= form.text_area :supplementary_information %>
+    <%= form.text_area :supplementary_information, class:'form-control' %>
   </div>
 
+  </br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-light'%>
   </div>
 <% end %>
