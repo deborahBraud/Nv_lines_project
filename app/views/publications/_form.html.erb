@@ -12,32 +12,8 @@
   <% end %>
 
   <div class="field form-group">
-    <%= form.label :publication_name %>
-    <%= form.text_field :publication_name, class:'form-control' %>
-  </div>
-
-  </br>
-  <div class="field form-group">
-    <%= form.label :publication_date %>
-    <%= form.date_select :publication_date, :start_year => 1970, :end_year => 2120, class:'form-control' %>
-  </div>
-
-  </br>
-  <div class="field form-group">
-    <%= form.label :authors %>
-    <%= form.text_field :authors, class:'form-control' %>
-  </div>
-
-  </br>
-  <div class="field form-group">
-    <%= form.label :pubmed_link %>
-    <%= form.text_field :pubmed_link, class:'form-control' %>
-  </div>
-
-  </br>
-  <div class="field form-group">
-    <%= form.label :doi_link %>
-    <%= form.text_field :doi_link, class:'form-control' %>
+    Please enter the PUBMED accession number of the publication :
+    <input type="text" name="ids" />
   </div>
 
   </br>

@@ -16,6 +16,7 @@ class ImagesController < ApplicationController
     else
       @images = Image.all
     end
+    #raise
   end
 
   # GET /images/1 or /images/1.json

@@ -32,11 +32,10 @@
 
     </tbody>
   </table>
-</div>  
+</div>
 
-</br>
 <% if user_signed_in?%>
   <%= link_to 'New Publication', new_publication_path, class:'btn btn-light' %>
  <% else %>
   <p> To create a new publication, please <%= link_to "login",new_user_session_path, class:"link" %> </p>
- <% end %>  
+ <% end %>

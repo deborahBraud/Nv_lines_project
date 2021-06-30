@@ -1,4 +1,4 @@
-<h1>Images</h1>
+<h1>Images Repertory</h1>
 <hr>
 
 <div class= 'row'>
@@ -16,10 +16,9 @@
 
   <div class='col'>
    <%= link_to 'All images', images_path, class:'btn btn-outline-secondary' %>
- </div> 
+  </div> 
 </div>  
 
-</br>
 <p>
 <table class="table">
   <thead>
@@ -27,26 +26,29 @@
       <th>Name</th>
       <th>Lifecycle stage</th>
       <th>Tissu localization</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @images.each do |image| %>
+      <% unless image.line.nil? %>
       <tr>
-        <td><%= image.line%>, <%= image.image_name%> </td> 
+        <td><%= link_to image.line.combined_value, image.line %>, <%= image.image_name%> </td> 
         <td><%= image.lifecycle_stage %></td>
         <td><%= image.tissu_localization %></td>
-        <td><%= link_to 'Show', image, class:'btn btn-outline-secondary btn-sm' %></td>
 
         <% if user_signed_in?%> 
           <td><%= link_to 'Edit', edit_image_path(image), class:'btn btn-outline-secondary btn-sm' %></td>
           <td><%= link_to 'Delete', image, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-outline-danger btn-sm' %></td>
         <% end %>  
       </tr>
-    <% end %>
+      <% end %>
+    <% end %>a
   </tbody>
+</thead>
 </table>
+</p>
 
 <br>
 <% if user_signed_in?%>
